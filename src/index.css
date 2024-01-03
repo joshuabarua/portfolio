@@ -1,27 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'helvetica-neue';
+	src: url('./assets/fonts/helvetica-neue/HelveticaNeue-Light.otf') format('opentype');
+	/* Add other font formats if available */
+	font-weight: normal;
+	font-style: normal;
+}
+
 .max-width {
-  @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
+	@apply lg:mx-auto lg:px-48 xl:px-52 px-5;
 }
 .bg-gradient {
-  @apply bg-gradient-to-r from-sky-500 via-purple-500 to-pink-600;
+	@apply bg-gradient-to-r from-sky-500 via-purple-500 to-pink-600;
 }
 .text-gradient {
-  @apply bg-clip-text bg-gradient text-transparent;
+	@apply bg-clip-text bg-gradient text-transparent;
 }
 .section {
-  @apply pt-28 xl:pt-28 2xl:pt-44;
+	@apply pt-28 xl:pt-28 2xl:pt-44;
 }
 .text-content {
-  @apply dark:text-light-content text-dark-content;
+	@apply dark:text-light-content text-dark-content;
 }
-body {
-  overflow-x: hidden;
-}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
-  display: none;
+	display: none;
+}
+
+body {
+	font-family: 'helvetica-neue';
+	padding: 25px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	min-width: 325px;
+}
+
+#root {
+	height: 100%;
+	width: 100%;
+	border: 2px rgb(250, 242, 214) solid;
+	padding: 25px;
+	min-width: 325px;
+	overflow-y: hidden;
+}
+
+.active {
+	text-decoration: underline;
+	text-decoration-color: rgb(250, 242, 214);
+	text-underline-offset: 5px;
+	/* Add other styles for the active link if needed */
 }
