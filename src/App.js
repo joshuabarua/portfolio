@@ -36,7 +36,7 @@ function App() {
 			style={{
 				color: 'white',
 				textAlign: 'left',
-				gap: '30px',
+				gap: '50px',
 			}}>
 			<div>
 				<h1 ref={h12} className="text-4xl">
@@ -44,7 +44,7 @@ function App() {
 				</h1>
 				<h2 ref={h13}>{tagline}</h2>
 			</div>
-			<div className=" h-full w-full flex justify-between flex-row ">
+			<div className=" h-full w-full flex justify-between flex-row  gap-7">
 				<Router>
 					<Header isOpen={isOpen} setIsOpen={setIsOpen} />
 

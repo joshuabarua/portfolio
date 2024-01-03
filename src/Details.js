@@ -17,6 +17,30 @@ import git from './assets/techstack/git.png';
 import npm from './assets/techstack/npm.png';
 import postman from './assets/techstack/postman.png';
 import figma from './assets/techstack/figma.png';
+import adobe from './assets/techstack/adobe-premiere-pro-96.png';
+import express from './assets/techstack/express-js-144.png';
+import finalCut from './assets/techstack/final-cut-pro-x-96.png';
+import firebase from './assets/techstack/firebase-144.png';
+import graphql from './assets/techstack/GraphQL.png';
+import java from './assets/techstack/java-144.png';
+import json from './assets/techstack/json-96.png';
+import jwt from './assets/techstack/json-web-token-96.png';
+import linux from './assets/techstack/linux-96.png';
+import mui from './assets/techstack/material-ui-240.png';
+import mongo from './assets/techstack/mongodb-144.png';
+import sql from './assets/techstack/mysql-240.png';
+import node from './assets/techstack/nodejs-240.png';
+import photoshop from './assets/techstack/photoshop-96.png';
+import python from './assets/techstack/python-144.png';
+import php from './assets/techstack/php-96.png';
+import ruby from './assets/techstack/ruby-programming-language-144.png';
+import styled from './assets/techstack/styled-components-96.png';
+import swift from './assets/techstack/swift-144.png';
+import ts from './assets/techstack/ts.png';
+import unix from './assets/techstack/unix-96.png';
+import wordpress from './assets/techstack/wordpress-240.png';
+import zustand from './assets/techstack/zustand.png';
+
 // Project Images
 import projectImage1 from './assets/projects/project1.jpg';
 import projectImage2 from './assets/projects/project2.jpg';
@@ -149,6 +173,29 @@ export const techStackDetails = {
 	git: git,
 	github: github,
 	figma: figma,
+	finalCut: finalCut,
+	adobe: adobe,
+	express: express,
+	firebase: firebase,
+	graphql: graphql,
+	java: java,
+	json: json,
+	jwt: jwt,
+	linux: linux,
+	mui: mui,
+	mongo: mongo,
+	sql: sql,
+	node: node,
+	photoshop: photoshop,
+	php: php,
+	python: python,
+	ruby: ruby,
+	styled: styled,
+	swift: swift,
+	ts: ts,
+	unix: unix,
+	wordpress: wordpress,
+	zustand: zustand,
 };
 
 // Enter your Project Details here
