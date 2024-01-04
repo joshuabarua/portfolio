@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import emailjs from 'emailjs';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
 	const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ const ContactForm = () => {
 		e.preventDefault();
 
 		emailjs
-			.sendForm(
+			.send(
 				'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
 				'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
 				e.target,

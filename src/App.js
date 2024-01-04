@@ -1,9 +1,8 @@
-import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
-import React, {useRef, useEffect, useState} from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React, {useRef, useEffect} from 'react';
 import gsap from 'gsap';
 import {personalDetails} from './Details';
 import Home from './Pages/Home';
-import About from './Pages/Experience';
 import Contact from './Pages/Contact';
 import Projects from './Pages/Projects';
 import Technologies from './Pages/Technologies';
@@ -12,11 +11,10 @@ import Experience from './Pages/Experience';
 import Education from './Pages/Education';
 
 function App() {
-	const {name, tagline, img} = personalDetails;
+	const {name, tagline} = personalDetails;
 	const h12 = useRef();
 	const h13 = useRef();
 	const myImageRef = useRef();
-	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const elements = [h12.current, h13.current, myImageRef.current];
@@ -31,33 +29,48 @@ function App() {
 	}, []);
 
 	return (
-		<div
-			className=" h-full w-full flex  items-start justify-start flex-col"
-			style={{
-				color: 'white',
-				textAlign: 'left',
-				gap: '50px',
-			}}>
-			<div>
-				<h1 ref={h12} className="text-4xl">
-					{name}
-				</h1>
-				<h2 ref={h13}>{tagline}</h2>
-			</div>
-			<div className=" h-full w-full flex justify-between flex-row  gap-7">
-				<Router>
-					<Header isOpen={isOpen} setIsOpen={setIsOpen} />
+		<div>
+			<div id='page'>
 
-					<Routes>
-						<Route path="/" element={<Home />}></Route>
-						<Route path="/experience" element={<Experience />} />
-						<Route path="/education" element={<Education />} />
-						<Route path="/projects" element={<Projects />} />
-						<Route path="/technologies" element={<Technologies />} />
-						<Route path="/contact" element={<Contact />} />
-					</Routes>
-				</Router>
 			</div>
+			<div>
+
+			</div>
+			<Router>
+				<div
+					className="grid grid-cols-2 grid-rows-4 gap-4 h-full"
+					style={{
+						color: 'white',
+						textAlign: 'left',
+						gridTemplateRows: '1fr 6fr',
+						gridTemplateColumns: '3fr 8fr',
+					}}>
+					{/* Name and Tagline */}
+					<div className="col-start-1 row-start-1 col-end-2 row-end-2">
+						<h1 ref={h12} className="text-4xl ">
+							{name}
+						</h1>
+						<h2 ref={h13}>{tagline}</h2>
+					</div>
+
+					{/* Header */}
+					<div className="col-start-1 row-start-2 col-end-2 row-end-3">
+						<Header />
+					</div>
+
+					{/* Content */}
+					<div className="col-start-2 row-start-1 col-end-3 row-end-4 overflow-y-auto" id="DATA">
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/experience" element={<Experience />} />
+							<Route path="/education" element={<Education />} />
+							<Route path="/projects" element={<Projects />} />
+							<Route path="/technologies" element={<Technologies />} />
+							<Route path="/contact" element={<Contact />} />
+						</Routes>
+					</div>
+				</div>
+			</Router>
 		</div>
 	);
 }

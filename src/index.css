@@ -6,7 +6,6 @@
 @font-face {
 	font-family: 'helvetica-neue';
 	src: url('./assets/fonts/helvetica-neue/HelveticaNeue-Light.otf') format('opentype');
-	/* Add other font formats if available */
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,15 +30,24 @@
 body::-webkit-scrollbar {
 	display: none;
 }
-
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
 	font-family: 'helvetica-neue';
 	padding: 25px;
+	overflow: hidden;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	min-width: 325px;
-	background: rgba(5, 1, 1, 0.31);
+	background-color: hsl(0, 0%, 5%);
+	z-index: 10;
+	font-feature-settings: 'palt';
+	-webkit-text-size-adjust: none;
+	-moz-osx-font-smoothing: grayscale;
+	overscroll-behavior: none;
 }
 
 #root {
@@ -47,25 +55,36 @@ body {
 	width: 100%;
 	border-style: solid;
 	border-width: 1px;
-	padding: 25px;
 	min-width: 325px;
 	overflow-y: hidden;
 	border-color: rgba(250, 242, 255, 0.5);
-	background: rgba(13, 13, 13, 0.95);
+	background: rgb(3, 2, 2);
+	z-index: 11;
 }
 
 .active {
 	text-decoration: underline;
 	text-decoration-color: rgb(250, 242, 214);
 	text-underline-offset: 5px;
-	/* Add other styles for the active link if needed */
 }
 
 .tech img {
 	width: 60px;
 	height: 60px;
+	border-radius: 10%;
 }
 
-section {
-	background: transparent;
+#page {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: var(--c-bg);
+	color: #fff;
+	white-space: nowrap;
+	transition-property: background-color;
+	transition-duration: 0.9s;
+	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
 }
