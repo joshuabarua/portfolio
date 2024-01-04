@@ -30,36 +30,30 @@ function App() {
 
 	return (
 		<div>
-			<div id='page'>
-
+			<div id="frame">
+				<div className="frame_line frame_line-left"></div>
+				<div className="frame_line frame_line-right"></div>
+				<div className="frame_line frame_line-top"></div>
+				<div className="frame_line frame_line-bottom"></div>
 			</div>
-			<div>
-
+			<div className="mask">
+				<div className="mask_top"></div>
+				<div className="mask_bottom"></div>
 			</div>
 			<Router>
-				<div
-					className="grid grid-cols-2 grid-rows-4 gap-4 h-full"
-					style={{
-						color: 'white',
-						textAlign: 'left',
-						gridTemplateRows: '1fr 6fr',
-						gridTemplateColumns: '3fr 8fr',
-					}}>
-					{/* Name and Tagline */}
-					<div className="col-start-1 row-start-1 col-end-2 row-end-2">
+				<div>
+					<div className="name">
 						<h1 ref={h12} className="text-4xl ">
 							{name}
 						</h1>
 						<h2 ref={h13}>{tagline}</h2>
 					</div>
 
-					{/* Header */}
-					<div className="col-start-1 row-start-2 col-end-2 row-end-3">
+					<div className="header">
 						<Header />
 					</div>
 
-					{/* Content */}
-					<div className="col-start-2 row-start-1 col-end-3 row-end-4 overflow-y-auto" id="DATA">
+					<div id="content">
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/experience" element={<Experience />} />
