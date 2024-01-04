@@ -141,7 +141,7 @@ export const workDetails = [
 		Position: 'Frontend Developer',
 		Description:
 			'I developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, I crafted a visually appealing and modern website. I integrated a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, I organized project data—descriptions, images, and achievements—in a structured and easily accessible format.',
-		Company: `Galaxy Firl MUA`,
+		Company: `Galaxy Girl MUA`,
 		Location: 'Remote/Brighton, UK',
 		Type: 'Freelance',
 		Duration: 'Jan 2022 - Jan 2023',

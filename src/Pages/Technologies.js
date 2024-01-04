@@ -4,62 +4,64 @@ import {techStackDetails} from '../Details';
 function Technologies() {
 	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;
 	return (
-		<main className="overflow-y-auto max-width pt-10 pb-40 ">
-			<section>
-				<h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold pb-6">Technology</h1>
-			</section>
-			<section>
-				<h2 className="text-1xl text-dark-heading dark:text-light-heading md:text-1xl xl:text-2xl xl:leading-tight font-bold">Frequently Used</h2>
-				<section className="tech grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-5 pt-6 pb-6">
-					<img src={techStackDetails.ts} title="Typescript" alt="" />
-					<img src={js} title="JavaScript" alt="" />
-					<img src={html} title="HTML" alt="" />
-					<img src={react} title="React" alt="" />
-					<img src={redux} title="Redux" alt="" />
-					<img src={techStackDetails.graphql} title="GraphQL" alt="" />
-					<img src={techStackDetails.mongo} title="MongoDB" alt="" />
-					<img src={techStackDetails.node} title="NodeJS" className="dark:bg-white rounded-md" alt="" />
-					<img src={tailwind} title="Tailwind CSS" alt="" />
-					<img src={techStackDetails.mui} title="Material UI" alt="" />
-					<img src={techStackDetails.styled} title="Styled Components" alt="" />
-					<img src={techStackDetails.jwt} title="JWT" alt="" />
-					<img src={techStackDetails.express} title="Express" alt="" style={{background: 'white', borderRadius: '50%'}} />
-					<img src={techStackDetails.firebase} title="Firebase" alt="" />
-					<img src={techStackDetails.json} title="JSON" alt="" />
-					<img src={techStackDetails.zustand} title="Zustand" alt="" />
-					<img src={techStackDetails.rest} title="RESTful" alt="" className="dark:bg-white rounded-md" />
+		<main className="h-screen w-[90%] flex justify-end items-end pb-[100px] pr-5">
+			<div className=" w-[60%]  ">
+				<h1 className="text-1xl text-left text-dark-heading dark:text-light-heading md:text-3xl xl:text-4xl xl:leading-tight font-bold pb-6">Technologies</h1>
+				<section>
+					<h2 className="text-1xl text-dark-heading dark:text-light-heading md:text-1xl xl:text-2xl xl:leading-tight font-bold">Frequently Used</h2>
+					<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
+						<img src={techStackDetails.ts} title="Typescript" alt="" />
+						<img src={js} title="JavaScript" alt="" />
+						<img src={html} title="HTML" alt="" />
+						<img src={css} title="CSS" alt="" />
+						<img src={react} title="React" alt="" />
+						<img src={redux} title="Redux" alt="" />
+						<img src={techStackDetails.graphql} title="GraphQL" alt="" />
+						<img src={techStackDetails.mongo} title="MongoDB" alt="" />
+						<img src={techStackDetails.node} title="NodeJS" className="dark:bg-white rounded-md" alt="" />
+						<img src={tailwind} title="Tailwind CSS" alt="" />
+						<img src={techStackDetails.mui} title="Material UI" alt="" />
+						<img src={techStackDetails.styled} title="Styled Components" alt="" />
+						<img src={techStackDetails.jwt} title="JWT" alt="" />
+						<img src={techStackDetails.express} title="Express" alt="" style={{background: 'white', borderRadius: '50%'}} />
+						<img src={techStackDetails.firebase} title="Firebase" alt="" />
+						<img src={techStackDetails.json} title="JSON" alt="" />
+						<img src={techStackDetails.zustand} title="Zustand" alt="" />
+						<img src={techStackDetails.rest} title="RESTful" alt="" className="dark:bg-white rounded-md" />
+					</section>
 				</section>
-			</section>
-			<section>
-				<h2 className="text-1xl text-dark-heading dark:text-light-heading md:text-1xl xl:text-2xl xl:leading-tight font-bold">Familiar With</h2>
-				<section className="tech grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-5 pt-6 pb-6">
-					<img src={techStackDetails.java} title="Java" alt="" />
-					<img src={techStackDetails.sql} title="MySQL" alt="" />
-					<img src={techStackDetails.php} title="PHP" alt="" />
-					<img src={techStackDetails.ruby} title="Ruby" alt="" />
-					<img src={techStackDetails.swift} title="Swift" alt="" />
-					<img src={techStackDetails.python} title="Python" alt="" />
-					<img src={techStackDetails.unix} title="Unix" alt="" />
-					<img src={techStackDetails.linux} title="Linux" className="dark:bg-white rounded-md" alt="" />
-					<img src={techStackDetails.wordpress} title="Wordpress" alt="" />
+				<section>
+					<h2 className="text-1xl text-dark-heading dark:text-light-heading md:text-1xl xl:text-2xl xl:leading-tight font-bold">Familiar With</h2>
+					<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
+						<img src={techStackDetails.java} title="Java" alt="" />
+						<img src={techStackDetails.sql} title="MySQL" alt="" />
+						<img src={techStackDetails.php} title="PHP" alt="" />
+						<img src={techStackDetails.ruby} title="Ruby" alt="" />
+						<img src={techStackDetails.swift} title="Swift" alt="" />
+						<img src={techStackDetails.python} title="Python" alt="" />
+						<img src={techStackDetails.unix} title="Unix" alt="" />
+						<img src={techStackDetails.linux} title="Linux" className="dark:bg-white rounded-md" alt="" />
+						<img src={techStackDetails.wordpress} title="Wordpress" alt="" />
+					</section>
 				</section>
-			</section>
 
-			<section>
-				<h1 className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">Tools</h1>
-			</section>
-			<section className="tech grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-5 pt-6">
-				<img src={vscode} title="Visual Studio Code" alt="" />
-				<img src={git} title="Git" alt="Git" />
-				<img src={github} title="Github" alt="Github" className="dark:bg-white rounded-md " />
-				<img src={figma} title="Figma" alt="Figma" />
-				<img src={techStackDetails.yarn} title="yarn" alt="Figma" />
-				<img src={npm} title="NPM" alt="NPM" className="bg-white rounded-md" />
-				<img src={postman} title="Postman" alt="Postman" />
-				<img src={techStackDetails.adobe} title="PremierPro" alt="" />
-				<img src={techStackDetails.finalCut} title="FinalCut" alt="" />
-				<img src={techStackDetails.photoshop} title="Photoshop" alt="" />
-			</section>
+				<section>
+					<h1 className="text-1xl text-dark-heading dark:text-light-heading md:text-1xl xl:text-2xl xl:leading-tight font-bold">Tools</h1>
+				</section>
+				<section className="tech flex flex-wrap items-center gap-5 pt-2">
+					<img src={vscode} title="Visual Studio Code" alt="" />
+					<img src={git} title="Git" alt="Git" />
+					<img src={github} title="Github" alt="Github" className="dark:bg-white rounded-md " />
+					<img src={figma} title="Figma" alt="Figma" />
+					<img src={techStackDetails.yarn} title="yarn" alt="Figma" />
+					<img src={npm} title="NPM" alt="NPM" className="bg-white rounded-md" />
+					<img src={postman} title="Postman" alt="Postman" />
+					<img src={techStackDetails.adobe} title="PremierPro" alt="" />
+					<img src={techStackDetails.finalCut} title="FinalCut" alt="" />
+					<img src={techStackDetails.photoshop} title="Photoshop" alt="" />
+					<img src={techStackDetails.vite} title="Vite" alt="" />
+				</section>
+			</div>
 		</main>
 	);
 }

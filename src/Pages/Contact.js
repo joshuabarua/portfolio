@@ -43,12 +43,19 @@ const ContactForm = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
-			<input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" required />
-			<textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your Message" required></textarea>
-			<button type="submit">Send</button>
-		</form>
+		<main className="h-screen w-[90%] flex justify-end items-end flex-col ">
+			<section className="pb-[100px] w-[70%]">
+				<form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-2 bg-gray-800 w-[80%] h-[550px] rounded-md">
+					<input type="text" className="h-[40px] w-[80%] rounded-lg pl-3" name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
+					<input className="h-[40px] w-[80%] rounded-md pl-3" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
+					<input className="h-[40px] w-[80%] rounded-md pl-3" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subject" required />
+					<textarea className="h-[300px] w-[80%] rounded-md pl-3" name="message" value={formData.message} onChange={handleChange} placeholder="Message" required></textarea>
+					<button type="submit" className="h-[40px] w-[80%] rounded-md pl-3 bg-blue-400">
+						Send
+					</button>
+				</form>
+			</section>
+		</main>
 	);
 };
 
