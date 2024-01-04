@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {logos, socialMediaUrl} from '../Details';
+import {socialMediaUrl} from '../Details';
 
-function Header(props) {
-	const {isOpen, setIsOpen} = props;
-	console.log(isOpen);
+function Header() {
 	const {linkdein, github} = socialMediaUrl;
 
 	const navLinks = [
@@ -16,19 +14,13 @@ function Header(props) {
 		{path: '/contact', label: 'Contact'},
 	];
 
-	const toggleClass = () => {
-		setIsOpen(!isOpen);
-	};
-
 	return (
-		<header className=" flex justify-start content-start flex-col">
-			<nav className={` text-left flex justify-between gap-2 flex-col`}>
+		<header className="">
+			<nav className={` text-left flex justify-between gap-4 flex-col`}>
 				<ul className="dark:text-light-content font-medium flex justify-start content-start flex-col">
 					{navLinks.map((link, index) => (
 						<li key={index} className="pb-1 md:pb-0">
-							<NavLink to={link.path} onClick={toggleClass}>
-								{link.label}
-							</NavLink>
+							<NavLink to={link.path}>{link.label}</NavLink>
 						</li>
 					))}
 				</ul>
