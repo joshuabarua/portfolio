@@ -27,7 +27,7 @@
 }
 
 :root {
-	--bg-dark: hsl(0, 0%, 5%);
+	--bg-dark: #0d0d0d;
 	--bg-light: hsl(0, 0%, 90%);
 	--text-dark: hsl(0, 0%, 10%);
 	--text-light: hsl(0, 0%, 95%);
@@ -87,6 +87,29 @@ body {
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
 }
+
+#background {
+	/* left: var(--pad);
+	right: var(--pad);
+	top: var(--pad);
+	bottom: var(--pad); */
+	position: fixed;
+	left: -45vw;
+	bottom: -45vw;
+	width: 85vw;
+	height: 85vw;
+	border-radius: 45%;
+	z-index: -1;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+/* #background::content {
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	background: linear-gradient(45deg, rgba(0, 0, 0, 0.136) 0, rgba(0, 0, 0, 0.607) 100%);
+} */
 
 #frame {
 	position: fixed;
@@ -183,6 +206,7 @@ body {
 	left: calc(var(--pad) * 2);
 	top: calc(var(--pad) * 2);
 	mix-blend-mode: difference;
+	width: 50%;
 	color: var(--text-light);
 }
 
@@ -193,12 +217,11 @@ body {
 	top: calc(var(--pad) * 4);
 	mix-blend-mode: difference;
 	color: var(--text-light);
-	margin-top: 50px;
+	margin-top: 70px;
 }
 
 #content {
 	z-index: 9;
-	mix-blend-mode: difference;
 	color: var(--text-light);
 	/* right: calc(var(--pad));
 	bottom: calc(var(--pad)); */
