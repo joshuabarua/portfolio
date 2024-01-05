@@ -9,10 +9,14 @@
     "@testing-library/user-event": "^13.5.0",
     "env": "^0.0.2",
     "gsap": "^3.10.4",
+    "p5": "^1.9.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-p5": "^1.4.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "three": "^0.160.0",
+    "vanta": "^0.5.24",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

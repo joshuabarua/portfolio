@@ -71,7 +71,7 @@ development, coupled with a strong
 commitment to agile methodologies and a
 passion for collaborative teamwork.
 I'm committed to achieving excellence as a full-stack engineer, dedicated to crafting scalable
-web applications.`,
+web applications whilst continuing to explore aspects of design.`,
 };
 
 // Enter your Social Media URLs here
