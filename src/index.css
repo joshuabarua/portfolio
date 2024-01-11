@@ -29,8 +29,8 @@
 :root {
 	--bg-dark: #0d0d0d;
 	--bg-light: hsl(0, 0%, 90%);
-	--text-dark: hsl(0, 0%, 10%);
-	--text-light: hsl(0, 0%, 95%);
+	--text-dark: #1a1a1a;
+	--text-light: #f2f2f2;
 	--pad: max(20px, 4vmin);
 }
 
@@ -258,4 +258,15 @@ header {
 
 .workImg img {
 	border-radius: 10%;
+}
+
+input,
+select,
+textarea {
+	color: var(--text-dark);
+}
+
+textarea:focus,
+input:focus {
+	color: var(--text-dark);
 }
