@@ -2,7 +2,7 @@ import React from 'react';
 
 function Work({position, description, company, location, type, duration, website, tech}) {
 	return (
-		<article className=" border-b-2 mb-12  border-dark-content dark:border-light-content border-opacity-20 dark:border-opacity-60  pr-[30px]">
+		<article className=" border-b-2 mb-12  border-dark-content dark:border-light-content border-opacity-20 dark:border-opacity-60  pr-[25px]">
 			<div className="flex justify-between items-center wrapped-text flex-wrap">
 				<h1 className="text-lg md:text-xl lg:text-2xl pr-4 pt-[10px]">{position}</h1>
 				<div className="btn bg-greenbg text-green-text text-xs inline-block rounded-3xl px-3 py-1 min-w-fit ">{type}</div>
@@ -27,7 +27,7 @@ function Work({position, description, company, location, type, duration, website
 				<p className="wrapped-text text-xs md:text-sm font-light pl-1 min-w-fit">{duration}</p>
 			</div>
 			<div className="">
-				<h3 className="wrapped-text text-sm leading-6 md:text-md lg:text-lg font-light  pr-4 pb-4">{description}</h3>
+				<h3 className="wrapped-text text-sm leading-6 md:text-md lg:text-lg font-light pb-4">{description}</h3>
 			</div>
 			<div className="workImg flex flex-wrap justify-around items-baseline w-full gap-4 pb-2">
 				{tech ? (
