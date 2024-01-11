@@ -223,6 +223,7 @@ header {
 	top: calc(var(--pad) * 2);
 	width: 50%;
 	color: var(--text-light);
+	backdrop-filter: difference;
 }
 
 .header {
@@ -232,6 +233,7 @@ header {
 	top: calc(var(--pad) * 4);
 	color: var(--text-light);
 	margin-top: 70px;
+	backdrop-filter: difference;
 }
 
 #content {

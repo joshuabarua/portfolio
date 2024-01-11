@@ -46,12 +46,11 @@ import vite from './assets/techstack/vite-js-logo.png';
 import mapbox from './assets/techstack/mapbox-logo.png';
 
 // Project Images
-import projectImage1 from './assets/projects/project1.jpg';
-import projectImage2 from './assets/projects/project2.jpg';
-import projectImage3 from './assets/projects/project3.jpg';
-import projectImage4 from './assets/projects/project4.jpg';
-import projectImage5 from './assets/projects/project5.jpg';
-import projectImage6 from './assets/projects/project6.jpg';
+import boulderberlin from './assets/projects/boulderberlin.png';
+import mystictarot from './assets/projects/mystictarot.png';
+import pfantastisch from './assets/projects/pfandtastisch.png';
+import mixtape from './assets/projects/mixtape.png';
+import boulderbbs from './assets/projects/boulderbbs.png';
 import weatherWear from './assets/projects/weather_wear.png';
 
 // Logos
@@ -143,6 +142,7 @@ export const workDetails = [
 		Description:
 			'I developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, I crafted a visually appealing and modern website. I integrated a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, I organized project data—descriptions, images, and achievements—in a structured and easily accessible format.',
 		Company: `Galaxy Girl MUA`,
+		Website: 'https://github.com/joshuabarua/galaxy-girl-vite',
 		Location: 'Remote/Brighton, UK',
 		Type: 'Freelance',
 		Duration: 'Jan 2022 - Jan 2023',
@@ -220,6 +220,14 @@ export const eduDetails = [
 // Enter your Project Details here
 export const projectDetails = [
 	{
+		title: 'Boulder Bebis',
+		image: boulderbbs,
+		description: `A booking website for buying tokens to use at a local boulder hall timeslot online`,
+		techstack: 'Typescript, Graphql, MongoDB, Passport, JWT, Auth,  HTML/CSS, JavaScript, Express, NodeJS, Client/Server',
+		previewLink: 'https://portfolio-ten-iota-87.vercel.app/',
+		githubLink: 'https://github.com/joshuabarua/Final_Project_CAB',
+	},
+	{
 		title: 'Weather Wear',
 		image: weatherWear,
 		description: `An app that consumes an API using Javascript. This is weather app that tells you what to wear given the temperature throughout the day based on clothing options selected.`,
@@ -228,54 +236,35 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/CAB-JS-API-weatherApp',
 	},
 	{
-		title: 'Project title 2',
-		image: projectImage2,
-		description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-		techstack: 'HTML/CSS, JavaScript',
-		previewLink: 'https://google.com',
-		githubLink: 'https://github.com',
+		title: 'Pfandtastisch',
+		image: pfantastisch,
+		description: `Currently not hosted as being still working on! A web app to help users find the nearest pfandmachine nearby. Currently not hosted! `,
+		techstack: 'Typescript, Reactjs, MongoDB, JWT, Express, Passport, Bcrypt/Auth, nodeJS, Client/Server, ',
+		previewLink: 'https://portfolio-ten-iota-87.vercel.app/',
+		githubLink: 'https://github.com/joshuabarua/pfantastisch-app',
 	},
 	{
-		title: 'Project title 3',
-		image: projectImage3,
-		description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-		techstack: 'HTML/CSS, JavaScript',
-		previewLink: 'https://google.com',
-		githubLink: 'https://github.com',
+		title: 'Mystic Tarot',
+		image: mystictarot,
+		description: `A Tarot Card website that allows card selections and firebase as a login system. Work in progress!`,
+		techstack: 'Typescript, Reactjs, CSS, Firebase',
+		previewLink: 'https://cab-tarot-card-site-ts.vercel.app/',
+		githubLink: 'https://github.com/joshuabarua/CAB-tarot-card-site-ts',
 	},
 	{
-		title: 'Project title 4',
-		image: projectImage4,
-		description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-		techstack: 'HTML/CSS, JavaScript',
-		previewLink: 'https://google.com',
-		githubLink: 'https://github.com',
+		title: 'Mixtape',
+		image: mixtape,
+		description: `A simple webapp to play songs that look like a mixtape`,
+		techstack: 'Reactjs, JavaScript, CSS, Material-UI',
+		previewLink: ' mixtape4pati.vercel.app/ ',
+		githubLink: 'https://github.com/joshuabarua/mixtape_app',
 	},
 	{
-		title: 'Project title 5',
-		image: projectImage5,
-		description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-		techstack: 'HTML/CSS, JavaScript',
-		previewLink: 'https://google.com',
-		githubLink: 'https://github.com',
-	},
-	{
-		title: 'Project title 6',
-		image: projectImage6,
-		description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-		techstack: 'HTML/CSS, JavaScript',
-		previewLink: 'https://google.com',
-		githubLink: 'https://github.com',
+		title: 'Boulder Berlin',
+		image: boulderberlin,
+		description: `A simple website to test design skills with only HTML/CSS`,
+		techstack: 'HTML/CSS',
+		previewLink: 'https://bouldering-37fr51one-acancerouscake.vercel.app/pages/contact.html',
+		githubLink: 'https://github.com/joshuabarua/CAB-project1-HTML-CSS',
 	},
 ];
-
-// Enter your Contact Details here
-export const contactDetails = {
-	email: 'joshua.k.barua@gmail.com',
-	phone: '+49 176 4184 9375',
-};

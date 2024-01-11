@@ -2,14 +2,14 @@ import React from 'react';
 
 function Project({title, image, description, techstack, previewLink, githubLink}) {
 	return (
-		<article className="rounded-xl max-w-[600px] max-h-[500px] mt-5 overflow-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
-			<div className="w-full">
-				<img src={image} alt="" loading="lazy" />
-				<div className="dark:bg-dark-card p-4">
+		<article className="rounded-xl max-w-[400px] min-w-[250px] max-h-[500px] mt-5 overflow-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
+			<div className="w-full h-full">
+				<img src={image} alt="" loading="lazy" className="max-h-[225px]" />
+				<div className="dark:bg-dark-card p-4 h-full">
 					<h1 className="dark:text-light-heading font-semibold text-lg pt-1">{title}</h1>
 					<p className="wrapped-text pt-4 font-light">{description}</p>
 					<h3 className="text-dark-heading dark:text-light-heading font-medium pt-4">
-						Tech Stack : <span className="font-light">{techstack}</span>
+						Tech Stack: <span className="wrapped-text font-light">{techstack}</span>
 					</h3>
 					<div className="flex justify-between items-center mt-5">
 						<div className="flex items-center">
