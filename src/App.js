@@ -36,7 +36,7 @@ function App() {
 					minWidth: 400.0,
 					scale: 1,
 					scaleMobile: 1.0,
-					color: 0xf2f2f2,
+					color: 0x959393,
 					backgroundColor: 0x0d0d0d,
 					spacing: 20.0,
 					chaos: 2.0,
@@ -105,6 +105,7 @@ function App() {
 			<div className="mask">
 				<div className="mask_top"></div>
 				<div className="mask_bottom"></div>
+				<div className="mask_left"></div>
 			</div>
 			<Router>
 				<div>

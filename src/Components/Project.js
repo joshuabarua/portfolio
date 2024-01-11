@@ -2,7 +2,7 @@ import React from 'react';
 
 function Project({title, image, description, techstack, previewLink, githubLink}) {
 	return (
-		<article className="rounded-xl max-w-[600px] mt-5 overflow-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
+		<article className="rounded-xl max-w-[600px] max-h-[500px] mt-5 overflow-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
 			<div className="w-full">
 				<img src={image} alt="" loading="lazy" />
 				<div className="dark:bg-dark-card p-4">
