@@ -52,6 +52,7 @@ import pfantastisch from './assets/projects/pfandtastisch.png';
 import mixtape from './assets/projects/mixtape.png';
 import boulderbbs from './assets/projects/boulderbbs.png';
 import weatherWear from './assets/projects/weather_wear.png';
+import ricknmorty from './assets/projects/rickandmorty.png';
 
 // Logos
 export const logos = {
@@ -140,7 +141,7 @@ export const workDetails = [
 	{
 		Position: 'Frontend Developer',
 		Description:
-			'I developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, I crafted a visually appealing and modern website. I integrated a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, I organized project data—descriptions, images, and achievements—in a structured and easily accessible format.',
+			'[Currently migrated to vite and yarn due to create-react-app issues, currently squashing bugs] I developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, I crafted a visually appealing and modern website. I integrated a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, I organized project data—descriptions, images, and achievements—in a structured and easily accessible format.',
 		Company: `Galaxy Girl MUA`,
 		Website: 'https://github.com/joshuabarua/galaxy-girl-vite',
 		Location: 'Remote/Brighton, UK',
@@ -222,31 +223,37 @@ export const projectDetails = [
 	{
 		title: 'Boulder Bebis',
 		image: boulderbbs,
-		description: `A booking website for buying tokens to use at a local boulder hall timeslot online`,
+		description: `[Work in Progress] A booking website for buying tokens to use at a local boulder hall timeslot online`,
 		techstack: 'Typescript, Graphql, MongoDB, Passport, JWT, Auth,  HTML/CSS, JavaScript, Express, NodeJS, Client/Server',
-		previewLink: 'https://portfolio-ten-iota-87.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/Final_Project_CAB',
 	},
 	{
 		title: 'Weather Wear',
 		image: weatherWear,
 		description: `An app that consumes an API using Javascript. This is weather app that tells you what to wear given the temperature throughout the day based on clothing options selected.`,
-		techstack: 'HTML/CSS, JavaScript',
+		techstack: 'HTML/CSS, JavaScript, JSON, openWeatherAPI, geoLocation',
 		previewLink: 'https://weather-wear.onrender.com/',
 		githubLink: 'https://github.com/joshuabarua/CAB-JS-API-weatherApp',
 	},
 	{
 		title: 'Pfandtastisch',
 		image: pfantastisch,
-		description: `Currently not hosted as being still working on! A web app to help users find the nearest pfandmachine nearby. Currently not hosted! `,
-		techstack: 'Typescript, Reactjs, MongoDB, JWT, Express, Passport, Bcrypt/Auth, nodeJS, Client/Server, ',
-		previewLink: 'https://portfolio-ten-iota-87.vercel.app/',
+		description: `[Work in Progress]  A web app to help users find the nearest pfandmachine nearby. Currently not hosted! `,
+		techstack: 'Typescript, Reactjs, MongoDB, JWT, Express, Passport, Bcrypt/Auth, nodeJS, Client/Server, JSON',
 		githubLink: 'https://github.com/joshuabarua/pfantastisch-app',
+	},
+	{
+		title: 'Rick and Morty API',
+		image: ricknmorty,
+		description: `A mini project completed at Code Academy Berlin using the rick and morty API to display characters`,
+		techstack: 'Typescript, Reactjs, APIs, JSON',
+		previewLink: 'https://ricknmorty-project2-5.vercel.app/',
+		githubLink: 'https://github.com/joshuabarua/ricknmorty-project2.5',
 	},
 	{
 		title: 'Mystic Tarot',
 		image: mystictarot,
-		description: `A Tarot Card website that allows card selections and firebase as a login system. Work in progress!`,
+		description: `[Work in Progress] A Tarot Card website that allows card selections and firebase as a login system. Work in progress!`,
 		techstack: 'Typescript, Reactjs, CSS, Firebase',
 		previewLink: 'https://cab-tarot-card-site-ts.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/CAB-tarot-card-site-ts',

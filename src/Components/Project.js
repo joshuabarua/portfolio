@@ -33,9 +33,13 @@ function Project({title, image, description, techstack, previewLink, githubLink}
 									strokeLinejoin="round"
 								/>
 							</svg>
-							<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white">
-								Live Preview
-							</a>
+							{previewLink ? (
+								<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white">
+									Live Preview
+								</a>
+							) : (
+								<>Unavailable</>
+							)}
 						</div>
 						<div className="flex items-center">
 							<svg
