@@ -207,13 +207,43 @@ body {
 }
 
 /* nav */
-header {
+
+.hover-underline-animation {
+	display: inline-block;
+	position: relative;
+	color: var(--text-light);
+}
+
+.hover-underline-animation::after {
+	content: '';
+	position: absolute;
+	width: 10%;
+	transform: scaleX(0);
+	height: 0.5px;
+	bottom: 4px;
+	left: 0;
+	background-color: var(--text-light);
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
 
 .active {
 	text-decoration: underline;
 	text-decoration-color: var(--text-light);
 	text-underline-offset: 5px;
+}
+
+.header_icon:hover {
+	background-color: var(--text-dark);
+	transform: scale(1.2);
+
+	border-radius: 10px;
+	transition: transform 0.25s ease-out;
 }
 
 .name {
