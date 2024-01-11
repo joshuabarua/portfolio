@@ -52,6 +52,7 @@ import projectImage3 from './assets/projects/project3.jpg';
 import projectImage4 from './assets/projects/project4.jpg';
 import projectImage5 from './assets/projects/project5.jpg';
 import projectImage6 from './assets/projects/project6.jpg';
+import weatherWear from './assets/projects/weather_wear.png';
 
 // Logos
 export const logos = {
@@ -219,13 +220,12 @@ export const eduDetails = [
 // Enter your Project Details here
 export const projectDetails = [
 	{
-		title: 'Project title 1',
-		image: projectImage1,
-		description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
+		title: 'Weather Wear',
+		image: weatherWear,
+		description: `An app that consumes an API using Javascript. This is weather app that tells you what to wear given the temperature throughout the day based on clothing options selected.`,
 		techstack: 'HTML/CSS, JavaScript',
-		previewLink: 'https://google.com',
-		githubLink: 'https://github.com',
+		previewLink: 'https://weather-wear.onrender.com/',
+		githubLink: 'https://github.com/joshuabarua/CAB-JS-API-weatherApp',
 	},
 	{
 		title: 'Project title 2',

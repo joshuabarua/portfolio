@@ -168,8 +168,8 @@ body {
 }
 
 .mask_top {
-	top: 0;
 	position: absolute;
+	top: 0;
 	left: 0;
 	width: 100%;
 	height: var(--pad);
@@ -181,8 +181,8 @@ body {
 }
 
 .mask_bottom {
-	bottom: 0;
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: var(--pad);
@@ -193,7 +193,23 @@ body {
 	opacity: 0.7;
 }
 
+.mask_left {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: var(--pad);
+	height: 100%;
+	background-color: var(--bg-dark);
+	transition-property: background-color;
+	transition-duration: 0.9s;
+	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+	opacity: 0.7;
+}
+
 /* nav */
+header {
+}
+
 .active {
 	text-decoration: underline;
 	text-decoration-color: var(--text-light);
@@ -205,7 +221,6 @@ body {
 	z-index: 10;
 	left: calc(var(--pad) * 2);
 	top: calc(var(--pad) * 2);
-	mix-blend-mode: difference;
 	width: 50%;
 	color: var(--text-light);
 }
@@ -215,7 +230,6 @@ body {
 	z-index: 10;
 	left: calc(var(--pad) * 2);
 	top: calc(var(--pad) * 4);
-	mix-blend-mode: difference;
 	color: var(--text-light);
 	margin-top: 70px;
 }

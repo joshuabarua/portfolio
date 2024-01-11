@@ -15,7 +15,7 @@ function Header() {
 	];
 
 	return (
-		<header className="">
+		<header>
 			<nav className={` text-left flex justify-between gap-4 flex-col`}>
 				<ul className="dark:text-light-content font-medium flex justify-start content-start flex-col">
 					{navLinks.map((link, index) => (
