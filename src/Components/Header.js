@@ -23,8 +23,8 @@ function Header() {
 							<NavLink
 								to={link.path}
 								style={({isActive}) => ({
-									color: isActive ? '#545e6f' : '#f2f2f2;',
-									background: isActive ? '#f0f0f0' : '',
+									color: isActive ? '#545e6f' : '',
+									background: isActive ? '#f0f0f0' : 'transparent',
 								})}>
 								{link.label}
 							</NavLink>
