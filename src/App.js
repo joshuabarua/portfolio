@@ -9,11 +9,10 @@ import Technologies from './Pages/Technologies';
 import Header from './Components/Header';
 import Experience from './Pages/Experience';
 import Education from './Pages/Education';
-import p5 from 'p5';
 import * as THREE from 'three';
 import Sketch from 'react-p5';
-import FOG from 'vanta/src/vanta.fog';
 import TRUNK from 'vanta/src/vanta.trunk';
+import {DarkModeToggle} from './Components/DarkModeToggle';
 
 function App() {
 	const {name, tagline} = personalDetails;
@@ -41,19 +40,6 @@ function App() {
 					spacing: 20.0,
 					chaos: 2.0,
 				})
-				// FOG({
-				// 	el: myRef.current,
-				// 	THREE: THREE,
-				// 	mouseControls: true,
-				// 	touchControls: true,
-				// 	gyroControls: false,
-
-				// 	highlightColor: 0x0,
-				// 	midtoneColor: 0xc0909,
-				// 	lowlightColor: 0x0,
-				// 	baseColor: 0xdedbdb,
-				// 	blurFactor: 0.3,
-				// })
 			);
 		}
 		return () => {
@@ -73,39 +59,19 @@ function App() {
 		});
 	}, []);
 
-	// const setup = (p5, canvasParentRef) => {
-	// 	p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-	// };
-
-	// const draw = (p5) => {
-	// 	// Define the gradient colors
-	// 	// let color1 = p5.color(255, 0, 0); // Red
-	// 	// let color2 = p5.color(0, 0, 255); // Blue
-
-	// 	// Set the diagonal gradient from bottom left to top right
-	// 	// setDiagonalGradient(p5, color1, color2);
-
-	// 	//Static TV background
-	// 	p5.background(0);
-	// 	p5.noStroke();
-	// 	for (let i = 0; i < 12000; i++) {
-	// 		p5.rect(p5.random(p5.width), p5.random(p5.height), 1, 1);
-	// 	}
-	// };
-
 	return (
 		<div id="">
 			<div id="background" ref={myRef}></div>
 			<div id="frame">
-				<div className="frame_line frame_line-left"></div>
-				<div className="frame_line frame_line-right"></div>
-				<div className="frame_line frame_line-top"></div>
-				<div className="frame_line frame_line-bottom"></div>
+				<div className="frame_line frame_line-left bg-dark-color dark:bg-light-color"></div>
+				<div className="frame_line frame_line-right bg-dark-color dark:bg-light-color"></div>
+				<div className="frame_line frame_line-top bg-dark-color dark:bg-light-color"></div>
+				<div className="frame_line frame_line-bottom bg-dark-color dark:bg-light-color"></div>
 			</div>
 			<div className="mask">
-				<div className="mask_top"></div>
-				<div className="mask_bottom"></div>
-				<div className="mask_left"></div>
+				<div className="mask_top   dark:bg-dark-color bg-light-color"></div>
+				<div className="mask_bottom  dark:bg-dark-color bg-light-color"></div>
+				<div className="mask_left  dark:bg-dark-color bg-light-color"></div>
 			</div>
 			<Router>
 				<div>
@@ -132,8 +98,43 @@ function App() {
 					</div>
 				</div>
 			</Router>
+			<DarkModeToggle />
 		</div>
 	);
 }
 
 export default App;
+
+// FOG({
+// 	el: myRef.current,
+// 	THREE: THREE,
+// 	mouseControls: true,
+// 	touchControls: true,
+// 	gyroControls: false,
+
+// 	highlightColor: 0x0,
+// 	midtoneColor: 0xc0909,
+// 	lowlightColor: 0x0,
+// 	baseColor: 0xdedbdb,
+// 	blurFactor: 0.3,
+// })
+
+// const setup = (p5, canvasParentRef) => {
+// 	p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+// };
+
+// const draw = (p5) => {
+// 	// Define the gradient colors
+// 	// let color1 = p5.color(255, 0, 0); // Red
+// 	// let color2 = p5.color(0, 0, 255); // Blue
+
+// 	// Set the diagonal gradient from bottom left to top right
+// 	// setDiagonalGradient(p5, color1, color2);
+
+// 	//Static TV background
+// 	p5.background(0);
+// 	p5.noStroke();
+// 	for (let i = 0; i < 12000; i++) {
+// 		p5.rect(p5.random(p5.width), p5.random(p5.height), 1, 1);
+// 	}
+// };

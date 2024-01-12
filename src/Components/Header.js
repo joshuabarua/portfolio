@@ -17,7 +17,7 @@ function Header() {
 	return (
 		<header>
 			<nav className={` text-left flex justify-between gap-4 flex-col`}>
-				<ul className="dark:text-light-content font-medium flex justify-start content-start flex-col">
+				<ul className="dark-text dark:light-text font-medium flex justify-start content-start flex-col">
 					{navLinks.map((link, index) => (
 						<li key={index} className="pb-1 md:pb-0 hover-underline-animation">
 							<NavLink
