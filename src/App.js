@@ -76,10 +76,12 @@ function App() {
 			<Router>
 				<div>
 					<div className="name">
-						<h1 ref={h12} className="wrapped-text text-3xl md:text-2xl xl:text-4xl">
+						<h1 ref={h12} className="wrapped-text  text-dark-text dark:text-light-text text-2xl md:text-3xl xl:text-4xl">
 							{name}
 						</h1>
-						<h2 ref={h13}>{tagline}</h2>
+						<h2 ref={h13} className="wrapped-text text-dark-text dark:text-light-text ">
+							{tagline}
+						</h2>
 					</div>
 
 					<div className="header">

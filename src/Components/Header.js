@@ -17,15 +17,10 @@ function Header() {
 	return (
 		<header>
 			<nav className={` text-left flex justify-between gap-4 flex-col`}>
-				<ul className="dark-text dark:light-text font-medium flex justify-start content-start flex-col">
+				<ul className="text-dark-text dark:text-light-text font-medium flex justify-start content-start flex-col">
 					{navLinks.map((link, index) => (
-						<li key={index} className="pb-1 md:pb-0 hover-underline-animation">
-							<NavLink
-								to={link.path}
-								style={({isActive}) => ({
-									color: isActive ? '#545e6f' : '',
-									background: isActive ? '#f0f0f0' : 'transparent',
-								})}>
+						<li key={index} className="pb-1 md:pb-0 hover-underline-animation ">
+							<NavLink to={link.path} className={'text-dark-text dark:text-light-text bg-light-color dark:bg-dark-color'}>
 								{link.label}
 							</NavLink>
 						</li>
