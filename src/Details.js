@@ -194,6 +194,7 @@ export const workDetails = [
 export const eduDetails = [
 	{
 		Position: 'Diploma of Full Stack Development with Typescript',
+		Website: 'https://www.codeacademyberlin.com/',
 		Company: 'Code Academy Berlin',
 		Location: 'Berlin, Germany',
 		Type: 'Full Time',
@@ -202,6 +203,7 @@ export const eduDetails = [
 	},
 	{
 		Position: 'Bachelors Degree of Information Technology & Computer Science',
+		Website: 'https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bachelor-of-information-technology-bp162/bp162opn9auscy',
 		Company: `Royal Melbourne Institute of Technology University`,
 		Location: 'Melbourne, Australia',
 		Type: 'Full Time',
@@ -210,6 +212,7 @@ export const eduDetails = [
 	},
 	{
 		Position: 'Associate Degree of Information Technology',
+		Website: 'https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/associate-degrees/associate-degree-in-information-technology-ad006',
 		Company: `Royal Melbourne Institute of Technology University`,
 		Location: 'Melbourne, Australia',
 		Type: 'Full Time',

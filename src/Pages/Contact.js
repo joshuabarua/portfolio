@@ -45,10 +45,10 @@ const ContactForm = () => {
 	return (
 		<main className="h-screen w-[100%] flex justify-end items-end flex-col ">
 			<section className=" w-[60%] pb-[100px]">
-				<h1 className="text-3xl  pb-1  text-dark-heading dark:text-light-heading md:text-2xl xl:text-4xl xl:leading-tight font-bold">Contact</h1>
+				<h1 className="text-3xl  pb-1  dark-text dark:light-text md:text-2xl xl:text-4xl xl:leading-tight font-bold">Contact</h1>
 				<form onSubmit={handleSubmit} className="flex  flex-col justify-center items-left gap-2 w-[50%] h-[550px] min-w-[280px] max-w-[500px] mr-2 rounded-md">
 					{/* Name */}
-					<label for="email-name" class="block  text-sm font-medium text-gray-900 dark:text-white">
+					<label for="email-name" className="block  text-sm font-medium dark-text dark:light-text">
 						Name
 					</label>
 					<div class="relative mb-2">
@@ -65,7 +65,7 @@ const ContactForm = () => {
 						/>
 					</div>
 					{/* EMAIL */}
-					<label for="email-address" class="block text-sm font-medium text-gray-900 dark:text-white">
+					<label for="email-address" class="block text-sm font-medium dark-text dark:light-text">
 						Email
 					</label>
 					<div className="relative mb-2">
@@ -83,7 +83,7 @@ const ContactForm = () => {
 						/>
 					</div>
 					{/* Subject */}
-					<label for="email-subject" class="block text-sm font-medium text-gray-900 dark:text-white">
+					<label for="email-subject" class="block text-sm font-medium dark-text dark:light-text">
 						Subject
 					</label>
 					<div className="relative mb-2">
@@ -100,7 +100,7 @@ const ContactForm = () => {
 						/>
 					</div>
 					<div>
-						<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+						<label for="message" class="block mb-2 text-sm font-medium dark-text dark:light-text">
 							Message
 						</label>
 						<textarea

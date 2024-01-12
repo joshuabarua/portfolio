@@ -6,9 +6,9 @@ function Project({title, image, description, techstack, previewLink, githubLink}
 			<div className="w-full h-full">
 				<img src={image} alt="" loading="lazy" className="max-h-[225px]" />
 				<div className="dark:bg-dark-card p-4 h-full">
-					<h1 className="dark:text-light-heading font-semibold text-lg pt-1">{title}</h1>
+					<h1 className="dark-text dark:light-text font-semibold text-lg pt-1">{title}</h1>
 					<p className="wrapped-text pt-4 font-light">{description}</p>
-					<h3 className="text-dark-heading dark:text-light-heading font-medium pt-4">
+					<h3 className="dark-text dark:light-text font-medium pt-4">
 						Tech Stack: <span className="wrapped-text font-light">{techstack}</span>
 					</h3>
 					<div className="flex justify-between items-center mt-5">

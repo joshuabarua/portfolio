@@ -6,9 +6,9 @@ function Technologies() {
 	return (
 		<main className="h-screen w-[90%] flex justify-end items-center pb-[100px]">
 			<div className=" w-[55%] overflow-y-auto">
-				<h1 className="text-2xl text-left text-dark-heading dark:text-light-heading md:text-1xl xl:text-3xl xl:leading-tight font-bold mt-[150px]">Technologies</h1>
+				<h1 className="text-2xl text-left dark-text dark:light-text md:text-1xl xl:text-3xl xl:leading-tight font-bold mt-[150px]">Technologies</h1>
 				<section>
-					<h2 className="text-md text-dark-heading dark:text-light-heading xl:text-2xl xl:leading-tight font-bold pt-5">Frequently Used</h2>
+					<h2 className="text-md dark-text dark:light-text xl:text-2xl xl:leading-tight font-bold pt-5">Frequently Used</h2>
 					<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
 						<img src={techStackDetails.ts} title="Typescript" alt="" />
 						<img src={js} title="JavaScript" alt="" />
@@ -31,7 +31,7 @@ function Technologies() {
 					</section>
 				</section>
 				<section>
-					<h2 className="text-md text-dark-heading dark:text-light-heading  xl:text-2xl xl:leading-tight font-bold">Familiar With</h2>
+					<h2 className="text-md dark-text dark:light-text xl:text-2xl xl:leading-tight font-bold">Familiar With</h2>
 					<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
 						<img src={techStackDetails.java} title="Java" alt="" />
 						<img src={techStackDetails.sql} title="MySQL" alt="" />
@@ -46,7 +46,7 @@ function Technologies() {
 				</section>
 
 				<section>
-					<h1 className="text-md text-dark-heading dark:text-light-heading  xl:text-2xl xl:leading-tight font-bold">Tools</h1>
+					<h1 className="text-md dark-text dark:light-text xl:text-2xl xl:leading-tight font-bold">Tools</h1>
 				</section>
 				<section className="tech flex flex-wrap items-center gap-5 pt-2 mb-[50px]">
 					<img src={vscode} title="Visual Studio Code" alt="" />
