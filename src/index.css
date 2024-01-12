@@ -214,18 +214,17 @@ body.dark {
 .hover-underline-animation {
 	display: inline-block;
 	position: relative;
-	color: var(--text-light);
 }
 
 .hover-underline-animation::after {
 	content: '';
 	position: absolute;
-	width: 10%;
+	width: 20%;
 	transform: scaleX(0);
-	height: 0.5px;
+	height: 2px;
 	bottom: 4px;
 	left: 0;
-	background-color: var(--text-light);
+	background-color: var(--bg-dark);
 	transform-origin: bottom right;
 	transition: transform 0.25s ease-out;
 }
@@ -242,9 +241,8 @@ body.dark {
 }
 
 .header_icon:hover {
-	background-color: var(--text-dark);
+	/* background-color: var(--text-dark); */
 	transform: scale(1.2);
-
 	border-radius: 10px;
 	transition: transform 0.25s ease-out;
 }
@@ -255,7 +253,6 @@ body.dark {
 	left: calc(var(--pad) * 2);
 	top: calc(var(--pad) * 2);
 	width: 50%;
-	color: var(--text-light);
 	backdrop-filter: difference;
 }
 
@@ -264,14 +261,12 @@ body.dark {
 	z-index: 10;
 	left: calc(var(--pad) * 2);
 	top: calc(var(--pad) * 4);
-	color: var(--text-light);
 	margin-top: 70px;
 	backdrop-filter: difference;
 }
 
 #content {
 	z-index: 9;
-	color: var(--text-light);
 	/* right: calc(var(--pad));
 	bottom: calc(var(--pad)); */
 	overflow-x: hidden;
@@ -289,7 +284,6 @@ body.dark {
 .wrapped-text {
 	overflow-wrap: break-word;
 	white-space: normal;
-	color: var(--text-light);
 }
 
 .tech img {
@@ -327,4 +321,10 @@ input:focus {
 .custom-box {
 	font-size: 25px;
 	cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+	.hover-underline-animation::after {
+		background-color: var(--bg-light);
+	}
 }
