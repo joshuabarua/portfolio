@@ -106,6 +106,7 @@ body.dark {
 	width: 85vw;
 	height: 85vw;
 	border-radius: 45%;
+	border: 1px solid black;
 	z-index: -1;
 	pointer-events: none;
 	overflow: hidden;

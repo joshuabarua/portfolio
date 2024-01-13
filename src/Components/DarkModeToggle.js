@@ -1,11 +1,11 @@
 import React from 'react';
-import {useColorScheme} from '../hooks/useColorScheme';
 
-export const DarkModeToggle = () => {
-	const {isDark, setIsDark} = useColorScheme();
-
+export const DarkModeToggle = ({setIsDark, isDark, vantaEffect, setVantaEffect}) => {
+	console.log(isDark);
 	const handleToggle = () => {
-		setIsDark(!isDark);
+		if (vantaEffect) {
+			setIsDark(!isDark);
+		}
 	};
 
 	return (
@@ -29,7 +29,6 @@ export const DarkModeToggle = () => {
 						DARK
 					</label>
 				</div>
-				{/* <p>The mode is {isDark ? 'Dark' : 'Light'}</p> */}
 			</div>
 		</>
 	);
