@@ -13,8 +13,11 @@ import * as THREE from 'three';
 import Sketch from 'react-p5';
 import TRUNK from 'vanta/src/vanta.trunk';
 import {DarkModeToggle} from './Components/DarkModeToggle';
+import {useColorScheme} from './hooks/useColorScheme';
 
 function App() {
+	const {isDark, setIsDark} = useColorScheme();
+
 	const {name, tagline} = personalDetails;
 	const h12 = useRef();
 	const h13 = useRef();
@@ -23,29 +26,33 @@ function App() {
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const myRef = useRef(null);
 	useEffect(() => {
-		if (!vantaEffect) {
-			setVantaEffect(
-				TRUNK({
-					el: myRef.current,
-					THREE: THREE,
-					mouseControls: false,
-					touchControls: false,
-					gyroControls: false,
-					minHeight: 400.0,
-					minWidth: 400.0,
-					scale: 1,
-					scaleMobile: 1.0,
-					color: 0x959393,
-					backgroundColor: 0x0d0d0d,
-					spacing: 20.0,
-					chaos: 2.0,
-				})
-			);
+		const initializeVanta = () => {
+			return TRUNK({
+				el: myRef.current,
+				THREE: THREE,
+				mouseControls: false,
+				touchControls: false,
+				gyroControls: false,
+				minHeight: 400.0,
+				minWidth: 400.0,
+				scale: 1,
+				scaleMobile: 1.0,
+				color: isDark ? 0x959393 : 0x0d0d0d,
+				backgroundColor: isDark ? 0x0d0d0d : 0xf2f2f2,
+				spacing: 20.0,
+				chaos: 2.0,
+			});
+		};
+
+		if (!vantaEffect || vantaEffect.isDark !== isDark) {
+			if (vantaEffect) vantaEffect.destroy();
+			setVantaEffect(initializeVanta());
 		}
+
 		return () => {
 			if (vantaEffect) vantaEffect.destroy();
 		};
-	}, [vantaEffect]);
+	}, [isDark]);
 
 	useEffect(() => {
 		const elements = [h12.current, h13.current, myImageRef.current];
@@ -100,7 +107,7 @@ function App() {
 					</div>
 				</div>
 			</Router>
-			<DarkModeToggle />
+			<DarkModeToggle isDark={isDark} setIsDark={setIsDark} vantaEffect={vantaEffect} setVantaEffect={setVantaEffect} />
 		</div>
 	);
 }
