@@ -1,0 +1,137 @@
+.loadingScreen {
+	min-width: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: #1a1a1a;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+	z-index: 1000;
+}
+
+.loading-fade-out {
+	opacity: 0;
+}
+
+#loading path:nth-child(10) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 6.5s ease forwards;
+}
+#loading path:nth-child(11) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 6.2s ease forwards;
+}
+#loading path:nth-child(12) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 5.9s ease forwards;
+}
+#loading path:nth-child(13) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 5.6s ease forwards;
+}
+#loading path:nth-child(14) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 5.3s ease forwards;
+}
+#loading path:nth-child(15) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 5s ease forwards;
+}
+#loading path:nth-child(16) {
+	stroke-dasharray: 200%;
+	stroke-dashoffset: 200%;
+	animation: strokeAnimate 4.7s ease forwards;
+}
+
+#loading path:nth-child(17) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 4.3s ease forwards;
+}
+#loading path:nth-child(18) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 4.1s ease forwards;
+}
+#loading path:nth-child(19) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 3.8s ease forwards;
+}
+#loading path:nth-child(20) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 3.5s ease forwards;
+}
+#loading path:nth-child(21) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 3.2s ease forwards;
+}
+#loading path:nth-child(22) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 2.9s ease forwards;
+}
+#loading path:nth-child(23) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 2.6s ease forwards;
+}
+#loading path:nth-child(24) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 2.3s ease forwards;
+}
+#loading path:nth-child(25) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 1.9s ease forwards;
+}
+#loading path:nth-child(26) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 1.6s ease forwards;
+}
+#loading path:nth-child(27) {
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	animation: strokeAnimate 1.3s ease forwards;
+}
+
+@keyframes strokeAnimate {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#loader-container {
+		max-width: 150px;
+	}
+	#loader {
+		width: 150px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	#loader-container {
+		max-width: 100px;
+	}
+	#loader {
+		width: 100px;
+	}
+}
