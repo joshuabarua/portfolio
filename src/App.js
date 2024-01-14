@@ -49,8 +49,7 @@ function App() {
 				scale: 1,
 				scaleMobile: 1.0,
 				color: isDark ? 0x959393 : 0x0d0d0d,
-
-				spacing: isDark ? 10.0 : 15,
+				spacing: isDark ? 11.0 : 15,
 				chaos: isDark ? 4.0 : 3.0,
 			});
 		};
