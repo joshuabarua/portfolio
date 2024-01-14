@@ -14,17 +14,28 @@ import Sketch from 'react-p5';
 import TRUNK from 'vanta/src/vanta.trunk';
 import {DarkModeToggle} from './Components/DarkModeToggle';
 import {useColorScheme} from './hooks/useColorScheme';
+import Loading from './Components/Loading';
 
 function App() {
 	const {isDark, setIsDark} = useColorScheme();
-
 	const {name, tagline} = personalDetails;
 	const h12 = useRef();
 	const h13 = useRef();
 	const myImageRef = useRef();
-
+	const [showLoading, setLoading] = useState(true);
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const myRef = useRef(null);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+
+		return () => {
+			clearTimeout(timer);
+		};
+	}, []);
+
 	useEffect(() => {
 		const initializeVanta = () => {
 			return TRUNK({
@@ -43,12 +54,10 @@ function App() {
 				chaos: isDark ? 4.0 : 3.0,
 			});
 		};
-
 		if (!vantaEffect || vantaEffect.isDark !== isDark) {
 			if (vantaEffect) vantaEffect.destroy();
 			setVantaEffect(initializeVanta());
 		}
-
 		return () => {
 			if (vantaEffect) vantaEffect.destroy();
 		};
@@ -68,6 +77,7 @@ function App() {
 
 	return (
 		<div id="">
+			{showLoading && <Loading showLoading={showLoading} />}
 			<div id="background" ref={myRef}></div>
 			<div id="frame">
 				<div className="frame_line frame_line-left bg-dark-color dark:bg-light-color"></div>
