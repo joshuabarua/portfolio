@@ -49,7 +49,7 @@ function App() {
 				scale: 1,
 				scaleMobile: 1.0,
 				color: isDark ? 0x959393 : 0x0d0d0d,
-				backgroundColor: isDark ? 0x0d0d0d : 0xf2f2f2,
+
 				spacing: isDark ? 10.0 : 15,
 				chaos: isDark ? 4.0 : 3.0,
 			});
@@ -89,6 +89,7 @@ function App() {
 				<div className="mask_top   dark:bg-dark-color bg-light-color"></div>
 				<div className="mask_bottom  dark:bg-dark-color bg-light-color"></div>
 				<div className="mask_left  dark:bg-dark-color bg-light-color"></div>
+				<div className="mask_right  dark:bg-dark-color bg-light-color"></div>
 			</div>
 			<Router>
 				<div>
