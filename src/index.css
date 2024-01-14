@@ -110,6 +110,9 @@ body.dark {
 	z-index: -1;
 	pointer-events: none;
 	overflow: hidden;
+	transition-property: background-color;
+	transition-duration: 0.9s;
+	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
 }
 
 /* #background::content {
@@ -322,6 +325,10 @@ input:focus {
 .custom-box {
 	font-size: 25px;
 	cursor: pointer;
+}
+
+.projectCard {
+	background-color: #fcf9f9;
 }
 
 @media (prefers-color-scheme: dark) {

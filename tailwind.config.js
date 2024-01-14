@@ -21,6 +21,8 @@ module.exports = {
 				'light-text': '#f2f2f2',
 				'fill-light-heading': '#f2f2f2',
 				'fill-dark-heading': '#1a1a1a',
+				'green-text': '#018C0F',
+				greenbg: '#D7FFE0',
 			},
 		},
 	},
