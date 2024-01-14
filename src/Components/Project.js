@@ -5,10 +5,10 @@ function Project({title, image, description, techstack, previewLink, githubLink}
 		<article className="rounded-xl max-w-[400px] min-w-[250px] max-h-[500px] mt-5 overflow-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
 			<div className="w-full h-full">
 				<img src={image} alt="" loading="lazy" className="max-h-[225px]" />
-				<div className="dark:bg-dark-card p-4 h-full">
+				<div className="dark:bg-dark-card p-4 projectCard h-full ">
 					<h1 className="dark-text dark:light-text font-semibold text-lg pt-1">{title}</h1>
-					<p className="wrapped-text pt-4 font-light">{description}</p>
-					<h3 className="dark-text dark:light-text font-medium pt-4">
+					<p className="wrapped-text pt-4 font-light filter-none opacity-90">{description}</p>
+					<h3 className="dark-text dark:light-text font-medium pt-4 opacity-75">
 						Tech Stack: <span className="wrapped-text font-light">{techstack}</span>
 					</h3>
 					<div className="flex justify-between items-center mt-5">
@@ -34,11 +34,11 @@ function Project({title, image, description, techstack, previewLink, githubLink}
 								/>
 							</svg>
 							{previewLink ? (
-								<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white">
+								<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white opacity-70">
 									Live Preview
 								</a>
 							) : (
-								<>Unavailable</>
+								<p className="opacity-70">Unavailable</p>
 							)}
 						</div>
 						<div className="flex items-center">
@@ -56,7 +56,7 @@ function Project({title, image, description, techstack, previewLink, githubLink}
 								/>
 							</svg>
 
-							<a href={githubLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white">
+							<a href={githubLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white opacity-70">
 								View Code
 							</a>
 						</div>
