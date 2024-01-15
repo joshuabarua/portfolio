@@ -9,7 +9,7 @@ export function useColorScheme() {
 		query: '(prefers-color-scheme: dark)',
 	});
 
-	const [isDark, setIsDark] = useColorSchemeState(undefined);
+	const [isDark, setIsDark] = useColorSchemeState('dark');
 
 	useEffect(() => {
 		let parsedValue;
