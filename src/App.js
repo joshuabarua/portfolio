@@ -47,10 +47,10 @@ function App() {
 				minHeight: 400.0,
 				minWidth: 400.0,
 				scale: 1,
-				scaleMobile: 1.0,
+				scaleMobile: 0.5,
 				color: isDark ? 0x959393 : 0x0d0d0d,
-				spacing: isDark ? 11.0 : 15,
-				chaos: isDark ? 4.0 : 3.0,
+				spacing: isDark ? 10.0 : 25,
+				chaos: isDark ? 3.5 : 3.0,
 			});
 		};
 		if (!vantaEffect || vantaEffect.isDark !== isDark) {
