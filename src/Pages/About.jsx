@@ -1,7 +1,7 @@
 import React from 'react';
 import {personalDetails} from '../Details';
 
-function Home() {
+function About() {
 	return (
 		<div className="h-screen w-[100%] flex justify-end items-end flex-col ">
 			<div className=" w-[50%] min-w-[250px] max-w-[350px] overflow-y-auto pb-[50px] pr-[35px]">
@@ -12,4 +12,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default About;

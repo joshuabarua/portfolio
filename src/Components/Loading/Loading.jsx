@@ -1,4 +1,4 @@
-import '../assets/css/loading.css';
+import './loading.css';
 const Loading = ({showLoading}) => {
 	return (
 		<div className={`loadingScreen ${!showLoading && 'loading-fade-out'} p-10 `}>

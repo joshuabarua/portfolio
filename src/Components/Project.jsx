@@ -3,7 +3,7 @@ import React from 'react';
 function Project({title, image, description, techstack, previewLink, githubLink}) {
 	return (
 		<article className="rounded-xl max-w-[400px] min-w-[250px] max-h-[500px] mt-5 overflow-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
-			<div className="w-full h-full">
+			<div className="w-full h-full overflow-y-hidden">
 				<img src={image} alt="" loading="lazy" className="max-h-[225px]" />
 				<div className="dark:bg-dark-card p-4 projectCard h-full ">
 					<h1 className="dark-text dark:light-text font-semibold text-lg pt-1">{title}</h1>

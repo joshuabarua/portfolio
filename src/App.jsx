@@ -1,12 +1,9 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React, {useRef, useEffect, useState} from 'react';
-import gsap from 'gsap';
 import {personalDetails} from './Details';
-import Home from './Pages/Home';
 import Contact from './Pages/Contact';
 import Projects from './Pages/Projects';
 import Technologies from './Pages/Technologies';
-import Header from './Components/Header';
 import Experience from './Pages/Experience';
 import Education from './Pages/Education';
 import * as THREE from 'three';
@@ -14,23 +11,26 @@ import Sketch from 'react-p5';
 import TRUNK from 'vanta/src/vanta.trunk';
 import {DarkModeToggle} from './Components/DarkModeToggle';
 import {useColorScheme} from './hooks/useColorScheme';
-import Loading from './Components/Loading';
+import Loading from './Components/Loading/Loading';
+import {useMediaQuery} from 'react-responsive';
+import About from './Pages/About';
+import HomeDesktop from './Pages/Desktop/HomeDesktop';
+import HomeMobile from './Pages/Mobile/HomeMobile';
 
 function App() {
 	const {isDark, setIsDark} = useColorScheme();
-	const {name, tagline} = personalDetails;
-	const h12 = useRef();
-	const h13 = useRef();
-	const myImageRef = useRef();
 	const [showLoading, setLoading] = useState(true);
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const myRef = useRef(null);
+	const is4k = useMediaQuery({minWidth: 3840});
+	const is1440p = useMediaQuery({minWidth: 2560, maxWidth: 3839});
+	const isDesktop = useMediaQuery({minWidth: 768, maxWidth: 2559});
+	const isMobile = useMediaQuery({maxWidth: 767});
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setLoading(false);
 		}, 2000);
-
 		return () => {
 			clearTimeout(timer);
 		};
@@ -47,9 +47,9 @@ function App() {
 				minHeight: 400.0,
 				minWidth: 400.0,
 				scale: 1,
-				scaleMobile: 0.5,
+				scaleMobile: 1,
 				color: isDark ? 0x959393 : 0x0d0d0d,
-				spacing: isDark ? 10.0 : 25,
+				spacing: isDark ? 10.0 : 30,
 				chaos: isDark ? 3.5 : 3.0,
 			});
 		};
@@ -62,20 +62,8 @@ function App() {
 		};
 	}, [isDark]);
 
-	useEffect(() => {
-		const elements = [h12.current, h13.current, myImageRef.current];
-		gsap.from(elements, {
-			x: (index) => (index === elements.length - 1 ? '200%' : '-100%'),
-			delay: (index) => (index === elements.length - 1 ? 0.5 : index * 0.3 + 0.1),
-			opacity: 0,
-			duration: 1.5,
-			ease: 'Power3.easeOut',
-			stagger: 0.3,
-		});
-	}, []);
-
 	return (
-		<div id="">
+		<div>
 			{showLoading && <Loading showLoading={showLoading} />}
 			<div id="background" ref={myRef}></div>
 			<div id="frame">
@@ -90,24 +78,19 @@ function App() {
 				<div className="mask_left  dark:bg-dark-color bg-light-color"></div>
 				<div className="mask_right  dark:bg-dark-color bg-light-color"></div>
 			</div>
+
+			{/* Conditional rendering based on screen size */}
+			{is4k && <p className="text-green-500">This is a 4k screen view</p>}
+			{is1440p && <p className="text-green-500">This is a 1440p screen view</p>}
+
 			<Router>
 				<div>
-					<div className="name">
-						<h1 ref={h12} className="wrapped-text  text-dark-text dark:text-light-text text-2xl md:text-3xl xl:text-4xl">
-							{name}
-						</h1>
-						<h2 ref={h13} className="wrapped-text text-dark-text dark:text-light-text ">
-							{tagline}
-						</h2>
-					</div>
-
-					<div className="header">
-						<Header />
-					</div>
+					{isDesktop && <HomeDesktop />}
+					{isMobile && <HomeMobile />}
 
 					<div id="content">
 						<Routes>
-							<Route path="/" element={<Home />} />
+							<Route path="/" element={<About />} />
 							<Route path="/experience" element={<Experience />} />
 							<Route path="/education" element={<Education />} />
 							<Route path="/projects" element={<Projects />} />
@@ -156,4 +139,5 @@ export default App;
 // 	for (let i = 0; i < 12000; i++) {
 // 		p5.rect(p5.random(p5.width), p5.random(p5.height), 1, 1);
 // 	}
+
 // };
