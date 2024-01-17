@@ -309,7 +309,7 @@ body.dark {
 .lightdark {
 	position: fixed;
 	left: var(--pad);
-	bottom: 5px;
+	bottom: 1px;
 	z-index: 10;
 }
 

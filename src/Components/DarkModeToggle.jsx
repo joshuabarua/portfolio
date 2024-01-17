@@ -9,13 +9,13 @@ export const DarkModeToggle = ({setIsDark, isDark, vantaEffect}) => {
 
 	return (
 		<>
-			<div className="lightdark flex gap-2">
+			<div className="lightdark flex gap-2 mt-5">
 				<div className="flex gap-1 text-base">
 					<input type="checkbox" id="light-checkbox" className="custom-checkbox " checked={!isDark} onChange={() => handleToggle('light')} />
 					<div className="custom-box" onClick={() => handleToggle('light')}>
 						{!isDark ? '■' : '□'}
 					</div>
-					<label htmlFor="light-checkbox" className="mt-[3px]">
+					<label htmlFor="light-checkbox" className="mt-[2px]">
 						LIGHT
 					</label>
 				</div>
@@ -24,7 +24,7 @@ export const DarkModeToggle = ({setIsDark, isDark, vantaEffect}) => {
 					<div className="custom-box" onClick={() => handleToggle('dark')}>
 						{isDark ? '■' : '□'}
 					</div>
-					<label htmlFor="dark-checkbox" className="mt-[3px]">
+					<label htmlFor="dark-checkbox" className="mt-[2px]">
 						DARK
 					</label>
 				</div>
