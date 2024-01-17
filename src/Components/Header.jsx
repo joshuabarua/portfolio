@@ -25,7 +25,7 @@ function Header({isOpen, setIsOpen}) {
 	return (
 		<header>
 			<nav className={` text-left flex justify-between gap-4 flex-col `}>
-				<ul className="text-dark-text dark:text-light-text font-medium flex justify-start content-start flex-col gap-2  mt-[80px] md:gap-1 md:mt-0">
+				<ul className="text-dark-text dark:text-light-text font-medium flex justify-start content-start flex-col gap-1  mt-[100px] md:gap-1 md:mt-0">
 					{navLinks.map((link, index) => (
 						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-2xl md:text-lg" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
 							<NavLink to={link.path} className={'text-dark-text dark:text-light-text bg-light-color dark:bg-dark-color'}>

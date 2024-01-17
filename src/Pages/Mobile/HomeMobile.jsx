@@ -33,7 +33,7 @@ const HomeMobile = () => {
 			{shouldRender && (
 				<div className={`menu-screen ${isOpen ? 'open' : ''} bg-light-color dark:bg-dark-color`} onAnimationEnd={onAnimationEnd}>
 					<div className="mobile-name">
-						<h1 className="wrapped-text  text-dark-text dark:text-light-text text-4xl ">{name}</h1>
+						<h1 className="wrapped-text  text-dark-text dark:text-light-text text-2xl ">{name}</h1>
 						<h2 className="wrapped-text text-dark-text dark:text-light-text text-lg ">{tagline}</h2>
 					</div>
 					<div className="flex justify-center items-center">
