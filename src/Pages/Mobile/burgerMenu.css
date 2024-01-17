@@ -64,6 +64,6 @@
 .mobile-name {
 	position: fixed;
 	z-index: 10;
-	left: calc(var(--pad) * 3);
-	top: calc(var(--pad) * 4);
+	left: calc(var(--pad) * 2);
+	top: calc(var(--pad) * 2.5);
 }
