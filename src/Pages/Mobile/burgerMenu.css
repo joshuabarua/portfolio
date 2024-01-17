@@ -1,39 +1,42 @@
 .burger-menu {
-	width: 40px;
+	width: 30px;
 	height: 30px;
 	position: fixed;
-	top: 40px;
+	top: 35px;
 	left: 40px;
 	display: flex;
 	justify-content: space-around;
 	flex-flow: column nowrap;
 	z-index: 20;
 	cursor: pointer;
-	border: green solid 5px;
 }
 
-.burger-lines span {
-	width: 100%;
+.burger-line {
+	position: absolute;
+	width: 30px;
 	height: 4px;
-	color: #333;
-	border-radius: 10px;
-	transform-origin: 1px;
-	transition: all 0.3s linear;
+	border-radius: 4px;
+	transition: all 0.3s ease;
 }
 
-.burger-menu.open .burger-lines span:nth-child(1) {
-	transform: rotate(45deg);
-	background-color: #fff;
+.burger-line-top {
+	transform: translate(0, -8px);
 }
 
-.burger-menu.open .burger-lines span:nth-child(2) {
+.burger-line-bottom {
+	transform: translate(0, 8px);
+}
+
+.burger-menu.open .burger-line-top {
+	transform: translateY(0px) rotate(45deg);
+}
+
+.burger-menu.open .burger-line-middle {
 	opacity: 0;
-	transform: translateX(20px);
 }
-
-.burger-menu.open .burger-lines span:nth-child(3) {
-	transform: rotate(-45deg);
-	background-color: #fff;
+.burger-menu.open .burger-line-bottom {
+	z-index: 909;
+	transform: translateY(0px) rotate(-45deg);
 }
 
 .menu-screen {
@@ -42,12 +45,25 @@
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.9);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.3s ease;
+	opacity: 0;
 	z-index: 10;
-	color: white;
+	pointer-events: none;
+	transition: opacity 0.5s cubic-bezier(0.1, 0.4, 0.2, 1);
+}
+
+.menu-screen.open {
+	opacity: 1;
+	pointer-events: all;
+	transition: opacity 0.5s cubic-bezier(0.1, 0.4, 0.2, 1);
+}
+
+.mobile-name {
+	position: fixed;
+	z-index: 10;
+	left: calc(var(--pad) * 3);
+	top: calc(var(--pad) * 4);
 }

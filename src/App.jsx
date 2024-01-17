@@ -63,7 +63,7 @@ function App() {
 	}, [isDark]);
 
 	return (
-		<div>
+		<div id="main-app">
 			{showLoading && <Loading showLoading={showLoading} />}
 			<div id="background" ref={myRef}></div>
 			<div id="frame">
