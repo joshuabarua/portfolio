@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {socialMediaUrl} from '../Details';
 
-function Header() {
+function Header({isOpen, setIsOpen}) {
 	const {linkdein, github} = socialMediaUrl;
 
 	const navLinks = [
@@ -14,19 +14,27 @@ function Header() {
 		{path: '/contact', label: 'Contact'},
 	];
 
+	const defaultSetIsOpen = () => {
+		console.warn('setIsOpen function is not provided!');
+	};
+
+	const handleSetIsOpen = setIsOpen || defaultSetIsOpen;
+
+	const isMenuOpen = !!isOpen;
+
 	return (
 		<header>
-			<nav className={` text-left flex justify-between gap-4 flex-col`}>
-				<ul className="text-dark-text dark:text-light-text font-medium flex justify-start content-start flex-col">
+			<nav className={` text-left flex justify-between gap-4 flex-col `}>
+				<ul className="text-dark-text dark:text-light-text font-medium flex justify-start content-start flex-col gap-3 md:gap-1">
 					{navLinks.map((link, index) => (
-						<li key={index} className="pb-1 md:pb-0 hover-underline-animation ">
+						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-2xl md:text-lg" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
 							<NavLink to={link.path} className={'text-dark-text dark:text-light-text bg-light-color dark:bg-dark-color'}>
 								{link.label}
 							</NavLink>
 						</li>
 					))}
 				</ul>
-				<ul className="flex justify-start items-center flex-row gap-2">
+				<ul className="flex justify-start items-center flex-row gap-6">
 					<li>
 						<a href={linkdein} target="_blank" rel="noreferrer noopener" className="header_icon">
 							<svg

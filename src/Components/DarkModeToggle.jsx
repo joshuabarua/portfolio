@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const DarkModeToggle = ({setIsDark, isDark, vantaEffect, setVantaEffect}) => {
+export const DarkModeToggle = ({setIsDark, isDark, vantaEffect}) => {
 	const handleToggle = () => {
 		if (vantaEffect) {
 			setIsDark(!isDark);

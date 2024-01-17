@@ -94,6 +94,7 @@ body.dark {
 	height: 100%;
 	overflow: hidden;
 	white-space: nowrap;
+	min-width: 325px;
 }
 
 #background {
@@ -136,6 +137,7 @@ body.dark {
 	bottom: var(--pad);
 	mix-blend-mode: difference;
 	pointer-events: none;
+	min-width: 0;
 }
 
 .frame_line {

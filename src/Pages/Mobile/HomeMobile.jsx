@@ -1,12 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {personalDetails} from '../../Details';
 import './burgerMenu.css'; // Make sure to create this CSS file
+import Header from '../../Components/Header';
 
 //TODO: Need to make  menu styles and add links, also adjust css"
 
 const HomeMobile = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const {name, tagline} = personalDetails;
+
+	const [shouldRender, setRender] = useState(isOpen);
+
+	useEffect(() => {
+		if (isOpen) setRender(true);
+	}, [isOpen]);
+
+	const onAnimationEnd = () => {
+		if (!isOpen) setRender(false);
+	};
+
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
@@ -14,21 +26,18 @@ const HomeMobile = () => {
 	return (
 		<div>
 			<div className={`burger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-				<div className="burger-lines">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
+				<span className="burger-line burger-line-top bg-dark-color dark:bg-light-color"></span>
+				<span className="burger-line burger-line-middle bg-dark-color dark:bg-light-color"></span>
+				<span className="burger-line burger-line-bottom bg-dark-color dark:bg-light-color"></span>
 			</div>
-			{isOpen && (
-				<div className="menu-screen">
-					<div>
-						<div className="name">
-							<p className="text-green-500">This is a Mobile view</p>
-							<h1 className="wrapped-text  text-dark-text dark:text-light-text text-2xl md:text-3xl xl:text-4xl">{name}</h1>
-							<h2 className="wrapped-text text-dark-text dark:text-light-text ">{tagline}</h2>
-						</div>
-						<div className="header">HEADER items</div>
+			{shouldRender && (
+				<div className={`menu-screen ${isOpen ? 'open' : ''} bg-light-color dark:bg-dark-color`} onAnimationEnd={onAnimationEnd}>
+					<div className="mobile-name">
+						<h1 className="wrapped-text  text-dark-text dark:text-light-text text-4xl ">{name}</h1>
+						<h2 className="wrapped-text text-dark-text dark:text-light-text text-lg ">{tagline}</h2>
+					</div>
+					<div className="flex justify-center items-center">
+						<Header setIsOpen={setIsOpen} isOpen={isOpen} />
 					</div>
 				</div>
 			)}
