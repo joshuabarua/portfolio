@@ -5,8 +5,8 @@ function AboutMobile() {
 	const {name, tagline, about} = personalDetails;
 	return (
 		<div className="h-screen w-[100%] flex justify-center items-center flex-col ">
-			<div className="pt-8 w-[70%]">
-				<h1 className="wrapped-text  text-dark-text dark:text-light-text text-3xl ">{name}</h1>
+			<div className="pt-10 w-[70%]">
+				<h1 className=" pt-10 wrapped-text  text-dark-text dark:text-light-text text-3xl ">{name}</h1>
 				<h2 className="wrapped-text text-dark-text dark:text-light-text text-lg ">{tagline}</h2>
 			</div>
 			<div className=" w-[70%]  max-w-[350px] pt-[80px] overflow-y-auto mb-[50px] flex gap-5 flex-col">
