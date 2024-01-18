@@ -1,5 +1,5 @@
 import React from 'react';
-import {personalDetails} from '../../data/Details';
+import {personalDetails} from '../../data/details';
 
 function AboutMobile() {
 	const {name, tagline, about} = personalDetails;

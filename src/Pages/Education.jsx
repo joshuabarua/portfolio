@@ -1,6 +1,6 @@
 import React from 'react';
 import Work from '../Components/Work';
-import {eduDetails} from '../data/Details';
+import {eduDetails} from '../data/details';
 
 function Education() {
 	return (

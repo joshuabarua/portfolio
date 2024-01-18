@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {socialMediaUrl} from '../data/Details';
+import {socialMediaUrl} from '../data/details';
 
 function Header({isOpen, setIsOpen}) {
 	const {linkdein, github} = socialMediaUrl;
