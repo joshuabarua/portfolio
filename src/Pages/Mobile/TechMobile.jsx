@@ -1,5 +1,5 @@
 import React from 'react';
-import {techStackDetails} from '../../Details';
+import {techStackDetails} from '../../data/Details';
 
 function TechMobile() {
 	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Project from '../Components/Project';
-import {projectDetails} from '../Details';
+import {projectDetails} from '../data/Details';
 
 function Projects() {
 	return (
