@@ -32,11 +32,11 @@ const HomeMobile = () => {
 			</div>
 			{shouldRender && (
 				<div className={`menu-screen ${isOpen ? 'open' : ''} bg-light-color dark:bg-dark-color`} onAnimationEnd={onAnimationEnd}>
-					<div className="mobile-name">
+					<div className="min-h-[100px] mt-[30px]">
 						<h1 className="wrapped-text  text-dark-text dark:text-light-text text-3xl ">{name}</h1>
 						<h2 className="wrapped-text text-dark-text dark:text-light-text text-lg ">{tagline}</h2>
 					</div>
-					<div className="flex justify-center items-center">
+					<div className="flex justify-center items-center min-h-[340px]">
 						<Header setIsOpen={setIsOpen} isOpen={isOpen} />
 					</div>
 				</div>
