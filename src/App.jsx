@@ -8,7 +8,6 @@ import {useColorScheme} from './hooks/useColorScheme';
 import Loading from './Components/Loading/Loading';
 import HomeDesktop from './Pages/Desktop/HomeDesktop';
 import HomeMobile from './Pages/Mobile/HomeMobile';
-
 import useDeviceType from './hooks/useDeviceType';
 import {desktopRoutes, mobileRoutes} from './data/routes';
 

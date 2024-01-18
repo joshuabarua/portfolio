@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {personalDetails} from '../../Details';
+import {personalDetails} from '../../data/Details';
 import './burgerMenu.css'; // Make sure to create this CSS file
 import Header from '../../Components/Header';
 
