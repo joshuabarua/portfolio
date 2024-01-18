@@ -1,37 +1,24 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React, {useRef, useEffect, useState} from 'react';
-import {personalDetails} from './Details';
-import Contact from './Pages/Contact';
-import Projects from './Pages/Projects';
-import Technologies from './Pages/Technologies';
-import Experience from './Pages/Experience';
-import Education from './Pages/Education';
 import * as THREE from 'three';
 import Sketch from 'react-p5';
 import TRUNK from 'vanta/src/vanta.trunk';
 import {DarkModeToggle} from './Components/DarkModeToggle';
 import {useColorScheme} from './hooks/useColorScheme';
 import Loading from './Components/Loading/Loading';
-import {useMediaQuery} from 'react-responsive';
-import About from './Pages/About';
 import HomeDesktop from './Pages/Desktop/HomeDesktop';
 import HomeMobile from './Pages/Mobile/HomeMobile';
-import AboutMobile from './Pages/Mobile/AboutMobile';
-import ContactMobile from './Pages/Mobile/ContactMobile';
-import ExperienceMobile from './Pages/Mobile/ExperienceMobile';
-import EducationMobile from './Pages/Mobile/EducationMobile';
-import TechMobile from './Pages/Mobile/TechMobile';
-import ProjectsMobile from './Pages/Mobile/ProjectsMobile';
+
+import useDeviceType from './hooks/useDeviceType';
+import {desktopRoutes, mobileRoutes} from './data/routes';
 
 function App() {
 	const {isDark, setIsDark} = useColorScheme();
 	const [showLoading, setLoading] = useState(true);
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const myRef = useRef(null);
-	const is4k = useMediaQuery({minWidth: 3840});
-	const is1440p = useMediaQuery({minWidth: 2560, maxWidth: 3839});
-	const isDesktop = useMediaQuery({minWidth: 768, maxWidth: 2559});
-	const isMobile = useMediaQuery({maxWidth: 767});
+	const {isMobile, isDesktop, is4k, is1440p} = useDeviceType();
+	const routes = isMobile ? mobileRoutes : desktopRoutes
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -97,20 +84,9 @@ function App() {
 					<div id="content">
 						{
 							<Routes>
-								isMobile ? (
-								<Route path="/" element={<AboutMobile />} />
-								<Route path="/contact" element={<ContactMobile />} />
-								<Route path="/experience" element={<ExperienceMobile />} />
-								<Route path="/education" element={<EducationMobile />} />
-								<Route path="/technologies" element={<TechMobile />} />
-								<Route path="/projects" element={<ProjectsMobile />} />
-								) : (
-								<Route path="/" element={<About />} />
-								<Route path="/experience" element={<Experience />} />
-								<Route path="/education" element={<Education />} />
-								<Route path="/projects" element={<Projects />} />
-								<Route path="/technologies" element={<Technologies />} />
-								<Route path="/contact" element={<Contact />} />)
+								{routes.map((route, index) => (
+									<Route key={index} path={route.path} element={React.createElement(route.component)} />
+								))}
 							</Routes>
 						}
 					</div>
