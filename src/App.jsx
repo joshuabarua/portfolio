@@ -16,6 +16,9 @@ import {useMediaQuery} from 'react-responsive';
 import About from './Pages/About';
 import HomeDesktop from './Pages/Desktop/HomeDesktop';
 import HomeMobile from './Pages/Mobile/HomeMobile';
+import AboutMobile from './Pages/Mobile/AboutMobile';
+import ContactMobile from './Pages/Mobile/ContactMobile';
+import ExperienceMobile from './Pages/Mobile/ExperienceMobile';
 
 function App() {
 	const {isDark, setIsDark} = useColorScheme();
@@ -89,14 +92,21 @@ function App() {
 					{isMobile && <HomeMobile />}
 
 					<div id="content">
-						<Routes>
-							<Route path="/" element={<About />} />
-							<Route path="/experience" element={<Experience />} />
-							<Route path="/education" element={<Education />} />
-							<Route path="/projects" element={<Projects />} />
-							<Route path="/technologies" element={<Technologies />} />
-							<Route path="/contact" element={<Contact />} />
-						</Routes>
+						{
+							<Routes>
+								isMobile ? (
+								<Route path="/" element={<AboutMobile />} />
+								<Route path="/contact" element={<ContactMobile />} />
+								<Route path="/experience" element={<ExperienceMobile />} />
+								) : (
+								<Route path="/" element={<About />} />
+								<Route path="/experience" element={<Experience />} />
+								<Route path="/education" element={<Education />} />
+								<Route path="/projects" element={<Projects />} />
+								<Route path="/technologies" element={<Technologies />} />
+								<Route path="/contact" element={<Contact />} />)
+							</Routes>
+						}
 					</div>
 				</div>
 			</Router>
