@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React, {useRef, useEffect, useState} from 'react';
 import * as THREE from 'three';
+// eslint-disable-next-line no-unused-vars
 import Sketch from 'react-p5';
 import TRUNK from 'vanta/src/vanta.trunk';
 import {DarkModeToggle} from './Components/DarkModeToggle';
@@ -17,7 +18,8 @@ function App() {
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const myRef = useRef(null);
 	const {isMobile, isDesktop, is4k, is1440p} = useDeviceType();
-	const routes = isMobile ? mobileRoutes : desktopRoutes
+	const routes = isMobile ? mobileRoutes : desktopRoutes;
+	const spacing = isMobile ? (isDark ? 4.0 : 6.0) : isDark ? 10.0 : 30.0;
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -41,7 +43,7 @@ function App() {
 				scale: 1,
 				scaleMobile: 1,
 				color: isDark ? 0x959393 : 0x0d0d0d,
-				spacing: isDark ? 10.0 : 30,
+				spacing: spacing,
 				chaos: isDark ? 3.5 : 3.0,
 			});
 		};
