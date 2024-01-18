@@ -246,14 +246,6 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/pfantastisch-app',
 	},
 	{
-		title: 'Rick and Morty API',
-		image: ricknmorty,
-		description: `A mini project completed at Code Academy Berlin using the rick and morty API to display characters`,
-		techstack: 'Typescript, Reactjs, APIs, JSON',
-		previewLink: 'https://ricknmorty-project2-5.vercel.app/',
-		githubLink: 'https://github.com/joshuabarua/ricknmorty-project2.5',
-	},
-	{
 		title: 'Mystic Tarot',
 		image: mystictarot,
 		description: `[Work in Progress] A Tarot Card website that allows card selections and firebase as a login system. Work in progress!`,
@@ -268,6 +260,14 @@ export const projectDetails = [
 		techstack: 'Reactjs, JavaScript, CSS, Material-UI',
 		previewLink: ' mixtape4pati.vercel.app/ ',
 		githubLink: 'https://github.com/joshuabarua/mixtape_app',
+	},
+	{
+		title: 'Rick and Morty API',
+		image: ricknmorty,
+		description: `A mini project completed at Code Academy Berlin using the rick and morty API to display characters using typescript`,
+		techstack: 'Typescript, Reactjs, APIs, JSON',
+		previewLink: 'https://ricknmorty-project2-5.vercel.app/',
+		githubLink: 'https://github.com/joshuabarua/ricknmorty-project2.5',
 	},
 	{
 		title: 'Boulder Berlin',

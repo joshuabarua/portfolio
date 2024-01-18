@@ -38,9 +38,9 @@ const ContactMobile = () => {
 	};
 
 	return (
-		<main className="h-screen w-[100%] flex justify-center items-center flex-col ">
-			<section className="">
-				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-1 w-[100%] h-[550px] min-w-[90%] max-w-[500px] rounded-md">
+		<main className="h-screen w-full flex justify-center items-center flex-col ">
+			<section className="w-[70%]">
+				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-1 w-[100%] h-[550px] max-w-[500px] rounded-md">
 					<h1 className="text-xl text-center pb-2 dark-text dark:light-text md:text-2xl xl:text-4xl xl:leading-tight font-bold">Contact</h1>
 					{/* Name */}
 					<label htmlFor="email-name" className="block text-sm font-medium dark-text dark:light-text">
