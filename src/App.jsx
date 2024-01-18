@@ -19,6 +19,9 @@ import HomeMobile from './Pages/Mobile/HomeMobile';
 import AboutMobile from './Pages/Mobile/AboutMobile';
 import ContactMobile from './Pages/Mobile/ContactMobile';
 import ExperienceMobile from './Pages/Mobile/ExperienceMobile';
+import EducationMobile from './Pages/Mobile/EducationMobile';
+import TechMobile from './Pages/Mobile/TechMobile';
+import ProjectsMobile from './Pages/Mobile/ProjectsMobile';
 
 function App() {
 	const {isDark, setIsDark} = useColorScheme();
@@ -98,6 +101,9 @@ function App() {
 								<Route path="/" element={<AboutMobile />} />
 								<Route path="/contact" element={<ContactMobile />} />
 								<Route path="/experience" element={<ExperienceMobile />} />
+								<Route path="/education" element={<EducationMobile />} />
+								<Route path="/technologies" element={<TechMobile />} />
+								<Route path="/projects" element={<ProjectsMobile />} />
 								) : (
 								<Route path="/" element={<About />} />
 								<Route path="/experience" element={<Experience />} />
