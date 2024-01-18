@@ -1,6 +1,6 @@
 import React from 'react';
 import Work from '../Components/Work';
-import {workDetails} from '../data/Details';
+import {workDetails} from '../data/details';
 
 function Experience() {
 	return (

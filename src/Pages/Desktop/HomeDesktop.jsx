@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {personalDetails} from '../../data/Details';
+import {personalDetails} from '../../data/details';
 import Header from '../../Components/Header';
 import gsap from 'gsap';
 
