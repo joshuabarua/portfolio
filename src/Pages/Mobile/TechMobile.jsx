@@ -4,7 +4,7 @@ import {techStackDetails} from '../../data/details';
 function TechMobile() {
 	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;
 	return (
-		<main className="h-screen w-full flex justify-start items-center flex-col  overflow-y-auto ">
+		<main className="h-screen w-full flex justify-start items-center flex-col  overflow-y-auto  mb-[20px]">
 			<div className=" w-[70%] overflow-x-hidden pb-10">
 				<h1 className="text-xl text-center mt-[50px] dark-text dark:light-text md:text-2xl xl:text-3xl xl:leading-tight font-bold">Technologies</h1>
 				<section className="">

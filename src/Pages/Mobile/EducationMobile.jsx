@@ -4,7 +4,7 @@ import {eduDetails} from '../../data/details';
 
 function EducationMobile() {
 	return (
-		<main className="h-screen w-[100%] flex justify-center items-center flex-col overflow-x-hidden">
+		<main className="h-screen w-[100%] flex justify-center items-center flex-col overflow-x-hidden  mb-[20px]">
 			<section className=" w-[70%] overflow-y-auto ">
 				<h1 className="text-xl text-center pb-8 mt-10 dark-text dark:light-text md:text-2xl xl:text-3xl xl:leading-tight font-bold">Education</h1>
 				{React.Children.toArray(
