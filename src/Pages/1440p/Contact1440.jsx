@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
 
-const ContactForm = () => {
+const ContactForm1440 = () => {
 	const formRef = useRef();
 	const [formData, setFormData] = useState({
 		from_name: '',
@@ -40,10 +40,10 @@ const ContactForm = () => {
 	return (
 		<main className="h-screen w-[100%] flex justify-center items-end flex-col ">
 			<section className=" w-[80%] mb-[10%] flex justify-center items-center flex-col">
-				<h1 className="dark-text dark:light-text text-3xl xl:leading-tight font-bold">Contact</h1>
-				<form onSubmit={handleSubmit} ref={formRef} className="flex  flex-col justify-center items-left gap-2 h-[550px] w-[500px] rounded-md">
+				<h1 className="dark-text dark:light-text text-4xl xl:leading-tight font-bold">Contact</h1>
+				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-2  h-[700px] min-w-[400px] w-[800px]  rounded-md">
 					{/* Name */}
-					<label htmlFor="email-name" className="block  text-lg font-medium dark-text dark:light-text">
+					<label htmlFor="email-name" className="block  text-xl font-medium dark-text dark:light-text">
 						Name
 					</label>
 					<div className="relative mb-2">
@@ -58,12 +58,12 @@ const ContactForm = () => {
 							name="from_name"
 							value={formData.from_name}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-slate-100 focus:border-slate-100 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-slate-100 dark:focus:border-slate-100"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-slate-100 focus:border-slate-100 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-slate-100 dark:focus:border-slate-100"
 							placeholder="John Smith"
 						/>
 					</div>
 					{/* EMAIL */}
-					<label htmlFor="email-address" className="block text-lg font-medium dark-text dark:light-text">
+					<label htmlFor="email-address" className="block text-xl font-medium dark-text dark:light-text">
 						Email
 					</label>
 					<div className="relative mb-2">
@@ -79,12 +79,12 @@ const ContactForm = () => {
 							name="from_email"
 							value={formData.from_email}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="john@smith.com"
 						/>
 					</div>
 					{/* Subject */}
-					<label htmlFor="email-subject" className="block text-lg font-medium dark-text dark:light-text">
+					<label htmlFor="email-subject" className="block text-xl font-medium dark-text dark:light-text">
 						Subject
 					</label>
 					<div className="relative mb-2">
@@ -99,12 +99,12 @@ const ContactForm = () => {
 							name="subject"
 							value={formData.subject}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Lets work together!"
 						/>
 					</div>
 					<div>
-						<label htmlFor="message" className="block mb-2 text-lg font-medium dark-text dark:light-text">
+						<label htmlFor="message" className="block mb-2 text-xl font-medium dark-text dark:light-text">
 							Message
 						</label>
 						<textarea
@@ -113,12 +113,12 @@ const ContactForm = () => {
 							rows="4"
 							value={formData.message}
 							onChange={handleInputChange}
-							className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							className="block p-2.5 w-full text-xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Write your thoughts here..."></textarea>
 					</div>
 					<input type="hidden" name="to_name" value="Joshua Barua-Fowle" />
 
-					<button type="submit" className="h-[40px] w-[100%] rounded-md p-3 bg-slate-200 dark:bg-slate-700">
+					<button type="submit" className="h-[40px] w-[100%] rounded-md p-3 bg-slate-200 dark:bg-slate-700 ">
 						Send
 					</button>
 				</form>
@@ -127,4 +127,4 @@ const ContactForm = () => {
 	);
 };
 
-export default ContactForm;
+export default ContactForm1440;

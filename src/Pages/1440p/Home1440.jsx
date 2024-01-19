@@ -3,7 +3,7 @@ import {personalDetails} from '../../data/details';
 import Header from '../../Components/Header';
 import gsap from 'gsap';
 
-export default function HomeDesktop() {
+export default function Home1440() {
 	const {name, tagline} = personalDetails;
 	const h12 = useRef();
 	const h13 = useRef();
@@ -24,10 +24,10 @@ export default function HomeDesktop() {
 	return (
 		<div>
 			<div className="name">
-				<h1 ref={h12} className="wrapped-text  text-dark-text dark:text-light-text text-2xl md:text-3xl xl:text-4xl">
+				<h1 ref={h12} className="wrapped-text  text-dark-text dark:text-light-text text-2xl md:text-3xl lg:text-4xl xl:text-6xl">
 					{name}
 				</h1>
-				<h2 ref={h13} className="wrapped-text text-dark-text dark:text-light-text ">
+				<h2 ref={h13} className="wrapped-text text-dark-text dark:text-light-text text-md md:text-lg lg:text-xl xl:text-3xl ">
 					{tagline}
 				</h2>
 			</div>
