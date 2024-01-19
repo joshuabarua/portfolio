@@ -20,7 +20,16 @@ function App() {
 	const myRef = useRef(null);
 	const {isMobile, isDesktop, is4k, is1440p} = useDeviceType();
 	const routes = isMobile ? mobileRoutes : isDesktop ? desktopRoutes : midRoutes;
-	const spacing = isMobile ? (isDark ? 4.0 : 6.0) : isDark ? 10.0 : 30.0;
+	let spacing;
+	if (isMobile) {
+		spacing = isDark ? 4.0 : 6.0;
+	} else if (isDesktop) {
+		spacing = isDark ? 10.0 : 15.0;
+	} else if (is1440p) {
+		spacing = isDark ? 25.0 : 35.0;
+	} else {
+		spacing = isDark ? 35.0 : 45.0;
+	}
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -42,7 +51,7 @@ function App() {
 				minHeight: 400.0,
 				minWidth: 400.0,
 				scale: 1,
-				scaleMobile: 1,
+				scaleMobile: 2,
 				color: isDark ? 0x959393 : 0x0d0d0d,
 				spacing: spacing,
 				chaos: isDark ? 3.5 : 3.0,
