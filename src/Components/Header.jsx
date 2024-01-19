@@ -23,11 +23,11 @@ function Header({isOpen, setIsOpen}) {
 	const isMenuOpen = !!isOpen;
 
 	return (
-		<header>
-			<nav className={` text-left flex justify-between gap-4 flex-col `}>
+		<header className="xl:mt-[150px]">
+			<nav className={`text-left flex justify-between gap-4 flex-col `}>
 				<ul className="text-dark-text dark:text-light-text font-medium flex justify-start content-start flex-col gap-1  mt-[50px] md:gap-1 md:mt-0">
 					{navLinks.map((link, index) => (
-						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-2xl md:text-lg" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
+						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-md md:text-lg lg:text-xl xl:text-3xl" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
 							<NavLink to={link.path} className={'text-dark-text dark:text-light-text bg-light-color dark:bg-dark-color'}>
 								{link.label}
 							</NavLink>

@@ -10,7 +10,8 @@ import Loading from './Components/Loading/Loading';
 import HomeDesktop from './Pages/Desktop/HomeDesktop';
 import HomeMobile from './Pages/Mobile/HomeMobile';
 import useDeviceType from './hooks/useDeviceType';
-import {desktopRoutes, mobileRoutes} from './data/routes';
+import {desktopRoutes, midRoutes, mobileRoutes} from './data/routes';
+import Home1440 from './Pages/1440p/Home1440';
 
 function App() {
 	const {isDark, setIsDark} = useColorScheme();
@@ -18,7 +19,7 @@ function App() {
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const myRef = useRef(null);
 	const {isMobile, isDesktop, is4k, is1440p} = useDeviceType();
-	const routes = isMobile ? mobileRoutes : desktopRoutes;
+	const routes = isMobile ? mobileRoutes : isDesktop ? desktopRoutes : midRoutes;
 	const spacing = isMobile ? (isDark ? 4.0 : 6.0) : isDark ? 10.0 : 30.0;
 
 	useEffect(() => {
@@ -75,11 +76,11 @@ function App() {
 
 			{/* Conditional rendering based on screen size */}
 			{is4k && <p className="text-green-500">This is a 4k screen view</p>}
-			{is1440p && <p className="text-green-500">This is a 1440p screen view</p>}
 
 			<Router>
 				<div>
 					{isDesktop && <HomeDesktop />}
+					{is1440p && <Home1440 />}
 					{isMobile && <HomeMobile />}
 
 					<div id="content">

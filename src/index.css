@@ -288,11 +288,17 @@ body.dark {
 	backdrop-filter: difference;
 }
 
+.about-1440,
+.about {
+	margin-right: calc(var(--pad) * 2);
+}
+
 .header {
 	position: fixed;
 	z-index: 10;
 	left: calc(var(--pad) * 2);
 	top: calc(var(--pad) * 4);
+	margin-right: calc(var(--pad) * 2);
 	margin-top: 70px;
 	backdrop-filter: difference;
 }
@@ -325,6 +331,11 @@ body.dark {
 }
 
 .workImg img {
+	border-radius: 10%;
+}
+.tech-large img {
+	width: 80px;
+	height: 80px;
 	border-radius: 10%;
 }
 

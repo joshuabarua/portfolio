@@ -23,7 +23,6 @@ export default function HomeDesktop() {
 
 	return (
 		<div>
-			<p className="text-green-500">This is a desktop view</p>
 			<div className="name">
 				<h1 ref={h12} className="wrapped-text  text-dark-text dark:text-light-text text-2xl md:text-3xl xl:text-4xl">
 					{name}

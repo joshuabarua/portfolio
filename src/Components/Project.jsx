@@ -2,16 +2,17 @@ import React from 'react';
 
 function Project({title, image, description, techstack, previewLink, githubLink}) {
 	return (
-		<article className="rounded-xl max-w-[400px] min-w-[250px] max-h-[500px] mt-5 overflow-hidden  border-dark-content dark:border-light-content border-opacity-10  p-2 bg-slate-200 dark:bg-slate-700 bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900 mb-10">
-			<div className="w-full h-full overflow-y-hidden">
-				<img src={image} alt="" loading="lazy" className="max-h-[225px]" />
-				<div className="p-4  h-full ">
-					<h1 className="dark-text dark:light-text font-semibold text-lg pt-1">{title}</h1>
-					<p className="wrapped-text pt-4 font-light filter-none opacity-90">{description}</p>
+		<article className="rounded-xl max-w-[400px] min-w-[200px] max-h-[550px] mt-5 overflow-hidden lg:max-w-[450px] lg:max-h-[600px] border-dark-content dark:border-light-content border-opacity-10  p-2 bg-slate-200 dark:bg-slate-700 bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900 mb-10">
+			<div className="w-full h-full overflow-y-hidden flex items-center flex-col">
+				<img src={image} alt="" loading="lazy" />
+				<div className="p-4 h-full flex justify-evenly flex-col gap-2">
+					<h1 className="dark-text dark:light-text font-semibold text-lg  lg:text-xl xl:text-2xl">{title}</h1>
+					<p className="wrapped-text font-light filter-none opacity-90 text-md  lg:text-lg xl:text-xl">{description}</p>
 					<h3 className="dark-text dark:light-text font-medium pt-4 opacity-75">
-						Tech Stack: <span className="wrapped-text font-light">{techstack}</span>
+						<strong>Tech Stack: </strong>
+						<span className="wrapped-text font-light text-md lg:text-lg xl:text-xl">{techstack}</span>
 					</h3>
-					<div className="flex justify-between items-center mt-5">
+					<div className="flex justify-between items-center text-md lg:text-lg xl:text-xl wrapped-text flex-wrap">
 						<div className="flex items-center">
 							<svg
 								className="stroke-dark-heading dark:stroke-white inline-block min-w-fit"
