@@ -14,9 +14,10 @@ export function useColorScheme() {
 	useEffect(() => {
 		let parsedValue;
 		try {
+			console.log('Parsing isDark value:', isDark);
 			parsedValue = typeof isDark === 'string' ? JSON.parse(isDark) : isDark;
 		} catch (error) {
-			console.error('Error parsing persisted state:', error);
+			console.error('Error parsing persisted state:', error, 'Value:', isDark);
 			parsedValue = !!systemPrefersDark;
 		}
 
