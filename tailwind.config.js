@@ -4,6 +4,11 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			screens: {
+				'h-sm': {raw: '(min-height: 640px)'},
+				'h-md': {raw: '(min-height: 768px)'},
+				'h-lg': {raw: '(min-height: 1080px)'},
+			},
 			fontFamily: {
 				// primary: "Poppins, sans-serif",
 			},
