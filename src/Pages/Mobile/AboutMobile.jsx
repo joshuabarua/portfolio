@@ -4,7 +4,7 @@ import {personalDetails} from '../../data/details';
 function AboutMobile() {
 	const {name, tagline, about} = personalDetails;
 	return (
-		<div className="h-screen w-[100%] flex justify-center items-center flex-col mb-3 ml-5">
+		<div className="h-screen w-[100%] flex justify-center items-center flex-col my-[20px] py-[20px] ml-5">
 			<div className="w-[70%] overflow-y-hidden h-[100px]">
 				<h1 className=" pt-10 wrapped-text  text-dark-text dark:text-light-text text-xl overflow-y-hidden">{name}</h1>
 				<h2 className="wrapped-text text-dark-text dark:text-light-text text-md overflow-y-hidden">{tagline}</h2>
