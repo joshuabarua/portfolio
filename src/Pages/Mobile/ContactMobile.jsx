@@ -58,7 +58,7 @@ const ContactMobile = () => {
 							name="from_name"
 							value={formData.from_name}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="John Smith"
 						/>
 					</div>
@@ -79,7 +79,7 @@ const ContactMobile = () => {
 							name="from_email"
 							value={formData.from_email}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="john@smith.com"
 						/>
 					</div>
@@ -99,7 +99,7 @@ const ContactMobile = () => {
 							name="subject"
 							value={formData.subject}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="Lets work together!"
 						/>
 					</div>
@@ -113,7 +113,7 @@ const ContactMobile = () => {
 							rows="4"
 							value={formData.message}
 							onChange={handleInputChange}
-							className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
+							className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="Write your thoughts here..."></textarea>
 					</div>
 					<input type="hidden" name="to_name" value="Joshua Barua-Fowle" />
