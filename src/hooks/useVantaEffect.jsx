@@ -17,7 +17,7 @@ const useVantaEffect = ({isDark, myRef, THREE, TRUNK, spacing}) => {
 				scaleMobile: 0.5,
 				color: isDark ? 0x959393 : 0x0d0d0d,
 				spacing: spacing,
-				chaos: isDark ? 3.5 : 3.0,
+				chaos: isDark ? 3.2 : 3.0,
 			});
 		};
 
