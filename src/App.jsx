@@ -19,7 +19,7 @@ function App() {
 	const {isDark, setIsDark} = useColorScheme();
 	const [showLoading, setLoading] = useState(true);
 	const myRef = useRef(null);
-	const {isMobile, isDesktop, is4k, is1440p} = useDeviceType();
+	const {isMobile, isDesktop, is1440p} = useDeviceType();
 	const routes = isMobile ? mobileRoutes : isDesktop ? desktopRoutes : midRoutes;
 	const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
 	const [vantaEffect, setVantaEffect] = useVantaEffect({isDark, myRef, THREE, TRUNK, spacing});
@@ -56,8 +56,6 @@ function App() {
 				<div className="mask_left  dark:bg-dark-color bg-light-color"></div>
 				<div className="mask_right  dark:bg-dark-color bg-light-color"></div>
 			</div>
-
-			{is4k && <p className="text-green-500">This is a 4k screen view</p>}
 
 			<Router>
 				<div>
