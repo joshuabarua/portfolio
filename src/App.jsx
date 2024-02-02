@@ -1,6 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React, {useRef, useLayoutEffect, useState} from 'react';
-import {SpeedInsights} from '@vercel/speed-insights/next';
 import * as THREE from 'three';
 // eslint-disable-next-line no-unused-vars
 import Sketch from 'react-p5';
@@ -43,7 +42,6 @@ function App() {
 
 	return (
 		<div id="main-app">
-			<SpeedInsights />
 			{showLoading && <Loading showLoading={showLoading} />}
 			<div id="background" ref={myRef}></div>
 			<div id="frame">
