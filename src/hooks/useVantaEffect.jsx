@@ -1,7 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 
 const useVantaEffect = ({isDark, myRef, THREE, TRUNK, spacing}) => {
 	const [vantaEffect, setVantaEffect] = useState(null);
+	const vantaEffectRef = useRef(vantaEffect);
+	useEffect(() => {
+		vantaEffectRef.current = vantaEffect;
+	}, [vantaEffect]);
 
 	useEffect(() => {
 		const initializeVanta = () => {
@@ -21,15 +25,20 @@ const useVantaEffect = ({isDark, myRef, THREE, TRUNK, spacing}) => {
 			});
 		};
 
-		if (!vantaEffect || vantaEffect.isDark !== isDark) {
-			if (vantaEffect) vantaEffect.destroy();
+		if (!vantaEffectRef.current) {
+			setVantaEffect(initializeVanta());
+		} else if (vantaEffectRef.current.isDark !== isDark) {
+			vantaEffectRef.current.destroy();
 			setVantaEffect(initializeVanta());
 		}
 
+		// Cleanup function
 		return () => {
-			if (vantaEffect) vantaEffect.destroy();
+			if (vantaEffectRef.current) {
+				vantaEffectRef.current.destroy();
+			}
 		};
-	}, [isDark, myRef, TRUNK, THREE, spacing]);
+	}, [isDark, spacing]);
 
 	return [vantaEffect, setVantaEffect];
 };
