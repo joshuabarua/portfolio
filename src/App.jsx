@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useLayoutEffect, useState} from 'react';
+import {SpeedInsights} from '@vercel/speed-insights/next';
 import * as THREE from 'three';
 // eslint-disable-next-line no-unused-vars
 import Sketch from 'react-p5';
@@ -24,7 +25,7 @@ function App() {
 	const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
 	const [vantaEffect, setVantaEffect] = useVantaEffect({isDark, myRef, THREE, TRUNK, spacing});
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const timer = setTimeout(() => {
 			setLoading(false);
 		}, 2000);
@@ -42,6 +43,7 @@ function App() {
 
 	return (
 		<div id="main-app">
+			<SpeedInsights />
 			{showLoading && <Loading showLoading={showLoading} />}
 			<div id="background" ref={myRef}></div>
 			<div id="frame">
