@@ -2369,6 +2369,11 @@
   resolved "https://registry.yarnpkg.com/@use-it/event-listener/-/event-listener-0.1.7.tgz#443a9b6df87f2f2961b74d42997ce723a7078623"
   integrity sha512-hgfExDzUU9uTRTPDCpw2s9jWTxcxmpJya3fK5ADpf5VDpSy8WYwY/kh28XE0tUcbsljeP8wfan48QvAQTSSa3Q==
 
+"@vercel/speed-insights@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@vercel/speed-insights/-/speed-insights-1.0.9.tgz#ad748c238c4ed58b32cc8a398f28abe507dabd53"
+  integrity sha512-f+XFP0O+aZ4Olj9h+BitkB1b4NJQaxtyCb69wWuDxytJHY6Pa4QtZPdBUftHOcajUCHRVeq062fk3MKXKtjNVQ==
+
 "@webassemblyjs/ast@1.11.6", "@webassemblyjs/ast@^1.11.5":
   version "1.11.6"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.6.tgz#db046555d3c413f8966ca50a95176a0e2c642e24"
