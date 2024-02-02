@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {personalDetails} from '../../data/details';
-import './burgerMenu.css'; // Make sure to create this CSS file
+import {personalDetails} from '../../data/details.js';
+import './burgerMenu.css';
 import Header from '../../Components/Header';
-
-//TODO: Need to make  menu styles and add links, also adjust css"
 
 const HomeMobile = () => {
 	const [isOpen, setIsOpen] = useState(false);

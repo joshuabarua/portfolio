@@ -1,5 +1,5 @@
 import React from 'react';
-import {techStackDetails} from '../../data/details';
+import {techStackDetails} from '../../data/details.js';
 
 function Technologies1440() {
 	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;
