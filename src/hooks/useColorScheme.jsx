@@ -1,35 +1,37 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useMediaQuery} from 'react-responsive';
-import createPersistedState from 'use-persisted-state';
-
-const useColorSchemeState = createPersistedState('colorScheme');
 
 export function useColorScheme() {
 	const systemPrefersDark = useMediaQuery({
 		query: '(prefers-color-scheme: dark)',
 	});
 
-	const [isDark, setIsDark] = useColorSchemeState('dark');
+	const getInitialColorScheme = () => {
+		const storedValue = localStorage.getItem('colorScheme');
+		if (storedValue !== null) {
+			try {
+				return JSON.parse(storedValue);
+			} catch (error) {
+				console.error('Error parsing persisted state:', error, 'Value:', storedValue);
+				return !!systemPrefersDark;
+			}
+		}
+		return !!systemPrefersDark;
+	};
+
+	const [isDark, setIsDark] = useState(getInitialColorScheme);
 
 	useEffect(() => {
-		let parsedValue;
-		try {
-			console.log('Parsing isDark value:', isDark);
-			parsedValue = typeof isDark === 'string' ? JSON.parse(isDark) : isDark;
-		} catch (error) {
-			console.error('Error parsing persisted state:', error, 'Value:', isDark);
-			parsedValue = !!systemPrefersDark;
-		}
-
-		if (parsedValue) {
+		localStorage.setItem('colorScheme', JSON.stringify(isDark));
+		if (isDark) {
 			document.body.classList.add('dark');
 		} else {
 			document.body.classList.remove('dark');
 		}
-	}, [isDark, systemPrefersDark]);
+	}, [isDark]);
 
 	return {
-		isDark: isDark === undefined ? !!systemPrefersDark : isDark,
+		isDark,
 		setIsDark,
 	};
 }
