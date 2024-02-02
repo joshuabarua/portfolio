@@ -1,6 +1,6 @@
 import React from 'react';
 import Project from '../../Components/Project';
-import {projectDetails} from '../../data/details';
+import {projectDetails} from '../../data/details.js';
 
 function ProjectsMobile() {
 	return (

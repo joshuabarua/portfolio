@@ -1,14 +1,17 @@
-import {useState, useEffect, useRef} from 'react';
+import {useState, useRef, useLayoutEffect} from 'react';
 
 const useVantaEffect = ({isDark, myRef, THREE, TRUNK, spacing}) => {
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const vantaEffectRef = useRef(vantaEffect);
-	useEffect(() => {
+	const initializedRef = useRef(false);
+
+	useLayoutEffect(() => {
 		vantaEffectRef.current = vantaEffect;
 	}, [vantaEffect]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const initializeVanta = () => {
+			console.log('initialised vanta effexct');
 			return TRUNK({
 				el: myRef.current,
 				THREE: THREE,
@@ -25,20 +28,23 @@ const useVantaEffect = ({isDark, myRef, THREE, TRUNK, spacing}) => {
 			});
 		};
 
-		if (!vantaEffectRef.current) {
+		if (!initializedRef.current || vantaEffectRef.current.isDark !== isDark || vantaEffectRef.current.spacing !== spacing) {
+			if (vantaEffectRef.current) {
+				vantaEffectRef.current.destroy();
+				console.log('vantaEffect Destroyed');
+			}
 			setVantaEffect(initializeVanta());
-		} else if (vantaEffectRef.current.isDark !== isDark) {
-			vantaEffectRef.current.destroy();
-			setVantaEffect(initializeVanta());
+			initializedRef.current = true;
 		}
 
-		// Cleanup function
 		return () => {
 			if (vantaEffectRef.current) {
 				vantaEffectRef.current.destroy();
+				initializedRef.current = false;
+				console.log('vantaEffect cleanup');
 			}
 		};
-	}, [isDark, spacing]);
+	}, [isDark, spacing, myRef, THREE, TRUNK]);
 
 	return [vantaEffect, setVantaEffect];
 };
