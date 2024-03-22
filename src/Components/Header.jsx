@@ -23,7 +23,7 @@ function Header({isOpen, setIsOpen}) {
 	const isMenuOpen = !!isOpen;
 
 	return (
-		<header className="xl:mt-[150px]">
+		<header>
 			<nav className={`flex justify-between gap-4 flex-col `}>
 				<ul className="flex justify-start content-start flex-col gap-1  mt-[50px] md:gap-1 md:mt-0">
 					{navLinks.map((link, index) => (
