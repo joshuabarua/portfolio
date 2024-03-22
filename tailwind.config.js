@@ -2,12 +2,14 @@
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	darkMode: 'class',
+	experimental: {textDecorationStyles: true},
 	theme: {
 		extend: {
 			screens: {
 				'h-sm': {raw: '(min-height: 640px)'},
 				'h-md': {raw: '(min-height: 768px)'},
 				'h-lg': {raw: '(min-height: 1080px)'},
+				dark: {raw: '(prefers-color-scheme: dark)'},
 			},
 			fontFamily: {
 				// primary: "Poppins, sans-serif",
@@ -27,7 +29,15 @@ module.exports = {
 				'fill-light-heading': '#f2f2f2',
 				'fill-dark-heading': '#1a1a1a',
 				'green-text': '#018C0F',
-				greenbg: '#D7FFE0',
+				'green-bg': '#D7FFE0',
+				darkModeUnderline: '#f2f2f2',
+				lightModeUnderline: '#1a1a1a',
+			},
+		},
+		variants: {
+			extend: {
+				textDecoration: ['active'],
+				textDecorationColor: ['active'],
 			},
 		},
 	},

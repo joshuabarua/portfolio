@@ -27,7 +27,7 @@ function Work({position, description, company, location, type, duration, website
 				</div>
 				<div className="flex flex-col justify-between items-left py-2 gap-1 sm:flex-row">
 					<p className="wrapped-text text-sm md:text-md lg:text-lg xl:text-xl font-light pl-1 min-w-fit opacity-80">{duration}</p>
-					<div className="btn bg-greenbg text-green-text text-sm md:text-md rounded-3xl py-1 min-w-[90px] max-w-[90px] h-[30px] flex justify-center items-center">{type}</div>
+					<div className="btn bg-green-bg text-green-text text-sm md:text-md rounded-3xl py-1 min-w-[90px] max-w-[90px] h-[30px] flex justify-center items-center">{type}</div>
 				</div>
 				<div className="">
 					<h3 className="wrapped-text text-sm leading-8 md:text-md lg:text-lg xl:text-xl font-light  opacity-70">{description}</h3>
