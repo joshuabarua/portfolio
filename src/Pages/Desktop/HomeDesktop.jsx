@@ -26,7 +26,7 @@ export default function HomeDesktop() {
 			<h1 ref={h12} className="wrapped-text  text-dark-text dark:text-light-text text-xl  absolute left-[31px] top-[7px] z-10 text">
 				{name}
 			</h1>
-			<h2 ref={h13} className="wrapped-text text-dark-text dark:text-light-text  absolute left-[35px] top-[30px] z-10">
+			<h2 ref={h13} className="wrapped-text text-lg  text-dark-text dark:text-light-text  absolute left-[35px] top-[30px] z-10">
 				{tagline}
 			</h2>
 			<div className="header">

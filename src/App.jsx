@@ -27,7 +27,7 @@ function App() {
 			if (isDesktop) return desktopRoutes;
 			return midRoutes;
 		},
-		[isMobile, isDesktop]
+		[]
 	);
 
 	const routes = getRoutes(isMobile, isDesktop);
