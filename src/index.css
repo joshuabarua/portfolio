@@ -406,3 +406,7 @@ input:focus {
 .projectCard {
 	background-color: #fcf9f9;
 }
+
+.extraSpace {
+	height: calc(100% + 2000px);
+}

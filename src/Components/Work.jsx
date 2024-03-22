@@ -2,7 +2,7 @@ import React from 'react';
 
 function Work({position, description, company, location, type, duration, website, tech}) {
 	return (
-		<article className="border-b-[1px] p-6 mb-[10%] h-lg:mb-[35px] w-[100%] md:max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] xl:p-10  border-dark-content dark:border-light-content border-opacity-10 rounded-xl  bg-slate-200 dark:bg-slate-700  bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
+		<article className="border-b-[1px] p-4 mb-[10%] h-lg:mb-[35px] w-[100%] md:max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] xl:p-10  border-dark-content dark:border-light-content border-opacity-10 rounded-xl  bg-slate-200 dark:bg-slate-700  bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900">
 			<div className="flex flex-col gap-2">
 				<div className="flex justify-between items-end wrapped-text flex-wrap">
 					<h1 className="text-lg md:text-xl lg:text-2xl pr-4 pt-[10px] opacity-95">{position}</h1>
