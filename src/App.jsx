@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import React, {useRef, useLayoutEffect, useState} from 'react';
+import React, {useRef, useLayoutEffect, useState, useMemo} from 'react';
 import * as THREE from 'three';
 // eslint-disable-next-line no-unused-vars
 import Sketch from 'react-p5';
@@ -20,7 +20,17 @@ function App() {
 	const [showLoading, setLoading] = useState(true);
 	const myRef = useRef(null);
 	const {isMobile, isDesktop, is1440p} = useDeviceType();
-	const routes = isMobile ? mobileRoutes : isDesktop ? desktopRoutes : midRoutes;
+
+	const getRoutes = useMemo(
+		() => (isMobile, isDesktop) => {
+			if (isMobile) return mobileRoutes;
+			if (isDesktop) return desktopRoutes;
+			return midRoutes;
+		},
+		[isMobile, isDesktop]
+	);
+
+	const routes = getRoutes(isMobile, isDesktop);
 	const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
 	const [vantaEffect, setVantaEffect] = useVantaEffect({isDark, myRef, THREE, TRUNK, spacing});
 
@@ -33,12 +43,12 @@ function App() {
 		};
 	}, [spacing]);
 
-	const getHomeComponent = () => {
+	const getHomeComponent = useMemo(() => {
 		if (isDesktop) return <HomeDesktop />;
 		if (is1440p) return <Home1440 />;
 		if (isMobile) return <HomeMobile />;
 		return null;
-	};
+	}, [isDesktop, is1440p, isMobile]);
 
 	return (
 		<div id="main-app">
@@ -58,8 +68,8 @@ function App() {
 			</div>
 
 			<Router>
-				<div>
-					{getHomeComponent()}
+				<>
+					{getHomeComponent}
 					<div id="content">
 						<Routes>
 							{routes.map((route, index) => (
@@ -67,7 +77,7 @@ function App() {
 							))}
 						</Routes>
 					</div>
-				</div>
+				</>
 			</Router>
 			<DarkModeToggle isDark={isDark} setIsDark={setIsDark} vantaEffect={vantaEffect} setVantaEffect={setVantaEffect} />
 		</div>
