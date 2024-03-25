@@ -42,7 +42,6 @@ body::-webkit-scrollbar {
 * {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
 }
 body {
 	font-family: 'helvetica-neue';
@@ -279,17 +278,6 @@ body.dark {
 	transform-origin: bottom left;
 }
 
-/* body .text-decoration-dark.active {
-	text-decoration: underline;
-	text-decoration-color: var(--text-dark);
-	text-underline-offset: 5px;
-}
-body.dark .text-decoration-light.active {
-	text-decoration: underline;
-	text-decoration-color: var(--text-light);
-	text-underline-offset: 5px;
-} */
-
 .header_icon:hover {
 	/* background-color: var(--text-dark); */
 	transform: scale(1.2);
@@ -352,16 +340,12 @@ body.dark .text-decoration-light.active {
 	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
-	/* width: 20px;
-	text-align: center;
-	word-break: break-all;
-	white-space: pre-wrap; */
 	letter-spacing: 15px;
 }
 
 .tech img {
-	width: 40px;
-	height: 40px;
+	width: 20px;
+	height: 20px;
 	border-radius: 10%;
 }
 
@@ -385,14 +369,12 @@ input:focus {
 	color: var(--text-dark);
 }
 
-/* Hiding the default checkbox */
 .custom-checkbox {
 	display: none;
 }
 
-/* Style when the checkbox is checked */
 .custom-checkbox:checked {
-	background-color: grey; /* Color when checked */
+	background-color: grey;
 	border-color: grey;
 }
 
@@ -408,4 +390,41 @@ input:focus {
 
 .extraSpace {
 	height: calc(100% + 2000px);
+}
+
+.not-scrollable > * {
+	overflow: hidden;
+}
+
+/*** WORK COMPONENT STYLING ***/
+
+/*** PROJECTS COMPONENT STYLING ***/
+.projectCard .details {
+	display: none;
+}
+
+.projectCardGrid {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 1.5rem;
+}
+
+.projectCard {
+	grid-column: span 3;
+}
+
+.projectCard .details {
+	display: none;
+}
+
+.projectCard.active .details {
+	display: block;
+	grid-column: 1 / span 6;
+	grid-row: 1;
+	order: 0;
+	height: auto;
+}
+
+.projectCard.is-inactive {
+	grid-column: span 2;
 }

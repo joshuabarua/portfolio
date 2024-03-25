@@ -2,11 +2,11 @@ import React from 'react';
 
 function Project({title, image, description, techstack, previewLink, githubLink}) {
 	return (
-		<article className="rounded-xl max-w-[400px] min-w-[200px] h-[550px] mt-5 overflow-hidden lg:max-w-[550px] lg:h-[600px] border-dark-content dark:border-light-content border-opacity-10  p-2 bg-slate-200 dark:bg-slate-700 bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900 mb-[10%] h-lg:mb-[32px]">
+		<article className="projectCard rounded-xl max-w-[400px] min-w-[200px] h-[550px] mt-5 overflow-hidden lg:max-w-[550px] lg:h-[600px] border-dark-content dark:border-light-content border-opacity-10  p-2 bg-slate-200 dark:bg-slate-700 bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900 mb-[10%] h-lg:mb-[32px]">
 			<div className="w-full h-full overflow-y-hidden flex items-center flex-col">
 				<img src={image} alt="" loading="lazy" />
-				<div className="p-4 h-full flex justify-evenly flex-col gap-2">
-					<h1 className="dark-text dark:light-text font-semibold text-lg  lg:text-xl xl:text-2xl">{title}</h1>
+				<h1 className="dark-text dark:light-text font-semibold text-lg  lg:text-xl xl:text-2xl">{title}</h1>
+				<div className="details p-4 h-full flex justify-evenly flex-col gap-2">
 					<p className="wrapped-text font-light filter-none opacity-90 text-md  lg:text-lg xl:text-xl">{description}</p>
 					<h3 className="dark-text dark:light-text font-medium pt-4 opacity-75">
 						<strong>Tech Stack: </strong>
