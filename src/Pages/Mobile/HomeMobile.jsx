@@ -6,7 +6,6 @@ import Header from '../../Components/Header';
 const HomeMobile = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const {name, tagline} = personalDetails;
-
 	const [shouldRender, setRender] = useState(isOpen);
 
 	useEffect(() => {
@@ -22,24 +21,28 @@ const HomeMobile = () => {
 	};
 
 	return (
-		<div>
+		<>
+			<div className="flex justify-start items-baseline top-[7px] absolute w-full ml-8 z-10">
+				<h1 className="wrapped-text  text-dark-text dark:text-light-text text-xl ">{name}</h1>
+			</div>
 			<div className={`burger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
 				<span className="burger-line burger-line-top bg-dark-color dark:bg-light-color"></span>
 				<span className="burger-line burger-line-middle bg-dark-color dark:bg-light-color"></span>
 				<span className="burger-line burger-line-bottom bg-dark-color dark:bg-light-color"></span>
 			</div>
 			{shouldRender && (
-				<div className={`menu-screen ${isOpen ? 'open' : ''} bg-light-color dark:bg-dark-color`} onAnimationEnd={onAnimationEnd}>
-					<div className="min-h-[100px] mt-[30px]">
-						<h1 className="wrapped-text  text-dark-text dark:text-light-text text-3xl ">{name}</h1>
-						<h2 className="wrapped-text text-dark-text dark:text-light-text text-lg ">{tagline}</h2>
+				<>
+					<div className={`flex justify-start items-baseline top-[7px] absolute w-full ml-8 ${isOpen ? 'z-20' : 'z-[-10]'}`}>
+						<h4 className="wrapped-text text-xl  text-dark-text dark:text-light-text ">{tagline}</h4>
 					</div>
-					<div className="flex justify-center items-center min-h-[340px]">
-						<Header setIsOpen={setIsOpen} isOpen={isOpen} />
+					<div className={`menu-screen ${isOpen ? 'open' : ''} bg-light-color dark:bg-dark-color`} onAnimationEnd={onAnimationEnd}>
+						<div className="flex justify-center items-center h-screen w-screen">
+							<Header setIsOpen={setIsOpen} isOpen={isOpen} />
+						</div>
 					</div>
-				</div>
+				</>
 			)}
-		</div>
+		</>
 	);
 };
 

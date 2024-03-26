@@ -2,6 +2,7 @@ import React from 'react';
 
 export const DarkModeToggle = ({setIsDark, isDark, vantaEffect}) => {
 	const handleToggle = () => {
+		console.log('button color scheme clicked');
 		if (vantaEffect) {
 			setIsDark(!isDark);
 		}

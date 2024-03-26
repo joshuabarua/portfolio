@@ -3,17 +3,17 @@ import ContactForm1440 from '../Pages/1440p/Contact1440';
 import Education1440 from '../Pages/1440p/Education1440';
 import Experience1440 from '../Pages/1440p/Experience1440';
 import Projects1440 from '../Pages/1440p/Projects1440';
-import Technologies1440 from '../Pages/1440p/Technologies1440';
-import About from '../Pages/About';
-import ContactForm from '../Pages/Contact';
-import Education from '../Pages/Education';
-import Experience from '../Pages/Experience';
 import AboutMobile from '../Pages/Mobile/AboutMobile';
 import ContactMobile from '../Pages/Mobile/ContactMobile';
 import EducationMobile from '../Pages/Mobile/EducationMobile';
 import ExperienceMobile from '../Pages/Mobile/ExperienceMobile';
 import ProjectsMobile from '../Pages/Mobile/ProjectsMobile';
 import TechMobile from '../Pages/Mobile/TechMobile';
+import Technologies1440 from '../Pages/1440p/Technologies1440';
+import About from '../Pages/About';
+import ContactForm from '../Pages/Contact';
+import Education from '../Pages/Education';
+import Experience from '../Pages/Experience';
 import Projects from '../Pages/Projects';
 import Technologies from '../Pages/Technologies';
 
@@ -35,7 +35,7 @@ const desktopRoutes = [
 	{path: '/projects', component: Projects},
 ];
 
-const midRoutes = [
+const bigRoutes = [
 	{path: '/', component: About1440},
 	{path: '/contact', component: ContactForm1440},
 	{path: '/experience', component: Experience1440},
@@ -44,4 +44,4 @@ const midRoutes = [
 	{path: '/projects', component: Projects1440},
 ];
 
-export {desktopRoutes, mobileRoutes, midRoutes};
+export {desktopRoutes, mobileRoutes, bigRoutes};
