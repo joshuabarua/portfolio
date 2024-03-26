@@ -10,7 +10,7 @@ import Loading from './Components/Loading/Loading';
 import HomeDesktop from './Pages/Desktop/HomeDesktop';
 import HomeMobile from './Pages/Mobile/HomeMobile';
 import useDeviceType from './hooks/useDeviceType';
-import {desktopRoutes, midRoutes, mobileRoutes} from './data/routes';
+import {desktopRoutes, bigRoutes, mobileRoutes} from './data/routes';
 import Home1440 from './Pages/1440p/Home1440';
 import useVantaEffect from './hooks/useVantaEffect';
 import useSpacing from './hooks/useVantaSpacing';
@@ -20,12 +20,12 @@ function App() {
 	const [showLoading, setLoading] = useState(true);
 	const myRef = useRef(null);
 	const {isMobile, isDesktop, is1440p} = useDeviceType();
-
+	console.log('Mobile:', isMobile, 'Desktop: ', isDesktop, '1440p:', is1440p);
 	const getRoutes = useMemo(
 		() => (isMobile, isDesktop) => {
 			if (isMobile) return mobileRoutes;
 			if (isDesktop) return desktopRoutes;
-			return midRoutes;
+			return bigRoutes;
 		},
 		[]
 	);

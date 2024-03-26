@@ -12,15 +12,23 @@ function Work({position, description, company, location, type, duration, website
 			date={duration}
 			iconStyle={{background: 'rgb(255, 239, 239)', color: '#fff', top: '10px'}}
 			icon={<WorkIcon />}>
-			<h1 className="vertical-timeline-element-title">
-				<a href={website ? website : ''}>{company}</a>
-			</h1>
-			<h1 className="vertical-timeline-element-subtitle">{position}</h1>
-			<h1 className="vertical-timeline-element-subtitle">{location}</h1>
-			<div className="not-scrollable btn bg-green-bg text-green-text text-sm rounded-3xl py-1 min-w-[90px] max-w-[90px] h-[30px] flex justify-center items-center">{type}</div>
-			<h4 className="wrapped-text text-xs leading-8 md:text-md lg:text-lg xl:text-xl font-light opacity-70">{description}</h4>
-			<div className="not-scrollable flex flex-col gap-2 ">
-				<div className="workImg not-scrollable flex flex-wrap justify-around items-baseline w-full gap-4 pb-2">
+			<div className="flex flex-col gap-2">
+				<div className="w-full flex justify-between">
+					<h1 className="vertical-timeline-element-title wrapped-text">
+						<a href={website ? website : ''}>{company}</a>
+					</h1>
+					<h1 className="vertical-timeline-element-subtitle wrapped-text">{position}</h1>
+				</div>
+				<div className="w-full flex justify-between">
+					<h1 className="vertical-timeline-element-subtitle">{location}</h1>
+					<div className="not-scrollable btn bg-green-bg text-green-text text-sm rounded-3xl min-w-[80px] max-w-[90px] h-[20px] flex justify-center items-center">
+						<h5 className="mt-1">{type}</h5>
+					</div>
+				</div>
+
+				<h4 className="wrapped-text text-xs leading-4 md:text-base font-light ">{description}</h4>
+
+				<div className="workImg not-scrollable flex flex-wrap justify-around items-baseline w-full gap-1 pb-2">
 					{tech ? (
 						tech.map((item, idx) => {
 							return <img src={item} className="w-[30px]" alt="" key={idx} />;

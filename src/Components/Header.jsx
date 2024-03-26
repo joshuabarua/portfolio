@@ -18,16 +18,24 @@ function Header({isOpen, setIsOpen}) {
 		console.warn('setIsOpen function is not provided!');
 	};
 
+	// const handleNavLinkClick = (event) => {
+	// 	event.preventDefault();
+	// 	event.stopPropagation();
+	// 	if (isOpen) {
+	// 		setIsOpen(false);
+	// 	}
+	// };
+
 	const handleSetIsOpen = setIsOpen || defaultSetIsOpen;
 
 	const isMenuOpen = !!isOpen;
 
 	return (
 		<header>
-			<nav className={`flex justify-between gap-4 flex-col `}>
-				<ul className="flex justify-start content-start flex-col gap-1  mt-[50px] md:gap-1 md:mt-0">
+			<nav className={`flex justify-between gap-16 flex-col `}>
+				<ul className="flex justify-start content-start flex-col gap-1">
 					{navLinks.map((link, index) => (
-						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-md md:text-lg lg:text-xl xl:text-2xl" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
+						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-lg md:text-lg lg:text-xl xl:text-2xl" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
 							<NavLink
 								to={link.path}
 								className={({isActive}) =>
@@ -40,13 +48,13 @@ function Header({isOpen, setIsOpen}) {
 						</li>
 					))}
 				</ul>
-				<ul className="flex justify-start items-center flex-row gap-6">
+				<ul className="flex justify-start items-center flex-row gap-8">
 					<li>
 						<a href={linkdein} target="_blank" rel="noreferrer noopener" className="header_icon">
 							<svg
 								className="dark:fill-light-heading fill-dark-heading header_icon"
-								width="30"
-								height="30"
+								width="40"
+								height="40"
 								viewBox="0 0 30 30"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg">
@@ -58,8 +66,8 @@ function Header({isOpen, setIsOpen}) {
 						<a href={github} target="_blank" rel="noreferrer noopener" className="header_icon">
 							<svg
 								className="dark:fill-light-heading fill-dark-heading header_icon"
-								width="30"
-								height="30"
+								width="40"
+								height="40"
 								viewBox="0 0 30 30"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg">
