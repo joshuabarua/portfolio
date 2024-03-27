@@ -35,3 +35,8 @@ export function useColorScheme() {
 		setIsDark,
 	};
 }
+
+export const isDarkMode = () => {
+	if (document.body.classList.contains('dark')) return true;
+	return false;
+};

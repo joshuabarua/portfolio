@@ -33,6 +33,7 @@
 	--text-light: #f2f2f2;
 	--pad: 30px;
 	--underline-color: #1a1a1a;
+	--timeline-line: #1a1a1a;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -70,6 +71,7 @@ body.dark {
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
 	--underline-color: #f2f2f2;
+	--timeline-line: #f2f2f2;
 }
 
 /* old root 
@@ -420,4 +422,25 @@ input:focus {
 
 .projectCard.is-inactive {
 	grid-column: span 2;
+}
+
+/*** Vertical Timeline Styles ***/
+
+.vertical-timeline.vertical-timeline--two-columns::before {
+	margin-left: 0px !important;
+}
+
+.vertical-timeline::before {
+	width: 2px !important;
+	background: var(--timeline-line) !important;
+}
+
+.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+	left: 130% !important;
+}
+
+.vertical-timeline--two-columns .vertical-timeline-element:nth-child(2n):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date {
+	left: auto !important;
+	right: 100% !important;
+	text-align: center !important;
 }
