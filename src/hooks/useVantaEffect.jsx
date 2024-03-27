@@ -10,10 +10,10 @@ const initializeVanta = (myRef, THREE, TRUNK, isDark, spacing) => {
 		minHeight: 400.0,
 		minWidth: 400.0,
 		scale: 1,
-		scaleMobile: 0.5,
+		scaleMobile: 1,
 		color: isDark ? 0x959393 : 0x0d0d0d,
 		spacing: spacing,
-		chaos: isDark ? 3.2 : 3.0,
+		chaos: isDark ? 6 : 3.0,
 	});
 };
 
