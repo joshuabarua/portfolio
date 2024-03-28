@@ -444,3 +444,10 @@ input:focus {
 	right: 100% !important;
 	text-align: center !important;
 }
+
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline.vertical-timeline--two-columns {
+    width: 100% !important;
+  }
+}
