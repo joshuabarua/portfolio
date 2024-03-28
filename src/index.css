@@ -105,12 +105,13 @@ body.dark {
 	right: var(--pad);
 	top: var(--pad);
 	bottom: var(--pad); */
-	position: fixed;
-	left: -45vw;
-	bottom: -45vw;
-	width: 85vw;
-	height: 85vw;
-	border-radius: 45%;
+	position: absolute;
+	left: clamp(-200px, -45%, -650px);
+	bottom: clamp(-200px, -45%, -650px);
+	width: clamp(500px, 85vw, 1200px);
+	height: clamp(500px, 85vw, 1200px);
+	border-radius: 50%;
+
 	border: 1px solid black;
 	z-index: -1;
 	pointer-events: none;
@@ -445,9 +446,13 @@ input:focus {
 	text-align: center !important;
 }
 
-
 @media only screen and (min-width: 1170px) {
-  .vertical-timeline.vertical-timeline--two-columns {
-    width: 100% !important;
-  }
+	.vertical-timeline.vertical-timeline--two-columns {
+		width: 100% !important;
+	}
+
+	#background {
+		left: -550px;
+		bottom: -550px;
+	}
 }
