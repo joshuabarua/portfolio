@@ -106,8 +106,8 @@ body.dark {
 	top: var(--pad);
 	bottom: var(--pad); */
 	position: absolute;
-	left: clamp(-200px, -45%, -650px);
-	bottom: clamp(-200px, -45%, -650px);
+	left: clamp(-250px, -45%, -650px);
+	bottom: clamp(-250px, -45%, -650px);
 	width: clamp(500px, 85vw, 1200px);
 	height: clamp(500px, 85vw, 1200px);
 	border-radius: 50%;
@@ -313,14 +313,59 @@ body.dark {
 	justify-content: center;
 }
 
+/** LIGHT DARK TOGGLE START **/
+
 .lightdark {
 	position: fixed;
 	left: var(--pad);
-	bottom: 30px;
+	bottom: 24px;
 	z-index: 10;
-	writing-mode: sideways-lr;
-	left: 5px;
+	left: -0px;
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	height: 100%;
+	width: 29px;
 }
+
+.lightdark .baseline {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.custom-checkbox {
+	display: none;
+}
+
+.custom-checkbox:checked {
+	background-color: grey;
+	border-color: grey;
+}
+
+.custom-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	cursor: pointer;
+	width: 25px;
+	margin-left: 1px;
+}
+
+.baseline label {
+	width: 25px;
+}
+
+@media screen and (max-width: 368px) {
+	.custom-box {
+		font-size: 20px;
+	}
+}
+
+/** LIGHT DARK TOGGLE FINISH **/
 
 .wrapped-text {
 	overflow-wrap: break-word;
@@ -363,21 +408,6 @@ textarea {
 textarea:focus,
 input:focus {
 	color: var(--text-dark);
-}
-
-.custom-checkbox {
-	display: none;
-}
-
-.custom-checkbox:checked {
-	background-color: grey;
-	border-color: grey;
-}
-
-.custom-box {
-	font-size: 25px;
-	cursor: pointer;
-	margin-left: -5px;
 }
 
 .projectCard {

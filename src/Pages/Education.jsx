@@ -13,8 +13,8 @@ function Education() {
 			<main className="h-screen w-[100%] flex justify-center items-center flex-col">
 				<div className="h-full w-[60%] pt-4 mt-3">
 					<VerticalTimeline lineColor={isDark ? '#f2f2f2' : '#1a1a1a'}>
-						{eduDetails.map(({...eduDetails}) => (
-							<Work props={eduDetails} isDark={isDark} />
+						{eduDetails.map(({...eduDetails}, idx) => (
+							<Work props={eduDetails} isDark={isDark} key={idx} />
 						))}
 					</VerticalTimeline>
 				</div>
