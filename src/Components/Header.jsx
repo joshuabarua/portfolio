@@ -32,7 +32,7 @@ function Header({isOpen, setIsOpen}) {
 
 	return (
 		<header>
-			<nav className={`flex justify-between gap-16 flex-col `}>
+			<nav className={`flex justify-between gap-4 flex-col `}>
 				<ul className="flex justify-start content-start flex-col gap-1">
 					{navLinks.map((link, index) => (
 						<li key={index} className="pb-1 md:pb-0 hover-underline-animation text-lg md:text-lg lg:text-xl xl:text-2xl" onClick={(e) => handleSetIsOpen(!isMenuOpen)}>
@@ -48,7 +48,7 @@ function Header({isOpen, setIsOpen}) {
 						</li>
 					))}
 				</ul>
-				<ul className="flex justify-start items-center flex-row gap-8">
+				<ul className="flex justify-start items-center flex-row gap-4">
 					<li>
 						<a href={linkdein} target="_blank" rel="noreferrer noopener" className="header_icon">
 							<svg
