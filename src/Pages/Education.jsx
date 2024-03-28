@@ -13,11 +13,9 @@ function Education() {
 			<main className="h-screen w-[100%] flex justify-center items-center flex-col">
 				<div className="h-full w-[60%] mx-48 pt-4 mt-3">
 					<VerticalTimeline lineColor={isDark ? '#f2f2f2' : '#1a1a1a'}>
-						{React.Children.toArray(
-							eduDetails.map(({Position, Company, Location, Type, Duration, Tech}) => (
-								<Work position={Position} company={Company} location={Location} type={Type} duration={Duration} tech={Tech} isDark={isDark} />
-							))
-						)}
+						{eduDetails.map(({...eduDetails}) => (
+							<Work props={eduDetails} isDark={isDark} />
+						))}
 					</VerticalTimeline>
 				</div>
 			</main>

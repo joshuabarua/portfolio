@@ -1,6 +1,15 @@
 // Logo images
 import logogradient from '../assets/logo.svg';
 import logo from '../assets/logo.png';
+import risefx from '../assets/riseFx.png';
+import rmit from '../assets/rmit.jpg';
+import procad from '../assets/procad.png';
+import cab from '../assets/CAB.png';
+import ggirl from '../assets/GalaxyGirlLogo.png';
+import poa from '../assets/POA6.png';
+import tca from '../assets/tca.png';
+import vicsq from '../assets/vicsq.png';
+
 // Profile Image
 import profile from '../assets/profile.png';
 // Tech stack images
@@ -54,10 +63,20 @@ import boulderbbs from '../assets/projects/boulderbbs.png';
 import weatherWear from '../assets/projects/weather_wear.png';
 import ricknmorty from '../assets/projects/rickandmorty.png';
 
+//logos
+
 // Logos
 export const logos = {
 	logogradient: logogradient,
 	logo: logo,
+	risefx: risefx,
+	rmit: rmit,
+	procad: procad,
+	cab: cab,
+	ggirl: ggirl,
+	poa: poa,
+	tca: tca,
+	vicsq: vicsq,
 };
 
 // Enter your Personal Details here
@@ -133,6 +152,8 @@ export const workDetails = [
 		Type: 'Full Time',
 		Duration: 'Mar 2022 - Mar 2023',
 		Tech: [react, ts, npm, graphql, mui, git, css],
+		Logo: risefx,
+		Color: 'black',
 	},
 	{
 		Position: 'Frontend Developer',
@@ -144,6 +165,8 @@ export const workDetails = [
 		Type: 'Freelance',
 		Duration: 'Jan 2022 - Jan 2023',
 		Tech: [react, js, yarn, styled, mui, git, css, vite],
+		Logo: ggirl,
+		Color: '#ffeab0',
 	},
 	{
 		Position: 'Content Developer',
@@ -154,6 +177,8 @@ export const workDetails = [
 		Location: 'Remote/Berlin, Germany',
 		Type: 'Part Time',
 		Duration: 'Jul 2021 - Mar 2022',
+		Logo: procad,
+		Color: '#0d0d0c',
 	},
 	{
 		Position: 'Freelance',
@@ -163,6 +188,8 @@ export const workDetails = [
 		Type: 'Part Time',
 		Duration: 'Jun 2021 - Jan 2022',
 		Tech: [wordpress, js, css],
+		Logo: poa,
+		Color: '#f7d997',
 	},
 	{
 		Position: 'Frontend Developer',
@@ -173,6 +200,8 @@ export const workDetails = [
 		Type: 'Part Time',
 		Duration: 'Apr 2020 - Sep 2020',
 		Tech: [js, php, sql, css],
+		Logo: vicsq,
+		Color: '#a1785e',
 	},
 	{
 		Position: 'Frontend Developer',
@@ -183,6 +212,8 @@ export const workDetails = [
 		Type: 'Part Time',
 		Duration: 'Apr 2020 - Sep 2020',
 		Tech: [wordpress, js, css, mapbox],
+		Logo: tca,
+		Color: '#88dbbe',
 	},
 ];
 
@@ -196,6 +227,8 @@ export const eduDetails = [
 		Type: 'Full Time',
 		Duration: 'May 2023 - October 2023',
 		Tech: [react, ts, js, graphql, yarn, tailwind, express, firebase, jwt, mui, git, github, rest, html, css, vite],
+		Logo: cab,
+		Color: '#239178',
 	},
 	{
 		Position: 'Bachelors Degree of Information Technology & Computer Science',
@@ -205,6 +238,8 @@ export const eduDetails = [
 		Type: 'Full Time',
 		Duration: 'Jul 2017 - Jan 2020',
 		Tech: [java, swift, ruby, python, php, sql, js, git, github, html, css],
+		Logo: rmit,
+		Color: '#fc4444',
 	},
 	{
 		Position: 'Associate Degree of Information Technology',
@@ -214,6 +249,8 @@ export const eduDetails = [
 		Type: 'Full Time',
 		Duration: 'Jul 2016 - Jan 2017',
 		Tech: [java, php, sql, js, git, html, css],
+		Logo: rmit,
+		Color: '#ed0c0c',
 	},
 ];
 
