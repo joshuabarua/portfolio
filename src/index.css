@@ -97,7 +97,7 @@ body.dark {
 	height: 100%;
 	overflow: hidden;
 	white-space: nowrap;
-	min-width: 325px;
+	min-width: 300px;
 }
 
 #background {
@@ -111,7 +111,6 @@ body.dark {
 	width: clamp(500px, 85vw, 1200px);
 	height: clamp(500px, 85vw, 1200px);
 	border-radius: 50%;
-
 	border: 1px solid black;
 	z-index: -1;
 	pointer-events: none;
@@ -255,6 +254,10 @@ body.dark {
 .p5canvas {
 	background: none;
 } */
+
+#content {
+	/* position: relative; */
+}
 
 /* nav */
 
