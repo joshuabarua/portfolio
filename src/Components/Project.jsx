@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Project({title, image, description, techstack, previewLink, githubLink}) {
+function Project({props}) {
+	const {title, image, description, techstack, previewLink, githubLink} = props;
+
 	return (
 		<article className="projectCard rounded-xl max-w-[400px] min-w-[200px] h-[550px] mt-5 overflow-hidden lg:max-w-[550px] lg:h-[600px] border-dark-content dark:border-light-content border-opacity-10  p-2 bg-slate-200 dark:bg-slate-700 bg-opacity-90 dark:bg-opacity-90 dark:border-opacity-20 overflow-x-hidden shadow-md shadow-slate-300 dark:shadow-slate-900 mb-[10%] h-lg:mb-[32px]">
 			<div className="w-full h-full overflow-y-hidden flex items-center flex-col">

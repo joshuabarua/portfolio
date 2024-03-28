@@ -22,8 +22,8 @@ const mobileRoutes = [
 	{path: '/contact', component: ContactMobile},
 	{path: '/experience', component: Experience},
 	{path: '/education', component: Education},
-	{path: '/technologies', component: TechMobile},
-	{path: '/projects', component: ProjectsMobile},
+	{path: '/technologies', component: Technologies},
+	{path: '/projects', component: Projects},
 ];
 
 const desktopRoutes = [
@@ -41,7 +41,7 @@ const bigRoutes = [
 	{path: '/experience', component: Experience},
 	{path: '/education', component: Education},
 	{path: '/technologies', component: Technologies1440},
-	{path: '/projects', component: Projects1440},
+	{path: '/projects', component: Projects},
 ];
 
 export {desktopRoutes, mobileRoutes, bigRoutes};
