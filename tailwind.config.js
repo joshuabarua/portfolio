@@ -9,6 +9,7 @@ module.exports = {
 				'h-sm': {raw: '(min-height: 640px)'},
 				'h-md': {raw: '(min-height: 768px)'},
 				'h-lg': {raw: '(min-height: 1080px)'},
+				'w-vtl': {raw: '(min-width: 1170px)'},
 				dark: {raw: '(prefers-color-scheme: dark)'},
 			},
 			fontFamily: {

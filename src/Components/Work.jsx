@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {VerticalTimelineElement} from 'react-vertical-timeline-component';
 
 const Icon = ({logo, company}) => (
-	<div className="flex justify-center items-center rounded-full pt-[1px] md:pt-[1px]">
-		<img src={logo} alt={company} className="rounded-full  sm:w-[38px] sm:h-[38px] md:w-[58px] md:h-[58px]" />
+	<div className="flex justify-center items-center rounded-full pt-[1px]">
+		<img src={logo} alt={company} className="rounded-full  w-[38px] h-[38px] w-vtl:w-[58px] w-vtl:h-[58px]" />
 	</div>
 );
 
