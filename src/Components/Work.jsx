@@ -8,22 +8,8 @@ const Icon = ({logo, company}) => (
 );
 
 function Work({props, isDark}) {
-	const [loading, setLoading] = useState(false);
-
-	useEffect(() => {
-		if (props === undefined) {
-			setLoading(true);
-		}
-		setLoading(false);
-	}, [props]);
-
-	if (loading) {
-		return <div>Loading...</div>;
-	}
-
 	const {Position, Description, Company, Location, Type, Duration, Website, Tech, Color, Logo} = props;
 
-	console.log(props);
 	return (
 		<VerticalTimelineElement
 			className="vertical-timeline-element--work "

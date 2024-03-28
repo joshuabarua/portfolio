@@ -10,24 +10,20 @@ export const DarkModeToggle = ({setIsDark, isDark, vantaEffect}) => {
 
 	return (
 		<>
-			<div className="lightdark flex justify-center items-start gap-5  ">
-				<div className="flex gap-[1px] justify-center items-center ">
+			<div className="lightdark  gap-4  ">
+				<div className="baseline">
 					<input type="checkbox" id="light-checkbox" className="custom-checkbox " checked={!isDark} onChange={() => handleToggle('light')} />
 					<div className="custom-box" onClick={() => handleToggle('light')}>
 						{!isDark ? '■' : '□'}
 					</div>
-					<label htmlFor="light-checkbox" className="mt-[2px]">
-						LIGHT
-					</label>
+					<label htmlFor="light-checkbox">LIGHT</label>
 				</div>
-				<div className="flex gap-[1px] justify-center items-center ">
-					<input type="checkbox" id="dark-checkbox" className="custom-checkbox w-0 h-0" checked={isDark} onChange={() => handleToggle('dark')} />
+				<div className="baseline">
+					<input type="checkbox" id="dark-checkbox" className="custom-checkbox" checked={isDark} onChange={() => handleToggle('dark')} />
 					<div className="custom-box " onClick={() => handleToggle('dark')}>
 						{isDark ? '■' : '□'}
 					</div>
-					<label htmlFor="dark-checkbox" className="mt-[2px]">
-						DARK
-					</label>
+					<label htmlFor="dark-checkbox">DARK</label>
 				</div>
 			</div>
 		</>
