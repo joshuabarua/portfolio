@@ -20,8 +20,8 @@ import Technologies from '../Pages/Technologies';
 const mobileRoutes = [
 	{path: '/', component: AboutMobile},
 	{path: '/contact', component: ContactMobile},
-	{path: '/experience', component: ExperienceMobile},
-	{path: '/education', component: EducationMobile},
+	{path: '/experience', component: Experience},
+	{path: '/education', component: Education},
 	{path: '/technologies', component: TechMobile},
 	{path: '/projects', component: ProjectsMobile},
 ];
@@ -38,8 +38,8 @@ const desktopRoutes = [
 const bigRoutes = [
 	{path: '/', component: About1440},
 	{path: '/contact', component: ContactForm1440},
-	{path: '/experience', component: Experience1440},
-	{path: '/education', component: Education1440},
+	{path: '/experience', component: Experience},
+	{path: '/education', component: Education},
 	{path: '/technologies', component: Technologies1440},
 	{path: '/projects', component: Projects1440},
 ];
