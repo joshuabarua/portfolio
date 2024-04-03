@@ -61,10 +61,10 @@ function App() {
 				<div className="frame_line frame_line-bottom bg-dark-color dark:bg-light-color"></div>
 			</div>
 			<div className="mask">
-				<div className="mask_top  dark:bg-dark-color bg-light-color"></div>
-				<div className="mask_bottom  dark:bg-dark-color bg-light-color"></div>
-				<div className="mask_left  dark:bg-dark-color bg-light-color"></div>
-				<div className="mask_right  dark:bg-dark-color bg-light-color"></div>
+				<div className="mask_top  dark:bg-dark-color bg-mask-light"></div>
+				<div className="mask_bottom  dark:bg-dark-color bg-mask-light"></div>
+				<div className="mask_left  dark:bg-dark-color bg-mask-light"></div>
+				<div className="mask_right  dark:bg-dark-color bg-mask-light"></div>
 			</div>
 
 			<Router>
