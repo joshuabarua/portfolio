@@ -6,12 +6,8 @@ function Projects() {
 	return (
 		<>
 			<h1 className="text-2xl dark-text dark:light-text page-title">Projects</h1>
-			<main className="h-screen w-[100%] flex justify-start items-end flex-col mt-[31px]">
-				<section className="w-[70%] mb-[31px]">
-					<div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-8 mr-[2.5rem]  md:pr-0 ">
-						{React.Children.toArray(projectDetails.map(({...projectDetails}) => <Project props={projectDetails} />))}
-					</div>
-				</section>
+			<main className="h-screen w-[65%] flex justify-start items-center flex-col mt-[31px]">
+				<div className="projectCardGrid">{React.Children.toArray(projectDetails.map(({...projectDetails}, idx) => <Project props={projectDetails} idx={idx} />))}</div>
 			</main>
 		</>
 	);

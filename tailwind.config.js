@@ -24,6 +24,7 @@ module.exports = {
 				'dark-content': '#666666',
 				'dark-color': '#1a1a1a',
 				'light-color': '#f2f2f2',
+				'mask-light': '#eeebeb;',
 				'dark-card': '#1a1a1a',
 				'dark-text': '#1a1a1a',
 				'light-text': '#f2f2f2',
