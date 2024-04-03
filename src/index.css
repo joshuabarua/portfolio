@@ -432,10 +432,9 @@ input:focus {
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 1.5em;
 	margin: 0rem 5rem;
-
-	min-width: 25rem;
+	min-width: 32rem;
 	max-width: 70rem;
-	padding: 0rem 5rem;
+	padding: 0rem 6rem;
 }
 
 .projectCard {
@@ -488,6 +487,50 @@ body.dark .projectCard {
 .projectCard.is-inactive {
 	grid-column: span 2;
 	height: auto;
+}
+
+@media screen and (max-width: 768px) {
+	.projectCardGrid {
+		grid-gap: 1rem;
+		min-width: 25rem;
+		padding: 0rem 2rem;
+		margin-top: 30px;
+	}
+
+	.projectCard {
+		font-size: 1.1rem;
+		gap: 1.2rem;
+		padding: 7px;
+	}
+
+	.projectCard.is-inactive {
+		grid-column: span 3;
+	}
+}
+
+@media screen and (max-width: 392px) {
+	.projectCardGrid {
+		grid-gap: 1rem;
+		min-width: 15rem;
+		padding: 0rem 1rem;
+		margin-top: 30px;
+	}
+
+	.projectCard {
+		grid-column: span 3;
+		font-size: 1rem;
+		gap: 1rem;
+		padding: 5px;
+	}
+
+	.projectCard.is-inactive {
+		grid-column: span 6;
+	}
+}
+
+.projectCard.is-inactive img {
+	max-width: 70%;
+	min-width: 80px;
 }
 
 .is-inactive {
