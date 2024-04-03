@@ -432,8 +432,7 @@ input:focus {
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 1.5em;
 	margin: 0rem 5rem;
-	overflow-y: auto;
-	overflow-x: hidden;
+
 	min-width: 25rem;
 	max-width: 70rem;
 	padding: 0rem 5rem;
@@ -441,7 +440,7 @@ input:focus {
 
 .projectCard {
 	grid-column: span 3;
-	height: 15rem;
+	height: auto;
 	border-radius: 1rem;
 	cursor: pointer;
 	display: flex;
@@ -465,6 +464,10 @@ body.dark .projectCard {
 	display: none;
 }
 
+.projectCard img {
+	border-radius: 0.2rem;
+}
+
 .projectCard.active .details {
 	display: block;
 	line-height: 1.2rem;
@@ -478,12 +481,13 @@ body.dark .projectCard {
 }
 
 .projectCard.active img {
-	max-width: 80%;
-	min-width: 100px;
+	max-width: 70%;
+	min-width: 200px;
 }
 
 .projectCard.is-inactive {
 	grid-column: span 2;
+	height: auto;
 }
 
 .is-inactive {

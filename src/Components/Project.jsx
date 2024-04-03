@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy} from 'react';
 import gsap from 'gsap';
 import {Flip} from 'gsap/Flip';
 
@@ -26,7 +26,7 @@ function Project({props, idx}) {
 		}
 
 		Flip.from(flipState, {
-			duration: 1,
+			duration: 1.2,
 			ease: 'expo.out',
 			absolute: true,
 		});
@@ -34,9 +34,9 @@ function Project({props, idx}) {
 
 	return (
 		<article className="projectCard" onClick={handleCardClick}>
-			<img src={image} alt="" />
-			<h1 className="dark-text wrapped-text dark:light-text font-semibold text-lg  lg:text-xl xl:text-2xl">{title}</h1>
-			<div className="details wrapped-text p-4">
+			<img src={image} alt="" loading={lazy} />
+			<h1 className="dark-text wrapped-text break-all dark:light-text font-semibold text-lg lg:text-xl xl:text-2xl">{title}</h1>
+			<div className="details wrapped-text px-10">
 				<p className="wrapped-text font-light text-md  lg:text-lg xl:text-xl">{description}</p>
 				<h3 className="dark-text dark:light-text  pt-2 ">
 					<strong>Tech Stack: </strong>
