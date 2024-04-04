@@ -38,7 +38,7 @@ const ContactMobile = () => {
 
 	return (
 		<main className="h-screen w-full flex justify-center items-center flex-col overflow-hidden">
-			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight page-title ">Contact</h1>
+			<h1 className="dark-text dark:light-text text-md mr-[-1px] md:text-2xl xl:leading-tight page-title ">Contact</h1>
 			<section className="w-[70%]">
 				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-1 w-[100%] h-[550px] max-w-[500px] rounded-md">
 					{/* Name */}

@@ -22,8 +22,8 @@ const HomeMobile = () => {
 
 	return (
 		<>
-			<div className="flex justify-start items-baseline top-[7px] absolute w-full ml-8 z-10">
-				<h1 className="wrapped-text  text-dark-text dark:text-light-text text-xl ">{name}</h1>
+			<div className="flex justify-start items-baseline absolute w-full ml-6 z-10">
+				<h1 className="wrapped-text text-dark-text dark:text-light-text text-base sm:text-lg">{name}</h1>
 			</div>
 			<div className={`burger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
 				<span className="burger-line burger-line-top bg-dark-color dark:bg-light-color"></span>
@@ -32,8 +32,8 @@ const HomeMobile = () => {
 			</div>
 			{shouldRender && (
 				<>
-					<div className={`flex justify-start items-baseline top-[7px] absolute w-full ml-8 ${isOpen ? 'z-20' : 'z-[-10]'}`}>
-						<h4 className="wrapped-text text-xl  text-dark-text dark:text-light-text ">{tagline}</h4>
+					<div className={`flex justify-start items-baseline absolute w-full ml-6 ${isOpen ? 'z-20' : 'z-[-190]'} `}>
+						<h4 className="wrapped-texttext-base sm:text-lg  text-dark-text dark:text-light-text ">{tagline}</h4>
 					</div>
 					<div className={`menu-screen ${isOpen ? 'open' : ''} bg-light-color dark:bg-dark-color`} onAnimationEnd={onAnimationEnd}>
 						<div className="flex justify-center items-center h-screen w-screen">

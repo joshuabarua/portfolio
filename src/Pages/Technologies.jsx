@@ -81,7 +81,7 @@ function Technologies() {
 
 	return (
 		<>
-			<h1 className="text-2xl dark-text dark:light-text page-title">Technologies</h1>
+			<h1 className="text-md mr-[-1px] md:text-2xl dark-text dark:light-text page-title">Technologies</h1>
 			<main className="h-screen w-[80%] flex justify-center items-center flex-col">
 				<div className="mt-32 px-4 md:px-16 flex gap-10 flex-col">
 					<section>

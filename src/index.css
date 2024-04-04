@@ -250,6 +250,27 @@ body.dark {
 	opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+	.mask_right,
+	.mask_left {
+		width: 20px;
+	}
+
+	.mask_top,
+	.mask_bottom {
+		height: 20px;
+	}
+
+	#frame {
+		position: fixed;
+		z-index: 10;
+		left: 20px;
+		right: 20px;
+		top: 20px;
+		bottom: 20px;
+	}
+}
+
 /* .blur {
 	backdrop-filter: blur(2px);
 } */
@@ -362,9 +383,22 @@ body.dark {
 	width: 25px;
 }
 
-@media screen and (max-width: 368px) {
+@media screen and (max-width: 768px) {
+	.lightdark {
+		bottom: 16px;
+	}
+	.lightdark .baseline {
+		margin-left: -1px;
+	}
+
 	.custom-box {
-		font-size: 20px;
+		font-size: 15px;
+	}
+
+	.baseline label {
+		width: 25px;
+		font-size: 12px;
+		margin-left: 7px;
 	}
 }
 
