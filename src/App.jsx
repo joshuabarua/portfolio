@@ -20,7 +20,7 @@ function App() {
 	const [showLoading, setLoading] = useState(true);
 	const myRef = useRef(null);
 	const {isMobile, isDesktop, is1440p} = useDeviceType();
-	console.log('Mobile:', isMobile, 'Desktop: ', isDesktop, '1440p:', is1440p);
+	// console.log('Mobile:', isMobile, 'Desktop: ', isDesktop, '1440p:', is1440p);
 	const getRoutes = useMemo(
 		() => (isMobile, isDesktop) => {
 			if (isMobile) return mobileRoutes;
