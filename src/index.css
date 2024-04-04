@@ -464,10 +464,10 @@ input:focus {
 
 /*** WORK COMPONENT STYLING ***/
 .work-header-text {
-	white-space: nowrap;
-	overflow-wrap: break-word;
-	text-wrap: balance;
-	word-wrap: break-word;
+	white-space: nowrap !important;
+	overflow-wrap: break-word !important;
+	text-wrap: wrap !important;
+	word-wrap: break-word !important;
 }
 
 /*** PROJECTS COMPONENT STYLING ***/

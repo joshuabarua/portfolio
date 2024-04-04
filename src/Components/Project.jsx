@@ -42,8 +42,8 @@ function Project({props, idx}) {
 					Tech Stack:
 					<span className="wrapped-text font-light text-xs md:text-lg xl:text-xl">{techstack}</span>
 				</h3>
-				<div className="flex justify-around items-center text-md lg:text-lg xl:text-xl wrapped-text flex-wrap pt-4 ">
-					<div className="flex items-center">
+				<div className="flex justify-around items-center text-md lg:text-lg xl:text-xl wrapped-text flex-wrap pt-4 gap-4">
+					<div className="flex items-center gap-0">
 						<svg
 							className="stroke-dark-heading dark:stroke-white inline-block min-w-fit"
 							width="20"
@@ -65,7 +65,7 @@ function Project({props, idx}) {
 							/>
 						</svg>
 						{previewLink ? (
-							<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light text-xs md:text-base dark:text-white">
+							<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline font-light text-xs md:text-base dark:text-white">
 								Live Preview
 							</a>
 						) : (
@@ -87,7 +87,7 @@ function Project({props, idx}) {
 							/>
 						</svg>
 
-						<a href={githubLink} target="_blank" rel="noreferrer noopener" className="underline pl-2 font-light dark:text-white text-xs md:text-base ">
+						<a href={githubLink} target="_blank" rel="noreferrer noopener" className="underline font-light dark:text-white text-xs md:text-base ">
 							View Code
 						</a>
 					</div>
