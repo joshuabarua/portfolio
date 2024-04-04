@@ -371,6 +371,7 @@ body.dark {
 .wrapped-text {
 	overflow-wrap: break-word;
 	white-space: normal;
+	text-wrap: balance;
 }
 
 .page-title {
@@ -424,6 +425,11 @@ input:focus {
 }
 
 /*** WORK COMPONENT STYLING ***/
+.work-header-text {
+	white-space: nowrap;
+	overflow-wrap: break-word;
+	text-wrap: balance;
+}
 
 /*** PROJECTS COMPONENT STYLING ***/
 

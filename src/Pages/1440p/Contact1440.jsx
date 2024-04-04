@@ -23,7 +23,6 @@ const ContactForm1440 = () => {
 		e.preventDefault();
 		try {
 			const result = await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
-			console.log('Form sent successfully:', result.text);
 
 			setFormData({
 				from_name: '',
@@ -56,6 +55,7 @@ const ContactForm1440 = () => {
 							type="text"
 							id="email-name"
 							name="from_name"
+							required
 							value={formData.from_name}
 							onChange={handleInputChange}
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-slate-100 focus:border-slate-100 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-slate-100 dark:focus:border-slate-100 focus:dark:text-light-color"
@@ -78,6 +78,7 @@ const ContactForm1440 = () => {
 							id="email-address"
 							name="from_email"
 							value={formData.from_email}
+							required
 							onChange={handleInputChange}
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:dark:text-light-color block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
 							placeholder="john@smith.com"
@@ -99,6 +100,7 @@ const ContactForm1440 = () => {
 							name="subject"
 							value={formData.subject}
 							onChange={handleInputChange}
+							required
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg  block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="Lets work together!"
 						/>
@@ -112,6 +114,7 @@ const ContactForm1440 = () => {
 							name="message"
 							rows="4"
 							value={formData.message}
+							required
 							onChange={handleInputChange}
 							className="block p-2.5 w-full text-xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:dark:text-light-color dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 							placeholder="Write your thoughts here..."></textarea>
