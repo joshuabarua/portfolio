@@ -15,8 +15,8 @@ function Work({props, isDark}) {
 			className="vertical-timeline-element--work "
 			contentStyle={
 				isDark
-					? {background: '#1f2020e7', Color: '#e8dada', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '175px'}
-					: {background: '#eaedf0e7', Color: '#111111', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '175px'}
+					? {background: '#1f2020e7', Color: '#e8dada', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '200px'}
+					: {background: '#eaedf0e7', Color: '#111111', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '200px'}
 			}
 			contentArrowStyle={{borderRight: isDark ? '10px solid #1f2020e7' : '10px solid #eaedf0e7', top: '1.5rem'}}
 			date={Duration}
@@ -26,7 +26,7 @@ function Work({props, isDark}) {
 				boxShadow: `0 0 0 3px ${Color}`,
 			}}
 			icon={<Icon logo={Logo} company={Company} />}>
-			<div className="flex flex-col justify-center items-center gap-2 w-[150px] md:w-full">
+			<div className="flex flex-col justify-center items-center gap-2 w-[180px] md:w-full">
 				<div className="grid grid-cols-4 grid-rows-auto gap-x-4 gap-y-2 md:gap-y-0 justify-items-start items-baseline">
 					<h1 className={`vertical-timeline-element-title wrapped-text text-sm md:text-base col-span-4 md:col-span-2`}>
 						<a href={Website ? Website : ''}>{Company}</a>
