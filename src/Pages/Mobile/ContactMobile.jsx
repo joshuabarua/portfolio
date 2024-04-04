@@ -23,7 +23,6 @@ const ContactMobile = () => {
 		e.preventDefault();
 		try {
 			const result = await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
-			console.log('Form sent successfully:', result.text);
 
 			setFormData({
 				from_name: '',
@@ -38,7 +37,7 @@ const ContactMobile = () => {
 	};
 
 	return (
-		<main className="h-screen w-full flex justify-center items-center flex-col">
+		<main className="h-screen w-full flex justify-center items-center flex-col overflow-hidden">
 			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight page-title ">Contact</h1>
 			<section className="w-[70%]">
 				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-1 w-[100%] h-[550px] max-w-[500px] rounded-md">
@@ -56,6 +55,7 @@ const ContactMobile = () => {
 							type="text"
 							id="email-name"
 							name="from_name"
+							required
 							value={formData.from_name}
 							onChange={handleInputChange}
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
@@ -77,6 +77,7 @@ const ContactMobile = () => {
 							type="text"
 							id="email-address"
 							name="from_email"
+							required
 							value={formData.from_email}
 							onChange={handleInputChange}
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
@@ -97,6 +98,7 @@ const ContactMobile = () => {
 							type="text"
 							id="email-subject"
 							name="subject"
+							required
 							value={formData.subject}
 							onChange={handleInputChange}
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
@@ -111,6 +113,7 @@ const ContactMobile = () => {
 							id="message"
 							name="message"
 							rows="4"
+							required
 							value={formData.message}
 							onChange={handleInputChange}
 							className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"

@@ -23,8 +23,6 @@ const ContactForm = () => {
 		e.preventDefault();
 		try {
 			const result = await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
-			console.log('Form sent successfully:', result.text);
-
 			setFormData({
 				from_name: '',
 				from_email: '',
@@ -60,6 +58,7 @@ const ContactForm = () => {
 								type="text"
 								id="email-name"
 								name="from_name"
+								required
 								value={formData.from_name}
 								onChange={handleInputChange}
 								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900 focus:border-slate-100  focus:ring-slate-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-slate-100 dark:focus:ring-slate-100"
@@ -82,6 +81,7 @@ const ContactForm = () => {
 								type="text"
 								id="email-address"
 								name="from_email"
+								required
 								value={formData.from_email}
 								onChange={handleInputChange}
 								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300  bg-gray-50 p-2.5 ps-10 text-lg  text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
@@ -103,6 +103,7 @@ const ContactForm = () => {
 								type="text"
 								id="email-subject"
 								name="subject"
+								required
 								value={formData.subject}
 								onChange={handleInputChange}
 								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 "
@@ -119,6 +120,7 @@ const ContactForm = () => {
 								id="message"
 								name="message"
 								rows="4"
+								required
 								value={formData.message}
 								onChange={handleInputChange}
 								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-lg text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"

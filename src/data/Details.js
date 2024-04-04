@@ -257,7 +257,7 @@ export const eduDetails = [
 // Enter your Project Details here
 export const projectDetails = [
 	{
-		title: 'Boulder Bebis',
+		title: 'Boulder Bebis GraphQL',
 		image: boulderbbs,
 		description: `[Work in Progress] A booking website for buying tokens to use at a local boulder hall timeslot online`,
 		previewLink: 'https://boulder-bebis.vercel.app/',
@@ -265,7 +265,7 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/Final_Project_CAB',
 	},
 	{
-		title: 'Weather Wear',
+		title: 'Weather Wear JS API',
 		image: weatherWear,
 		description: `An app that consumes an API using Javascript. This is weather app that tells you what to wear given the temperature throughout the day based on clothing options selected.`,
 		techstack: 'HTML/CSS, JavaScript, JSON, openWeatherAPI, geoLocation',
@@ -273,7 +273,7 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/CAB-JS-API-weatherApp',
 	},
 	{
-		title: 'Pfandtastisch',
+		title: 'Pfand-tastisch MERN',
 		image: pfantastisch,
 		previewLink: 'https://pfandtastisch-app.vercel.app/',
 		description: `[Work in Progress]  A web app to help users find the nearest pfandmachine nearby. `,
@@ -281,7 +281,7 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/pfantastisch-app',
 	},
 	{
-		title: 'Mystic Tarot',
+		title: 'Mystic Tarot ReactJS Firebase',
 		image: mystictarot,
 		description: `[Work in Progress] A Tarot Card website that allows card selections and firebase as a login system.`,
 		techstack: 'Typescript, Reactjs, CSS, Firebase',
@@ -289,7 +289,7 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/CAB-tarot-card-site-ts',
 	},
 	{
-		title: 'Mixtape',
+		title: 'Mixtape ReactJS',
 		image: mixtape,
 		description: `A simple webapp to play songs that look like a mixtape`,
 		techstack: 'Reactjs, JavaScript, CSS, Material-UI',
@@ -297,7 +297,7 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/mixtape_app',
 	},
 	{
-		title: 'Rick and Morty ',
+		title: 'Rick and Morty Typescript API',
 		image: ricknmorty,
 		description: `A mini project completed at Code Academy Berlin in a two days using the rick and morty API to display characters using typescript`,
 		techstack: 'Typescript, Reactjs, APIs, JSON',
@@ -305,7 +305,7 @@ export const projectDetails = [
 		githubLink: 'https://github.com/joshuabarua/ricknmorty-project2.5',
 	},
 	{
-		title: 'Boulder Berlin',
+		title: 'Boulder Berlin HTML/CSS',
 		image: boulderberlin,
 		description: `A simple website to test design skills with HTML/CSS`,
 		techstack: 'HTML/CSS',
