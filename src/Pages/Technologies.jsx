@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {techStackDetails} from '../data/details.js';
 import gsap from 'gsap';
 
@@ -46,19 +46,21 @@ function random(min, max) {
 
 function Technologies() {
 	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;
-
 	const iconImgs = gsap.utils.toArray('.tech img');
-	iconImgs.forEach((icon) => {
-		gsap.set(icon, {
-			x: randomX(-1),
-			y: randomX(1),
-			rotation: randomAngle(-1),
-		});
 
-		moveX(icon, 1);
-		moveY(icon, -1);
-		rotate(icon, 1);
-	});
+	useEffect(() => {
+		iconImgs.forEach((icon) => {
+			gsap.set(icon, {
+				x: randomX(-1),
+				y: randomX(1),
+				rotation: randomAngle(-1),
+			});
+
+			moveX(icon, 1);
+			moveY(icon, -1);
+			rotate(icon, 1);
+		});
+	}, [iconImgs]);
 
 	return (
 		<>
@@ -66,7 +68,7 @@ function Technologies() {
 			<main className="h-screen w-[80%] flex justify-center items-center flex-col">
 				<div className="md:mt-12 px-4 md:px-16 flex gap-10 flex-col">
 					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">Frequently Used</h4>
+						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">I usually use these...</h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
 							<img src={techStackDetails.ts} title="Typescript" alt="" />
 							<img src={js} title="JavaScript" alt="" />
@@ -89,7 +91,7 @@ function Technologies() {
 						</section>
 					</section>
 					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">Familiar With</h4>
+						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">I've used these in the past... </h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
 							<img src={techStackDetails.java} title="Java" alt="" />
 							<img src={techStackDetails.sql} title="MySQL" alt="" />
@@ -104,7 +106,7 @@ function Technologies() {
 					</section>
 
 					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">Tools</h4>
+						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">The other stuff...</h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 mb-[50px]">
 							<img src={vscode} title="Visual Studio Code" alt="" />
 							<img src={git} title="Git" alt="Git" />
