@@ -467,6 +467,7 @@ input:focus {
 	white-space: nowrap;
 	overflow-wrap: break-word;
 	text-wrap: balance;
+	word-wrap: break-word;
 }
 
 /*** PROJECTS COMPONENT STYLING ***/
