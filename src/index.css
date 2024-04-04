@@ -468,6 +468,7 @@ input:focus {
 	overflow-wrap: break-word !important;
 	text-wrap: wrap !important;
 	word-wrap: break-word !important;
+	word-break: break-word;
 }
 
 /*** PROJECTS COMPONENT STYLING ***/
