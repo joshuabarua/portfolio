@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {VerticalTimelineElement} from 'react-vertical-timeline-component';
 
 const Icon = ({logo, company}) => (
@@ -15,8 +15,8 @@ function Work({props, isDark}) {
 			className="vertical-timeline-element--work "
 			contentStyle={
 				isDark
-					? {background: '#1f2020e7', Color: '#e8dada', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '325px'}
-					: {background: '#eaedf0e7', Color: '#111111', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '325px'}
+					? {background: '#1f2020e7', Color: '#e8dada', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '175px'}
+					: {background: '#eaedf0e7', Color: '#111111', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '175px'}
 			}
 			contentArrowStyle={{borderRight: isDark ? '10px solid #1f2020e7' : '10px solid #eaedf0e7', top: '1.5rem'}}
 			date={Duration}
@@ -26,17 +26,14 @@ function Work({props, isDark}) {
 				boxShadow: `0 0 0 3px ${Color}`,
 			}}
 			icon={<Icon logo={Logo} company={Company} />}>
-			<div className="flex flex-col gap-2">
-				<div className={`w-full flex justify-between gap-4 ${Company.length > 30 ? 'flex-col' : ''}`}>
-					<h1 className={`vertical-timeline-element-title wrapped-text ${Company.length > 30 ? 'w-full' : 'w-1/2'}`}>
+			<div className="flex flex-col justify-center items-center gap-2 w-[150px] md:w-full">
+				<div className="grid grid-cols-4 grid-rows-auto gap-x-4 gap-y-2 md:gap-y-0 justify-items-start items-baseline">
+					<h1 className={`vertical-timeline-element-title wrapped-text text-sm md:text-base col-span-4 md:col-span-2`}>
 						<a href={Website ? Website : ''}>{Company}</a>
 					</h1>
-
-					<h1 className={`vertical-timeline-element-subtitle wrapped-text ${Position.length > 30 ? 'text-left' : 'text-right'}`}>{Position}</h1>
-				</div>
-				<div className="w-full flex justify-between">
-					<h1 className="vertical-timeline-element-subtitle">{Location}</h1>
-					<div className="not-scrollable btn bg-green-bg text-green-text text-sm rounded-3xl min-w-[80px] max-w-[90px] h-[20px] flex justify-center items-center">
+					<h1 className={`vertical-timeline-element-subtitle wrapped-text text-sm md:text-base col-span-4 md:col-span-2 `}>{Position}</h1>
+					<h1 className="vertical-timeline-element-subtitle text-sm md:text-base col-span-4 md:col-span-2">{Location}</h1>
+					<div className="not-scrollable btn bg-green-bg text-green-text text-xs md:text-sm rounded-3xl min-w-[80px] max-w-[90px] h-[20px] flex justify-center items-center col-span-4 md:col-span-2">
 						<h5 className="mt-1">{Type}</h5>
 					</div>
 				</div>

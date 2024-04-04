@@ -6,8 +6,8 @@ function Technologies() {
 	return (
 		<>
 			<h1 className="text-2xl dark-text dark:light-text page-title">Technologies</h1>
-			<main className="h-screen w-[90%] flex justify-end items-center pb-[100px]">
-				<div className=" w-[55%] overflow-y-auto">
+			<main className="h-screen w-[80%] flex justify-center items-center flex-col ">
+				<div className="overflow-y-auto px-4">
 					<section>
 						<h4 className="text-md dark-text dark:light-text xl:text-xl xl:leading-tight font-bold pt-5 opacity-70">Frequently Used</h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
