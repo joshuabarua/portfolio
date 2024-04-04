@@ -468,7 +468,7 @@ input:focus {
 	overflow-wrap: break-word !important;
 	text-wrap: wrap !important;
 	word-wrap: break-word !important;
-	word-break: break-word;
+	word-break: break-word; /** This is no longer supported but is supported by mobiles weirdly, so have to keep it **/
 }
 
 /*** PROJECTS COMPONENT STYLING ***/
