@@ -385,7 +385,7 @@ body.dark {
 
 @media screen and (max-width: 768px) {
 	.lightdark {
-		bottom: 16px;
+		bottom: 21px;
 	}
 	.lightdark .baseline {
 		margin-left: -1px;
@@ -464,7 +464,7 @@ input:focus {
 
 /*** WORK COMPONENT STYLING ***/
 .work-header-text {
-	white-space: nowrap !important;
+	white-space: normal !important;
 	overflow-wrap: break-word !important;
 	text-wrap: wrap !important;
 	word-wrap: break-word !important;
