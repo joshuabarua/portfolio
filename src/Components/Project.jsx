@@ -34,15 +34,15 @@ function Project({props, idx}) {
 
 	return (
 		<article className="projectCard " onClick={handleCardClick}>
-			<img src={image} alt="" loading={"lazy"} />
-			<h1 className="dark-text dark:light-text font-semibold work-header-text text-lg lg:text-xl xl:text-2xl">{title}</h1>
-			<div className="details wrapped-text px-2 md:px-12">
+			<img src={image} alt="" loading={'lazy'} />
+			<h1 className="dark-text dark:light-text work-header-text text-lg lg:text-xl xl:text-2xl">{title}</h1>
+			<div className="details wrapped-text px-2 md:px-12 ">
 				<p className="wrapped-text font-light text-md  lg:text-lg xl:text-xl">{description}</p>
 				<h3 className="dark-text dark:light-text  pt-2 ">
 					<strong>Tech Stack: </strong>
 					<span className="wrapped-text font-light text-md lg:text-lg xl:text-xl">{techstack}</span>
 				</h3>
-				<div className="flex justify-between items-center text-md lg:text-lg xl:text-xl wrapped-text flex-wrap">
+				<div className="flex justify-between items-center text-md lg:text-lg xl:text-xl wrapped-text flex-wrap pt-4 gap-2">
 					<div className="flex items-center">
 						<svg
 							className="stroke-dark-heading dark:stroke-white inline-block min-w-fit"
