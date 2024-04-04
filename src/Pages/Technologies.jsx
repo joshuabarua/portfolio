@@ -1,43 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useLayoutEffect, useRef} from 'react';
 import {techStackDetails} from '../data/details.js';
 import gsap from 'gsap';
-
-const randomX = random(1, 10);
-const randomY = random(1, 10);
-const randomDelay = random(0, 1);
-const randomTime = random(3, 5);
-const randomTime2 = random(5, 10);
-const randomAngle = random(-10, 10);
-
-function rotate(target, direction) {
-	gsap.to(target, {
-		rotation: randomAngle(direction),
-		duration: randomTime2(),
-		ease: 'sine.inOut',
-		onComplete: rotate,
-		onCompleteParams: [target, direction * -1],
-	});
-}
-
-function moveX(target, direction) {
-	gsap.to(target, {
-		x: randomX(direction),
-		duration: randomTime(),
-		ease: 'sine.inOut',
-		onComplete: moveX,
-		onCompleteParams: [target, direction * -1],
-	});
-}
-
-function moveY(target, direction) {
-	gsap.to(target, {
-		duration: randomTime(),
-		y: randomY(direction),
-		ease: 'sine.inOut',
-		onComplete: moveY,
-		onCompleteParams: [target, direction * -1],
-	});
-}
+import {useLocation} from 'react-router-dom';
 
 function random(min, max) {
 	const delta = max - min;
@@ -46,21 +10,74 @@ function random(min, max) {
 
 function Technologies() {
 	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;
-	const iconImgs = gsap.utils.toArray('.tech img');
 
-	useEffect(() => {
+	const location = useLocation();
+
+	const randomX = random(1, 10);
+	const randomY = random(1, 10);
+	const randomDelay = random(0, 1);
+	const randomTime = random(3, 5);
+	const randomTime2 = random(5, 10);
+	const randomAngle = random(-10, 10);
+
+	const rotate = useCallback(
+		(target, direction) => {
+			gsap.to(target, {
+				rotation: randomAngle(direction),
+				duration: randomTime2(),
+				ease: 'sine.inOut',
+				onComplete: rotate,
+				onCompleteParams: [target, direction * -1],
+			});
+		},
+		[randomAngle, randomTime2]
+	);
+
+	const moveX = useCallback(
+		(target, direction) => {
+			gsap.to(target, {
+				x: randomX(direction),
+				duration: randomTime(),
+				ease: 'sine.inOut',
+				onComplete: moveX,
+				onCompleteParams: [target, direction * -1],
+			});
+		},
+		[randomX, randomTime]
+	);
+
+	const moveY = useCallback(
+		(target, direction) => {
+			gsap.to(target, {
+				duration: randomTime(),
+				y: randomY(direction),
+				ease: 'sine.inOut',
+				onComplete: moveY,
+				onCompleteParams: [target, direction * -1],
+			});
+		},
+		[randomY, randomTime]
+	);
+
+	useLayoutEffect(() => {
+		const iconImgs = gsap.utils.toArray('.tech img');
 		iconImgs.forEach((icon) => {
+			moveX(icon, 1);
+			moveY(icon, -1);
+			rotate(icon, 1);
+
 			gsap.set(icon, {
 				x: randomX(-1),
 				y: randomX(1),
 				rotation: randomAngle(-1),
+				animationDelay: 1,
 			});
-
-			moveX(icon, 1);
-			moveY(icon, -1);
-			rotate(icon, 1);
 		});
-	}, [iconImgs]);
+
+		return () => {
+			gsap.killTweensOf('.tech img');
+		};
+	}, [location]);
 
 	return (
 		<>

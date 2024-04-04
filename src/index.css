@@ -108,10 +108,10 @@ body.dark {
 	top: var(--pad);
 	bottom: var(--pad); */
 	position: absolute;
-	left: clamp(-250px, -45%, -650px);
-	bottom: clamp(-250px, -45%, -650px);
-	width: clamp(500px, 85vw, 1200px);
-	height: clamp(500px, 85vw, 1200px);
+	left: clamp(-450px, -45%, -450px);
+	bottom: clamp(-450px, -45%, -450px);
+	width: clamp(500px, 85vw, 1100px);
+	height: clamp(500px, 85vw, 1100px);
 	border-radius: 50%;
 	border: 1px solid black;
 	z-index: -1;
@@ -120,6 +120,13 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+}
+
+@media screen and (max-width: 1170px) {
+	#background {
+		left: -250px !important;
+		bottom: -250px !important;
+	}
 }
 
 #background canvas {
@@ -245,11 +252,6 @@ body.dark {
 
 /* .blur {
 	backdrop-filter: blur(2px);
-} */
-
-/* .vanta-canvas,
-.p5canvas {
-	background: none;
 } */
 
 #content {
@@ -570,10 +572,5 @@ body.dark .projectCard {
 @media only screen and (min-width: 1170px) {
 	.vertical-timeline.vertical-timeline--two-columns {
 		width: 100% !important;
-	}
-
-	#background {
-		left: -550px;
-		bottom: -550px;
 	}
 }
