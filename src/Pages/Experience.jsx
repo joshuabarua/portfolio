@@ -11,7 +11,7 @@ function Experience() {
 		<>
 			<h1 className="page-title text-2xl dark-text dark:light-text">Experience</h1>
 			<main className="h-screen w-[100%] flex justify-start items-center flex-col mb-[-30px]">
-				<div className="mx-48 h-full pt-4 mt-4 ">
+				<div className=" md:mx-48 h-full pt-4 mt-4 ">
 					<VerticalTimeline lineColor={isDark ? '#f2f2f2' : '#1a1a1a'}>
 						{React.Children.toArray(workDetails.map(({...workDetails}, idx) => <Work props={workDetails} key={idx} isDark={isDark} />))}
 					</VerticalTimeline>
