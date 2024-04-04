@@ -13,8 +13,8 @@ function Technologies() {
 
 	const location = useLocation();
 
-	const randomX = random(1, 10);
-	const randomY = random(1, 10);
+	const randomX = random(1, 5);
+	const randomY = random(1, 5);
 	const randomDelay = random(0, 1);
 	const randomTime = random(3, 5);
 	const randomTime2 = random(5, 10);
