@@ -413,7 +413,7 @@ body.dark {
 .wrapped-text {
 	overflow-wrap: break-word;
 	white-space: normal;
-	text-wrap: balance;
+	/* text-wrap: balance; */
 }
 
 .page-title {
