@@ -113,7 +113,7 @@ body.dark {
 	width: clamp(500px, 85vw, 1100px);
 	height: clamp(500px, 85vw, 1100px);
 	border-radius: 50%;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	z-index: -1;
 	pointer-events: none;
 	overflow: hidden;
@@ -343,7 +343,7 @@ body.dark {
 	left: var(--pad);
 	bottom: 24px;
 	z-index: 10;
-	left: -0px;
+	left: 10px;
 	writing-mode: vertical-lr;
 	transform: rotate(180deg);
 	display: flex;
@@ -356,8 +356,7 @@ body.dark {
 .lightdark .baseline {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	margin-left: -7px;
+	align-items: flex-start;
 }
 
 .custom-checkbox {
@@ -373,32 +372,45 @@ body.dark {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 25px;
+	font-size: 29px;
 	cursor: pointer;
-	width: 25px;
-	margin-left: 2px;
+	width: 20px;
+	margin-left: 1px;
 }
 
-.baseline label {
-	width: 25px;
+.custom-box + label {
+	width: 30px !important;
+	font-size: 20px;
+	font-weight: 400 !important;
 }
 
 @media screen and (max-width: 768px) {
 	.lightdark {
 		bottom: 21px;
+		left: 0px;
 	}
-	.lightdark .baseline {
-		margin-left: -1px;
+
+	.baseline {
+		margin-left: 3px;
+	}
+
+	.custom-box,
+	.custom-box + label,
+	.custom-box h4 {
+		margin-left: 2px;
+		width: 20px !important;
+		font-weight: 100 !important;
+	}
+
+	.custom-box + label {
+		margin-left: -2px !important;
+		font-size: 18px;
 	}
 
 	.custom-box {
-		font-size: 15px;
-	}
-
-	.baseline label {
-		width: 25px;
-		font-size: 12px;
-		margin-left: 7px;
+		font-size: 18px;
+		font-family: 'Arial Narrow';
+		font-weight: 100;
 	}
 }
 

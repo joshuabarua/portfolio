@@ -16,7 +16,11 @@ export function useColorScheme() {
 				return !!systemPrefersDark;
 			}
 		}
-		return !!systemPrefersDark;
+		if (systemPrefersDark) {
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	const [isDark, setIsDark] = useState(getInitialColorScheme);

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Work from '../Components/Work';
 import {eduDetails} from '../data/details.js';
 import {VerticalTimeline} from 'react-vertical-timeline-component';
 import {isDarkMode} from '../hooks/useColorScheme.jsx';
+import {AppContext} from '../context/AppContext.jsx';
 
 function Education() {
-	const isDark = isDarkMode();
+	const {isDark} = useContext(AppContext);
 
 	return (
 		<>
@@ -14,7 +15,7 @@ function Education() {
 				<div className="h-full md:mx-48 pt-4 mt-4">
 					<VerticalTimeline lineColor={isDark ? '#f2f2f2' : '#1a1a1a'}>
 						{eduDetails.map(({...eduDetails}, idx) => (
-							<Work props={eduDetails} isDark={isDark} key={idx} />
+							<Work props={eduDetails} key={idx} />
 						))}
 					</VerticalTimeline>
 				</div>

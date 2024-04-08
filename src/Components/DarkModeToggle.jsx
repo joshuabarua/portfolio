@@ -1,26 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {AppContext} from '../context/AppContext';
 
-export const DarkModeToggle = ({setIsDark, isDark, vantaEffect}) => {
-	const handleToggle = () => {
-		console.log('button color scheme clicked');
-		if (vantaEffect) {
-			setIsDark(!isDark);
-		}
+export const DarkModeToggle = () => {
+	const {isDark, setIsDark} = useContext(AppContext);
+
+	const handleToggle = (isChecked) => {
+		setIsDark(!isDark);
 	};
 
 	return (
 		<>
-			<div className="lightdark  gap-4  ">
+			<div className="lightdark gap-4">
 				<div className="baseline">
-					<input type="checkbox" id="light-checkbox" className="custom-checkbox " checked={!isDark} onChange={() => handleToggle('light')} />
-					<div className="custom-box" onClick={() => handleToggle('light')}>
+					<input type="checkbox" id="light-checkbox" className="custom-checkbox" checked={!isDark} onChange={handleToggle} />
+					<div className="custom-box" onClick={handleToggle}>
 						{!isDark ? '■' : '□'}
 					</div>
 					<label htmlFor="light-checkbox">LIGHT</label>
 				</div>
 				<div className="baseline">
-					<input type="checkbox" id="dark-checkbox" className="custom-checkbox" checked={isDark} onChange={() => handleToggle('dark')} />
-					<div className="custom-box " onClick={() => handleToggle('dark')}>
+					<input type="checkbox" id="dark-checkbox" className="custom-checkbox" checked={isDark} onChange={handleToggle} />
+					<div className="custom-box" onClick={handleToggle}>
 						{isDark ? '■' : '□'}
 					</div>
 					<label htmlFor="dark-checkbox">DARK</label>
