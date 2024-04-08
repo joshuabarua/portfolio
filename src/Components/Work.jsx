@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {VerticalTimelineElement} from 'react-vertical-timeline-component';
+import {AppContext} from '../context/AppContext.jsx';
 
 const Icon = ({logo, company}) => (
 	<div className="flex justify-center items-center rounded-full pt-[1px]">
@@ -7,17 +8,15 @@ const Icon = ({logo, company}) => (
 	</div>
 );
 
-function Work({props, isDark}) {
+function Work({props}) {
 	const {Position, Description, Company, Location, Type, Duration, Website, Tech, Color, Logo} = props;
+
+	const {contentStyle, isDark} = useContext(AppContext);
 
 	return (
 		<VerticalTimelineElement
 			className="vertical-timeline-element--work "
-			contentStyle={
-				isDark
-					? {background: '#1f2020e7', Color: '#e8dada', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '200px'}
-					: {background: '#eaedf0e7', Color: '#111111', borderRadius: '3%', boxShadow: `0 3px 0 ${Color}`, minWidth: '200px'}
-			}
+			contentStyle={{...contentStyle, boxShadow: `0 3px 0 ${Color}`}}
 			contentArrowStyle={{borderRight: isDark ? '10px solid #1f2020e7' : '10px solid #eaedf0e7', top: '1.5rem'}}
 			date={Duration}
 			iconStyle={{
