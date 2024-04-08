@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Work from '../Components/Work';
 import {workDetails} from '../data/details.js';
 import {VerticalTimeline} from 'react-vertical-timeline-component';
@@ -6,7 +6,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import {isDarkMode} from '../hooks/useColorScheme.jsx';
 
 function Experience() {
-	const isDark = isDarkMode();
+	const isDark = useContext(isDarkMode);
 	return (
 		<>
 			<h1 className="page-title text-md mr-[-1px] md:text-2xl dark-text dark:light-text">Experience</h1>
