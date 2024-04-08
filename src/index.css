@@ -363,19 +363,15 @@ body.dark {
 	display: none;
 }
 
-.custom-checkbox:checked {
-	background-color: grey;
-	border-color: grey;
-}
-
 .custom-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 29px;
+	font-size: 25px;
 	cursor: pointer;
+	font-family: 'Arial Narrow';
 	width: 20px;
-	margin-left: 1px;
+	margin-left: 7px;
 }
 
 .custom-box + label {
@@ -409,8 +405,6 @@ body.dark {
 
 	.custom-box {
 		font-size: 18px;
-		font-family: 'Arial Narrow';
-		font-weight: 100;
 	}
 }
 
