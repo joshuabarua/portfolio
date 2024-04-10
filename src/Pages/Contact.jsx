@@ -38,15 +38,15 @@ const ContactForm = () => {
 	return (
 		<>
 			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight page-title ">Contact</h1>
-			<main className="flex w-[100%] flex-col items-center justify-center">
-				<section className="flex w-[70%] flex-col items-center justify-center">
+			<main className="flex w-full flex-col items-center justify-center">
+				<section className="flex w-[60%]">
 					<form
 						onSubmit={handleSubmit}
 						ref={formRef}
 						className="text-dark-color dark:text-light-color items-left flex  h-[700px] w-[550px] flex-col justify-center gap-2 rounded-md">
 						{/* Name */}
 						<label htmlFor="email-name" className="dark-text  dark:light-text block text-lg font-medium">
-							Name
+							Nameaaa
 						</label>
 						<div className="relative mb-2">
 							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
