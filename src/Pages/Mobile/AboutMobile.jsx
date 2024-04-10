@@ -6,9 +6,9 @@ function AboutMobile() {
 	return (
 		<>
 			<h1 className="wrapped-text text-md mr-[-1px] md:text-2xl text-dark-text dark:text-light-text page-title">About Me</h1>
-			<div className="w-full flex items-end flex-col-reverse h-xs:mb-[10%] mb-[25%] overflow-hidden">
+			<div className="w-full flex items-end flex-col-reverse mb-[10%] h-xs:mb-[20%] h-sm:mb-[35%] sm:mb-[35%] overflow-hidden">
 				<div className="flex items-end flex-col-reverse w-5/6 overflow-hidden ">
-					<p className="wrapped-text text-dark-text backdrop-opacity-30 backdrop-blur-xl dark:text-light-text text-xs pr-10 leading-tight h-md:text-base sm:text-sm md:text-base pb-18 sm:pr-16">
+					<p className="wrapped-text text-dark-text backdrop-opacity-30 backdrop-blur-xl dark:text-light-text text-xs pr-4 leading-tight h-md:text-base sm:text-sm md:text-base pb-18 sm:pr-16">
 						{about}
 					</p>
 				</div>
