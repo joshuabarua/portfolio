@@ -83,7 +83,7 @@ function Technologies() {
 		<>
 			<h1 className="text-md mr-[-1px] md:text-2xl dark-text dark:light-text page-title">Technologies</h1>
 			<main className="w-[80%] flex justify-center items-center flex-col]">
-				<div className="mt-20 md:mt-32 ml-8 px-6 md:px-16 flex gap-2 md:gap-10 flex-col">
+				<div className="mt-2 md:mt-32 ml-2 px-6 md:px-16 flex gap-2 md:gap-10 flex-col">
 					<section>
 						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">🛠️ Core Skills </h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
