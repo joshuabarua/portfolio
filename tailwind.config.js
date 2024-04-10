@@ -6,6 +6,7 @@ module.exports = {
 	theme: {
 		extend: {
 			screens: {
+				'h-xs': {raw: '(max-height: 480px)'},
 				'h-sm': {raw: '(min-height: 640px)'},
 				'h-md': {raw: '(min-height: 768px)'},
 				'h-lg': {raw: '(min-height: 1080px)'},
