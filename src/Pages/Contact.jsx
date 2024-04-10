@@ -38,8 +38,8 @@ const ContactForm = () => {
 	return (
 		<>
 			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight page-title ">Contact</h1>
-			<main className="flex h-screen w-[100%] flex-col items-end justify-center ">
-				<section className=" mb-[10%] flex w-[80%] flex-col items-center justify-center">
+			<main className="flex w-[100%] flex-col items-center justify-center">
+				<section className="flex w-[70%] flex-col items-center justify-center">
 					<form
 						onSubmit={handleSubmit}
 						ref={formRef}

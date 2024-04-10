@@ -82,10 +82,10 @@ function Technologies() {
 	return (
 		<>
 			<h1 className="text-md mr-[-1px] md:text-2xl dark-text dark:light-text page-title">Technologies</h1>
-			<main className="h-screen w-[80%] flex justify-center items-center flex-col mb-[-30px]">
+			<main className="w-[80%] flex justify-center items-center flex-col]">
 				<div className="mt-20 md:mt-32 ml-8 px-6 md:px-16 flex gap-2 md:gap-10 flex-col">
 					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">I usually use these...</h4>
+						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">🛠️ Core Skills </h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
 							<img src={techStackDetails.ts} title="Typescript" alt="" />
 							<img src={js} title="JavaScript" alt="" />
@@ -108,7 +108,7 @@ function Technologies() {
 						</section>
 					</section>
 					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">I've used these in the past... </h4>
+						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">💡 Secondary Skills</h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
 							<img src={techStackDetails.java} title="Java" alt="" />
 							<img src={techStackDetails.sql} title="MySQL" alt="" />
@@ -123,7 +123,7 @@ function Technologies() {
 					</section>
 
 					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">The other stuff...</h4>
+						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70">🧩 Additional Knowledge</h4>
 						<section className="tech flex flex-wrap items-center gap-5 pt-2 mb-[50px]">
 							<img src={vscode} title="Visual Studio Code" alt="" />
 							<img src={git} title="Git" alt="Git" />

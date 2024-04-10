@@ -276,11 +276,26 @@ body.dark {
 } */
 
 #content {
-	/* position: relative; */
+	margin: 31px 31px 0px 31px;
+	overflow-x: hidden;
+	display: flex;
+	justify-content: center;
+	/* border: green 2px solid; */
+	height: calc(100vh - 62px);
+	width: calc(100vw - 62px);
+}
+
+@media screen and (max-width: 768px) {
+	#content {
+		margin: 21px 21px 0px 21px;
+		height: calc(100vh - 42px);
+		width: calc(100vw - 42px);
+
+		/* margin-bottom: -6100px !important; */
+	}
 }
 
 /* nav */
-
 .hover-underline-animation {
 	display: inline-block;
 	position: relative;
@@ -325,15 +340,6 @@ body.dark {
 	top: calc(var(--pad));
 	backdrop-filter: difference;
 	margin-top: 50px;
-}
-
-#content {
-	z-index: 9;
-	/* right: calc(var(--pad));
-	bottom: calc(var(--pad)); */
-	overflow-x: hidden;
-	display: flex;
-	justify-content: center;
 }
 
 /** LIGHT DARK TOGGLE START **/
@@ -387,7 +393,8 @@ body.dark {
 	}
 
 	.baseline {
-		margin-left: 3px;
+		margin-left: 5px;
+		gap: 5px;
 	}
 
 	.custom-box,
@@ -419,7 +426,7 @@ body.dark {
 .page-title {
 	position: absolute;
 	top: 31px;
-	right: 3px;
+	right: 4px;
 	z-index: 9;
 	writing-mode: vertical-rl;
 	font-weight: 700;
@@ -427,6 +434,13 @@ body.dark {
 	text-transform: uppercase;
 	letter-spacing: 15px;
 }
+
+@media screen and (max-width: 768px) {
+	.page-title {
+		right: 2px;
+	}
+}
+
 .tech img {
 	width: 50px;
 	height: 50px;
@@ -483,10 +497,10 @@ input:focus {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 1.5em;
-	margin: 0rem 5rem;
+	margin: 3rem 7rem 3rem 7rem;
 	min-width: 32rem;
 	max-width: 70rem;
-	padding: 0rem 6rem;
+	padding: 0rem 3rem;
 }
 
 .projectCard {
@@ -545,8 +559,8 @@ body.dark .projectCard {
 	.projectCardGrid {
 		grid-gap: 1rem;
 		min-width: 25rem;
-		padding: 0rem 2rem;
-		margin-top: 30px;
+		padding: 0rem 1rem;
+		margin-top: 50px;
 	}
 
 	.projectCard {
@@ -564,8 +578,8 @@ body.dark .projectCard {
 	.projectCardGrid {
 		grid-gap: 1rem;
 		min-width: 15rem;
-		padding: 0rem 1rem;
-		margin-top: 30px;
+		padding: 0rem 2.5px;
+		margin-top: 60px;
 	}
 
 	.projectCard {
