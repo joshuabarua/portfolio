@@ -82,6 +82,16 @@ export const AppContextProvider = ({children}) => {
 	}, [isDesktop, isMobile]);
 
 	useEffect(() => {
+		const handleOrientationChange = () => {
+			if (window.screen.orientation.type !== 'portrait-primary') {
+				window.screen.orientation.lock('portrait-primary').catch((err) => {
+					console.error('Failed to lock screen orientation:', err);
+				});
+			}
+		};
+
+		window.addEventListener('orientationchange', handleOrientationChange);
+
 		localStorage.setItem('colorScheme', JSON.stringify(isDark));
 		if (isDark) {
 			document.body.classList.add('dark');
@@ -90,6 +100,10 @@ export const AppContextProvider = ({children}) => {
 		}
 
 		setRoutes(getRoutes(isMobile, isDesktop));
+
+		return () => {
+			window.removeEventListener('orientationchange', handleOrientationChange);
+		};
 	}, [getRoutes, isDark, isDesktop, isMobile]);
 
 	const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
