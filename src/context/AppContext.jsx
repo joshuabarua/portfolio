@@ -1,4 +1,3 @@
-// ContextProvider.js
 import React, {createContext, useState, useEffect, useLayoutEffect, useMemo} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import useDeviceType from '../hooks/useDeviceType';
@@ -34,16 +33,12 @@ export const AppContext = createContext({
 });
 
 export const AppContextProvider = ({children}) => {
-	//TODO: FIX THIS INITIAL VALUE BEING SET DARK THING
 	const systemPrefersDark = useMediaQuery({
 		query: '(prefers-color-scheme: dark)',
 	});
 
-	console.log('systemPrefersDark', systemPrefersDark);
-
 	const getInitialColorScheme = () => {
 		const storedValue = localStorage.getItem('colorScheme');
-		console.log('storedValue:', storedValue);
 		if (storedValue !== null) {
 			try {
 				const parsedValue = JSON.parse(storedValue);
@@ -57,11 +52,7 @@ export const AppContextProvider = ({children}) => {
 		return systemPrefersDark;
 	};
 
-	console.log('getinitialcolorScheme:', getInitialColorScheme());
-
 	const [isDark, setIsDark] = useState(getInitialColorScheme());
-
-	console.log('isDark:', isDark);
 
 	const {is1440p, isDesktop, isMobile} = useDeviceType();
 
@@ -81,15 +72,37 @@ export const AppContextProvider = ({children}) => {
 		return <Home1440 />;
 	}, [isDesktop, isMobile]);
 
-	useEffect(() => {
-		const handleOrientationChange = () => {
-			if (window.screen.orientation.type !== 'portrait-primary') {
-				window.screen.orientation.lock('portrait-primary').catch((err) => {
-					console.error('Failed to lock screen orientation:', err);
-				});
+	const requestFullScreen = async () => {
+		let element = await document.documentElement;
+		let requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+		if (requestMethod) {
+			requestMethod.call(element);
+			return true;
+		} else if (typeof window.ActiveXObject !== 'undefined') {
+			let wscript = new window.ActiveXObject('WScript.Shell');
+			if (wscript !== null) {
+				wscript.SendKeys('{F11}');
+				return true;
 			}
-		};
+		}
+	};
 
+	const handleOrientationChange = () => {
+		let myScreenOrientation = window.screen.orientation;
+		console.log(myScreenOrientation);
+		if (myScreenOrientation.type !== 'portrait-primary') {
+			console.log('Runs');
+
+			myScreenOrientation.lock('portrait-primary').catch((err) => {
+				console.error('Failed to lock screen orientation:', err);
+			});
+		}
+		myScreenOrientation.lock('portrait-primary').catch((err) => {
+			console.error('Failed to lock screen orientation:', err);
+		});
+	};
+	useEffect(() => {
+		window.addEventListener('requestFullscreen', requestFullScreen);
 		window.addEventListener('orientationchange', handleOrientationChange);
 
 		localStorage.setItem('colorScheme', JSON.stringify(isDark));
@@ -104,7 +117,7 @@ export const AppContextProvider = ({children}) => {
 		return () => {
 			window.removeEventListener('orientationchange', handleOrientationChange);
 		};
-	}, [getRoutes, isDark, isDesktop, isMobile]);
+	}, [getRoutes, isDark, isDesktop, isMobile, window.screen.orientation.type]);
 
 	const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
 	const [loading, setLoading] = useState(true);
