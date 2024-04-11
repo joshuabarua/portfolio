@@ -26,7 +26,7 @@ function Work({props}) {
 			}}
 			icon={<Icon logo={Logo} company={Company} />}>
 			<div className="flex flex-col justify-center items-center gap-2 w-[175px] md:w-full">
-				<div className="w-full grid grid-cols-4 grid-rows-auto gap-x-4 gap-y-2 md:gap-y-0 items-baseline">
+				<div className="w-full grid grid-cols-4 grid-rows-auto gap-x-4 gap-y-[1px] md:gap-y-0 justify-items-start items-baseline">
 					<h1 className={`vertical-timeline-element-title wrapped-text text-sm md:text-base col-span-4 md:col-span-2`}>
 						<a href={Website ? Website : ''}>{Company}</a>
 					</h1>
