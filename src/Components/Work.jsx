@@ -37,7 +37,9 @@ function Work({props}) {
 					</div>
 				</div>
 
-				<h4 className="wrapped-text text-xs leading-4 md:text-base font-light ">{Description}</h4>
+				<h4 lang="en" className="wrapped-text break-word hyphens-auto text-xs leading-4 md:text-base font-light ">
+					{Description}
+				</h4>
 
 				<div className="workImg not-scrollable flex flex-wrap justify-around items-baseline w-full gap-1 pb-2">
 					{Tech ? (
