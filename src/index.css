@@ -349,7 +349,7 @@ body.dark {
 	left: var(--pad);
 	bottom: 31px;
 	z-index: 10;
-	left: 7px;
+	left: 6px;
 	writing-mode: vertical-lr;
 	transform: rotate(180deg);
 	display: flex;
@@ -379,7 +379,7 @@ body.dark {
 
 .custom-box + h5 {
 	position: relative;
-	left: -1px;
+	left: -2px;
 	font-size: 18px;
 	font-weight: 400 !important;
 }
@@ -387,7 +387,7 @@ body.dark {
 @media screen and (max-width: 768px) {
 	.lightdark {
 		bottom: 21px;
-		left: 0px;
+		left: -1px;
 	}
 
 	.baseline {
