@@ -4,7 +4,7 @@ import {AppContext} from '../context/AppContext.jsx';
 
 const Icon = ({logo, company}) => (
 	<div className="flex justify-center items-center rounded-full pt-[1px]">
-		<img src={logo} alt={company} className="rounded-full  w-[38px] h-[38px] w-vtl:w-[58px] w-vtl:h-[58px]" />
+		<img src={logo} alt={company} loading="lazy" decoding="async" className="rounded-full  w-[38px] h-[38px] w-vtl:w-[58px] w-vtl:h-[58px]" />
 	</div>
 );
 
