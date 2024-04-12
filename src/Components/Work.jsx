@@ -37,7 +37,7 @@ function Work({props}) {
 					</div>
 				</div>
 
-				<h4 lang="en" className="wrapped-text break-word hyphens-auto text-xs leading-4 md:text-base font-light ">
+				<h4 lang="en" className="wrapped-text text-justify hyphens-auto text-xs leading-4 md:text-base font-light ">
 					{Description}
 				</h4>
 
