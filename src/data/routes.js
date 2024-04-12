@@ -2,7 +2,6 @@ import About1440 from '../Pages/1440p/About1440';
 import ContactForm1440 from '../Pages/1440p/Contact1440';
 import AboutMobile from '../Pages/Mobile/AboutMobile';
 import ContactMobile from '../Pages/Mobile/ContactMobile';
-import Technologies1440 from '../Pages/1440p/Technologies1440';
 import About from '../Pages/About';
 import ContactForm from '../Pages/Contact';
 import Education from '../Pages/Education';
@@ -33,7 +32,7 @@ const bigRoutes = [
 	{path: '/contact', component: ContactForm1440},
 	{path: '/experience', component: Experience},
 	{path: '/education', component: Education},
-	{path: '/technologies', component: Technologies1440},
+	{path: '/technologies', component: Technologies},
 	{path: '/projects', component: Projects},
 ];
 

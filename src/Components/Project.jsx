@@ -65,9 +65,16 @@ function Project({props, idx}) {
 							/>
 						</svg>
 						{previewLink ? (
-							<a href={previewLink} target="_blank" rel="noreferrer noopener" className="underline font-light text-xs md:text-base dark:text-white">
-								Live Preview
-							</a>
+							<div>
+								<a
+									onClick={() => window.open(previewLink, '_blank')}
+									href={previewLink}
+									target="_blank"
+									rel="noreferrer noopener"
+									className="underline font-light text-xs md:text-base dark:text-white z-50 h-18 border-white">
+									Live Preview
+								</a>
+							</div>
 						) : (
 							<p className="">Unavailable</p>
 						)}
@@ -87,7 +94,12 @@ function Project({props, idx}) {
 							/>
 						</svg>
 
-						<a href={githubLink} target="_blank" rel="noreferrer noopener" className="underline font-light dark:text-white text-xs md:text-base ">
+						<a
+							onClick={() => window.open(githubLink, '_blank')}
+							href={githubLink}
+							target="_blank"
+							rel="noreferrer noopener"
+							className="underline font-light dark:text-white text-xs md:text-base ">
 							View Code
 						</a>
 					</div>
