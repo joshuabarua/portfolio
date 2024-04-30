@@ -210,7 +210,7 @@ export const workDetails = [
 		Company: `Traffic Control Australia`,
 		Location: 'Melbourne, AU',
 		Type: 'Part Time',
-		Duration: 'Apr 2020 - Sep 2020',
+		Duration: 'Nov 2017 - Mar 2018',
 		Tech: [wordpress, js, css, mapbox],
 		Logo: tca,
 		Color: '#88dbbe',

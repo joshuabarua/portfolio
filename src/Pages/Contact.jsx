@@ -46,7 +46,7 @@ const ContactForm = () => {
 						className="text-dark-color dark:text-light-color items-left flex  h-[700px] w-[550px] flex-col justify-center gap-2 rounded-md">
 						{/* Name */}
 						<label htmlFor="email-name" className="dark-text  dark:light-text block text-lg font-medium">
-							Nameaaa
+							Name
 						</label>
 						<div className="relative mb-2">
 							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
