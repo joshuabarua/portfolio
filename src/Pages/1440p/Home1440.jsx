@@ -7,7 +7,7 @@ export default function Home1440() {
 
 	return (
 		<>
-			<h1 className="wrapped-text  text-dark-text dark:text-light-text text-xl  absolute left-[31px] top-[9px] z-10 text">{name}</h1>
+			<h1 className="wrapped-text  text-dark-text dark:text-light-text text-xl  absolute left-[31px] top-[9px] z-10 text name-header">{name}</h1>
 			<h2 className="wrapped-text text-lg  text-dark-text dark:text-light-text  absolute left-[32px] top-[27px] z-10">{tagline}</h2>
 			<div className="header">
 				<Header />

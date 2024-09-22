@@ -7,8 +7,8 @@ export default function HomeDesktop() {
 
 	return (
 		<>
-			<h1 className="wrapped-text  text-dark-text dark:text-light-text text-xl  absolute left-[31px] top-[9px] z-10">{name}</h1>
-			<h2 className="wrapped-text text-lg  text-dark-text dark:text-light-text  absolute left-[32px] top-[27px] z-10">{tagline}</h2>
+			<h1 className="wrapped-text  text-dark-text dark:text-light-text text-xl  absolute left-[31px] top-[8px] z-10 name-header">{name}</h1>
+			<h2 className="wrapped-text text-lg  text-dark-text dark:text-light-text  absolute left-[34px] top-[28px] z-10 tagline-header">{tagline}</h2>
 			<div className="header">
 				<Header />
 			</div>

@@ -54,22 +54,20 @@ export const AppContextProvider = ({children}) => {
 
 	const [isDark, setIsDark] = useState(getInitialColorScheme());
 
-	const {is1440p, isDesktop, isMobile} = useDeviceType();
+	const {isDesktop, isMobile} = useDeviceType();
 
 	const getRoutes = useMemo(
 		() => (mobileScreen, desktopScreen) => {
 			if (mobileScreen) return mobileRoutes;
-			if (desktopScreen) return desktopRoutes;
-			return bigRoutes;
+			return desktopRoutes;
 		},
 		[]
 	);
 	const [routes, setRoutes] = useState(getRoutes(isMobile, isDesktop));
 
 	const getHomeComponent = useMemo(() => {
-		if (isDesktop) return <HomeDesktop />;
 		if (isMobile) return <HomeMobile />;
-		return <Home1440 />;
+		return <HomeDesktop />;
 	}, [isDesktop, isMobile]);
 
 	const requestFullScreen = async () => {
@@ -117,9 +115,9 @@ export const AppContextProvider = ({children}) => {
 		return () => {
 			window.removeEventListener('orientationchange', handleOrientationChange);
 		};
-	}, [getRoutes, isDark, isDesktop, isMobile, window.screen.orientation.type]);
+	}, [getRoutes, isDark, isDesktop, isMobile]);
 
-	const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
+	const spacing = useSpacing({isMobile, isDesktop, isDark});
 	const [loading, setLoading] = useState(true);
 
 	const [contentStyle, setContentStyle] = useState({
@@ -152,5 +150,5 @@ export const AppContextProvider = ({children}) => {
 		};
 	}, [contentStyle, isDark, spacing]);
 
-	return <AppContext.Provider value={{isDark, setIsDark, is1440p, isDesktop, isMobile, routes, getHomeComponent, loading, contentStyle}}>{children}</AppContext.Provider>;
+	return <AppContext.Provider value={{isDark, setIsDark, isDesktop, isMobile, routes, getHomeComponent, loading, contentStyle}}>{children}</AppContext.Provider>;
 };
