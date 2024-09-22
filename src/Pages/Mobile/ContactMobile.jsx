@@ -22,8 +22,7 @@ const ContactMobile = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const result = await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
-
+			await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
 			setFormData({
 				from_name: '',
 				from_email: '',
@@ -38,7 +37,7 @@ const ContactMobile = () => {
 
 	return (
 		<>
-			<h1 className="dark-text dark:light-text text-md mr-[-1px] md:text-2xl xl:leading-tight page-title ">Contact</h1>
+			<h1 className="dark-text dark:light-text text-md mr-[-2px] md:text-2xl xl:leading-tight page-title">Contact</h1>
 			<main className="w-full flex justify-center items-center flex-col overflow-y-auto mt-4">
 				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-1 w-[90%] h-[550px] max-w-[500px] rounded-md">
 					{/* Name */}
@@ -46,7 +45,7 @@ const ContactMobile = () => {
 						Name
 					</label>
 					<div className="relative mb-2">
-						<div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+						<div className="absolute inset-y-0 start-0 flex items-center pl-1 pointer-events-none">
 							<svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
 								<path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
 							</svg>
@@ -58,7 +57,7 @@ const ContactMobile = () => {
 							required
 							value={formData.from_name}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full pl-6 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="John Smith"
 						/>
 					</div>
@@ -66,8 +65,8 @@ const ContactMobile = () => {
 					<label htmlFor="email-address" className="block text-sm font-medium dark-text dark:light-text">
 						Email
 					</label>
-					<div className="relative mb-2">
-						<div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+					<div className="relative ">
+						<div className="absolute inset-y-0 start-0 flex items-center pl-1 pointer-events-none ">
 							<svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
 								<path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
 								<path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
@@ -80,7 +79,7 @@ const ContactMobile = () => {
 							required
 							value={formData.from_email}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full pl-6 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="john@smith.com"
 						/>
 					</div>
@@ -89,7 +88,7 @@ const ContactMobile = () => {
 						Subject
 					</label>
 					<div className="relative mb-2">
-						<div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+						<div className="absolute inset-y-0 start-0 flex items-center pl-1 pointer-events-none">
 							<svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
 								<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h14M1 6h14M1 11h7" />
 							</svg>
@@ -101,7 +100,7 @@ const ContactMobile = () => {
 							required
 							value={formData.subject}
 							onChange={handleInputChange}
-							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
+							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-6 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:dark:text-light-color"
 							placeholder="Lets work together!"
 						/>
 					</div>

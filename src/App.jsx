@@ -1,23 +1,74 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import React, {useRef, useContext} from 'react';
-import * as THREE from 'three';
+import React, {useContext} from 'react';
 // eslint-disable-next-line no-unused-vars
 import Sketch from 'react-p5';
-import TRUNK from 'vanta/src/vanta.trunk';
 import {DarkModeToggle} from './Components/DarkModeToggle';
 import Loading from './Components/Loading/Loading';
-import useVantaEffect from './hooks/useVantaEffect';
-import useSpacing from './hooks/useVantaSpacing';
 import {AppContext} from './context/AppContext';
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useGSAP} from '@gsap/react';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function App() {
-	const {isDark, isMobile, isDesktop, is1440p, routes, getHomeComponent, loading} = useContext(AppContext);
-	// const myRef = useRef(null);
-	// const spacing = useSpacing({isMobile, isDesktop, is1440p, isDark});
-	// const [vantaEffect, setVantaEffect] = useVantaEffect({isDark, myRef, THREE, TRUNK, spacing});
+	const {isDark, routes, getHomeComponent, loading} = useContext(AppContext);
+	useGSAP(() => {
+		const pageIntroTl = gsap.timeline();
+
+		pageIntroTl
+			.set('#main-app', {opacity: 1})
+			.from(
+				'.page-title',
+				{
+					opacity: 0,
+					x: 10,
+					duration: 0.5,
+					delay: 0.3,
+				},
+				1.8
+			)
+			.from(
+				'.name-header',
+				{
+					opacity: 0,
+					y: -10,
+					duration: 0.5,
+					delay: 0.3,
+				},
+				1.8
+			)
+			.from(
+				'.tagline-header',
+				{
+					opacity: 0,
+					x: -10,
+					duration: 0.5,
+					delay: 0.3,
+				},
+				2
+			)
+			.from(
+				'.personalDetails',
+				{
+					opacity: 0,
+					y: 10,
+					duration: 0.5,
+					delay: 0.3,
+				},
+				2.5
+			)
+			.from('.techSkills', {
+				opacity: 0,
+				x: -10,
+				duration: 0.5,
+				delay: 0.3,
+				stagger: 0.3,
+			});
+	});
 
 	return (
-		<div id="main-app">
+		<div id="main-app" className="opacity-0">
 			{loading && <Loading showLoading={loading} />}
 			<div id="background"></div>
 			<div id="frame">

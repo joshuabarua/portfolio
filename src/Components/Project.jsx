@@ -1,4 +1,4 @@
-import React, {lazy} from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import {Flip} from 'gsap/Flip';
 

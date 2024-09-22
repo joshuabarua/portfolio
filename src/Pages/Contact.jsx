@@ -22,7 +22,7 @@ const ContactForm = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const result = await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
+			await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY);
 			setFormData({
 				from_name: '',
 				from_email: '',
@@ -37,7 +37,7 @@ const ContactForm = () => {
 
 	return (
 		<>
-			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight page-title ">Contact</h1>
+			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight mr-[-1px]  page-title">Contact</h1>
 			<main className="flex w-full flex-col items-center justify-center">
 				<section className="flex w-[60%]">
 					<form
@@ -49,8 +49,13 @@ const ContactForm = () => {
 							Name
 						</label>
 						<div className="relative mb-2">
-							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
-								<svg className="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+							<div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-1">
+								<svg
+									className="h-4 w-4 text-gray-500 dark:text-gray-400 ms-2"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="currentColor"
+									viewBox="0 0 20 20">
 									<path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
 								</svg>
 							</div>
@@ -61,7 +66,7 @@ const ContactForm = () => {
 								required
 								value={formData.from_name}
 								onChange={handleInputChange}
-								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900 focus:border-slate-100  focus:ring-slate-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-slate-100 dark:focus:ring-slate-100"
+								className=" focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900 focus:border-slate-100  focus:ring-slate-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-slate-100 dark:focus:ring-slate-100 pl-6"
 								placeholder="John Smith"
 							/>
 						</div>
@@ -71,7 +76,7 @@ const ContactForm = () => {
 							Email
 						</label>
 						<div className="relative mb-2">
-							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center pl-1">
 								<svg className="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
 									<path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
 									<path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
@@ -84,7 +89,7 @@ const ContactForm = () => {
 								required
 								value={formData.from_email}
 								onChange={handleInputChange}
-								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300  bg-gray-50 p-2.5 ps-10 text-lg  text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300  bg-gray-50 p-2.5 ps-10 text-lg  text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 pl-6"
 								placeholder="john@smith.com"
 							/>
 						</div>
@@ -94,7 +99,7 @@ const ContactForm = () => {
 							Subject
 						</label>
 						<div className="relative mb-2">
-							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+							<div className="pointer-events-none absolute inset-y-0 start-0 flex items-center pl-1">
 								<svg className="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
 									<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h14M1 6h14M1 11h7" />
 								</svg>
@@ -106,7 +111,7 @@ const ContactForm = () => {
 								required
 								value={formData.subject}
 								onChange={handleInputChange}
-								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 "
+								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 pl-6"
 								placeholder="Lets work together!"
 							/>
 						</div>
