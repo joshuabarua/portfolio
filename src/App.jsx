@@ -41,8 +41,8 @@ function App() {
 			.from('.page-title', {
 				opacity: 0,
 				x: 10,
-				duration: 0.5,
-				delay: 1.8,
+				duration: 0.6,
+				delay: 2,
 			})
 			.from('.personalDetails', {
 				opacity: 0,
