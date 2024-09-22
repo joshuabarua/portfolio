@@ -1,10 +1,9 @@
 import React, {createContext, useState, useEffect, useLayoutEffect, useMemo} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import useDeviceType from '../hooks/useDeviceType';
-import {desktopRoutes, bigRoutes, mobileRoutes} from '../data/routes';
+import {desktopRoutes, mobileRoutes} from '../data/routes';
 import HomeDesktop from '../Pages/Desktop/HomeDesktop';
 import HomeMobile from '../Pages/Mobile/HomeMobile';
-import Home1440 from '../Pages/1440p/Home1440';
 import useSpacing from '../hooks/useVantaSpacing';
 
 export const AppContext = createContext({
@@ -39,6 +38,7 @@ export const AppContextProvider = ({children}) => {
 
 	const getInitialColorScheme = () => {
 		const storedValue = localStorage.getItem('colorScheme');
+		console.log('Stored val color: ', storedValue);
 		if (storedValue !== null) {
 			try {
 				const parsedValue = JSON.parse(storedValue);
@@ -53,22 +53,12 @@ export const AppContextProvider = ({children}) => {
 	};
 
 	const [isDark, setIsDark] = useState(getInitialColorScheme());
-
 	const {isDesktop, isMobile} = useDeviceType();
 
-	const getRoutes = useMemo(
-		() => (mobileScreen, desktopScreen) => {
-			if (mobileScreen) return mobileRoutes;
-			return desktopRoutes;
-		},
-		[]
-	);
+	const getRoutes = useMemo(() => (mobileScreen, desktopScreen) => mobileScreen ? mobileRoutes : desktopRoutes, []);
 	const [routes, setRoutes] = useState(getRoutes(isMobile, isDesktop));
 
-	const getHomeComponent = useMemo(() => {
-		if (isMobile) return <HomeMobile />;
-		return <HomeDesktop />;
-	}, [isDesktop, isMobile]);
+	const getHomeComponent = useMemo(() => (isMobile ? <HomeMobile /> : <HomeDesktop />), [isMobile]);
 
 	const requestFullScreen = async () => {
 		let element = await document.documentElement;
@@ -90,7 +80,6 @@ export const AppContextProvider = ({children}) => {
 		console.log(myScreenOrientation);
 		if (myScreenOrientation.type !== 'portrait-primary') {
 			console.log('Runs');
-
 			myScreenOrientation.lock('portrait-primary').catch((err) => {
 				console.error('Failed to lock screen orientation:', err);
 			});
@@ -99,56 +88,40 @@ export const AppContextProvider = ({children}) => {
 			console.error('Failed to lock screen orientation:', err);
 		});
 	};
+
 	useEffect(() => {
-		window.addEventListener('requestFullscreen', requestFullScreen);
-		window.addEventListener('orientationchange', handleOrientationChange);
+		const handleFullScreen = () => requestFullScreen();
+		const handleOrientation = () => handleOrientationChange();
+
+		window.addEventListener('requestFullscreen', handleFullScreen);
+		window.addEventListener('orientationchange', handleOrientation);
 
 		localStorage.setItem('colorScheme', JSON.stringify(isDark));
-		if (isDark) {
-			document.body.classList.add('dark');
-		} else {
-			document.body.classList.remove('dark');
-		}
+		document.body.classList.toggle('dark', isDark);
 
 		setRoutes(getRoutes(isMobile, isDesktop));
 
 		return () => {
-			window.removeEventListener('orientationchange', handleOrientationChange);
+			window.removeEventListener('orientationchange', handleOrientation);
+			window.removeEventListener('requestFullscreen', handleFullScreen);
 		};
 	}, [getRoutes, isDark, isDesktop, isMobile]);
 
 	const spacing = useSpacing({isMobile, isDesktop, isDark});
 	const [loading, setLoading] = useState(true);
-
+	// eslint-disable-next-line
 	const [contentStyle, setContentStyle] = useState({
 		borderRadius: '3%',
 		minWidth: '200px',
+		background: isDark ? '#1f2020e7' : '#eaedf0e7',
+		color: isDark ? '#e8dada' : '#111111',
 	});
 
 	useLayoutEffect(() => {
-		if (isDark) {
-			return setContentStyle({
-				...contentStyle,
-				background: '#1f2020e7',
-				color: '#e8dada',
-			});
-		}
-		setContentStyle({
-			...contentStyle,
-			background: '#eaedf0e7',
-			color: '#111111',
-		});
-	}, [isDark]);
+		const timer = setTimeout(() => setLoading(false), 2000);
 
-	useLayoutEffect(() => {
-		const timer = setTimeout(() => {
-			setLoading(false);
-		}, 2000);
-
-		return () => {
-			clearTimeout(timer);
-		};
-	}, [contentStyle, isDark, spacing]);
+		return () => clearTimeout(timer);
+	}, [isDark, spacing]);
 
 	return <AppContext.Provider value={{isDark, setIsDark, isDesktop, isMobile, routes, getHomeComponent, loading, contentStyle}}>{children}</AppContext.Provider>;
 };

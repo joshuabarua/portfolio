@@ -4,7 +4,7 @@ import {AppContext} from '../context/AppContext';
 export const DarkModeToggle = () => {
 	const {isDark, setIsDark} = useContext(AppContext);
 
-	const handleToggle = (isChecked) => {
+	const handleToggle = () => {
 		setIsDark(!isDark);
 	};
 

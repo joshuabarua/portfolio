@@ -11,7 +11,6 @@ module.exports = {
 				'h-md': {raw: '(min-height: 768px)'},
 				'h-lg': {raw: '(min-height: 1080px)'},
 				'w-vtl': {raw: '(min-width: 1170px)'},
-				dark: {raw: '(prefers-color-scheme: dark)'},
 			},
 			fontFamily: {
 				// primary: "Poppins, sans-serif",

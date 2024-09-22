@@ -1,33 +1,21 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React, {useContext} from 'react';
-// eslint-disable-next-line no-unused-vars
-import Sketch from 'react-p5';
 import {DarkModeToggle} from './Components/DarkModeToggle';
 import Loading from './Components/Loading/Loading';
 import {AppContext} from './context/AppContext';
 import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 function App() {
 	const {isDark, routes, getHomeComponent, loading} = useContext(AppContext);
+
 	useGSAP(() => {
 		const pageIntroTl = gsap.timeline();
+		const pageTitles = gsap.timeline();
 
 		pageIntroTl
-			.set('#main-app', {opacity: 1})
-			.from(
-				'.page-title',
-				{
-					opacity: 0,
-					x: 10,
-					duration: 0.5,
-					delay: 0.3,
-				},
-				1.8
-			)
 			.from(
 				'.name-header',
 				{
@@ -47,28 +35,32 @@ function App() {
 					delay: 0.3,
 				},
 				2
-			)
-			.from(
-				'.personalDetails',
-				{
-					opacity: 0,
-					y: 10,
-					duration: 0.5,
-					delay: 0.3,
-				},
-				2.5
-			)
+			);
+
+		pageTitles
+			.from('.page-title', {
+				opacity: 0,
+				x: 10,
+				duration: 0.5,
+				delay: 1.8,
+			})
+			.from('.personalDetails', {
+				opacity: 0,
+				y: 10,
+				duration: 0.5,
+				delay: 2.0,
+			})
 			.from('.techSkills', {
 				opacity: 0,
 				x: -10,
 				duration: 0.5,
-				delay: 0.3,
+				delay: 1.8,
 				stagger: 0.3,
 			});
 	});
 
 	return (
-		<div id="main-app" className="opacity-0">
+		<div id="main-app">
 			{loading && <Loading showLoading={loading} />}
 			<div id="background"></div>
 			<div id="frame">
@@ -78,10 +70,10 @@ function App() {
 				<div className="frame_line frame_line-bottom bg-dark-color dark:bg-light-color"></div>
 			</div>
 			<div className="mask">
-				<div className="mask_top  dark:bg-dark-color bg-mask-light"></div>
-				<div className="mask_bottom  dark:bg-dark-color bg-mask-light"></div>
-				<div className="mask_left  dark:bg-dark-color bg-mask-light"></div>
-				<div className="mask_right  dark:bg-dark-color bg-mask-light"></div>
+				<div className="mask_top bg-mask-light dark:bg-dark-color "></div>
+				<div className="mask_bottom bg-mask-light  dark:bg-dark-color "></div>
+				<div className="mask_left bg-mask-light dark:bg-dark-color "></div>
+				<div className="mask_right bg-mask-light dark:bg-dark-color "></div>
 			</div>
 
 			<Router>
