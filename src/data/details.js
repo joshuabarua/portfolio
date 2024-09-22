@@ -231,7 +231,7 @@ export const eduDetails = [
 		Color: '#239178',
 	},
 	{
-		Position: 'Bachelors Degree of Information Technology & Computer Science',
+		Position: 'Bachelors Degree of Computer Science',
 		Website: 'https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bachelor-of-information-technology-bp162/bp162opn9auscy',
 		Company: `Royal Melbourne Institute of Technology University`,
 		Location: 'Melbourne, AU',
