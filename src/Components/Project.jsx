@@ -34,7 +34,7 @@ function Project({props, idx}) {
 
 	return (
 		<article className="projectCard " onClick={handleCardClick}>
-			<img src={image} alt="" loading="lazy" decoding="async" />
+			<img src={image} alt="" loading="lazy" decoding="async" className="" />
 			<h1 className="dark-text dark:light-text work-header-text text-sm md:text-lg xl:text-2xl">{title}</h1>
 			<div className="details wrapped-text px-2 md:px-12 ">
 				<p className="wrapped-text font-light text-xs  md:text-lg xl:text-xl">{description}</p>
