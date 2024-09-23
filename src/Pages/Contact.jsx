@@ -39,7 +39,7 @@ const ContactForm = () => {
 		<>
 			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight mr-[-1px]  page-title">Contact</h1>
 			<main className="flex w-full flex-col items-center justify-center">
-				<section className="flex w-[60%]">
+				<section className="flex w-[100%] items-center justify-center">
 					<form
 						onSubmit={handleSubmit}
 						ref={formRef}
