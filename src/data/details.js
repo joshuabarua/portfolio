@@ -145,7 +145,7 @@ export const techStackDetails = {
 export const workDetails = [
 	{
 		Position: 'Frontend Developer',
-		Description: `At a leading European VFX studio, I significantly improved a VFX management web app using React.js, TypeScript, GraphQL, Jest, Zustand, and Material-UI. I developed and integrated features to improve the user experience, streamline workflows, and increase platform functionality. My tasks involved creating and optimizing components, enhancing UI, and bug resolution within an agile system.`,
+		Description: `At a leading European VFX studio, I significantly improved a VFX management web app using React.js, TypeScript, GraphQL, Jest, Zustand, and Material-UI. I developed and integrated features to improve the user experience, streamline workflows, and increase platform functionality. My tasks involved creating and optimizing components, enhancing UI, and bug resolution within an agile system. Pipeline used Jenkins on a main branch for CI/CD.`,
 		Company: `RISE FX GmbH`,
 		Website: 'https://www.risefx.com/',
 		Location: 'Berlin, Germany',
@@ -158,7 +158,7 @@ export const workDetails = [
 	{
 		Position: 'Frontend Developer',
 		Description:
-			'[Currently migrated to vite and yarn due to create-react-app issues, currently squashing bugs] I developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, I crafted a visually appealing and modern website. I integrated a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, I organized project data—descriptions, images, and achievements—in a structured and easily accessible format.',
+			'Developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, crafted a visually appealing and modern website. Integrated with a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, organization of project data—descriptions, images, and achievements—in a structured and easily accessible format.',
 		Company: `Galaxy Girl MUA`,
 		Website: 'https://github.com/joshuabarua/galaxy-girl-vite',
 		Location: 'Remote/Brighton, UK',
