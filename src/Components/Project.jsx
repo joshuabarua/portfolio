@@ -2,7 +2,7 @@ import React from 'react';
 import gsap from 'gsap';
 import {Flip} from 'gsap/Flip';
 
-function Project({props, idx}) {
+const Project = React.memo(({props, idx}) => {
 	const {title, image, description, techstack, previewLink, githubLink} = props;
 	gsap.registerPlugin(Flip);
 
@@ -107,6 +107,6 @@ function Project({props, idx}) {
 			</div>
 		</article>
 	);
-}
+});
 
 export default Project;

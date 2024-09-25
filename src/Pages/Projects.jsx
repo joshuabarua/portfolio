@@ -1,17 +1,19 @@
-import React from 'react';
-import Project from '../Components/Project';
+import React, {useMemo} from 'react';
 import {projectDetails} from '../data/details.js';
-import Spacer from '../Components/Spacer.jsx';
+import Project from '../Components/Project';
 
 function Projects() {
+	// ... existing code ...
+
+	const projectCards = useMemo(() => {
+		return projectDetails.map((projectDetails, idx) => <Project key={idx} props={projectDetails} idx={idx} />);
+	}, [projectDetails]);
+
 	return (
-		<>
-			<h1 className="text-md mr-[-2px] md:mr-[-1px] md:text-2xl dark-text dark:light-text page-title">Projects</h1>
-			<main className="w-full flex justify-start items-center flex-col gap-18 overflow-x-hidden scroll-smooth">
-				<div className="projectCardGrid">{React.Children.toArray(projectDetails.map(({...projectDetails}, idx) => <Project props={projectDetails} idx={idx} />))}</div>
-				<Spacer size={100} axis={'vertical'} />
-			</main>
-		</>
+		<div className="projects">
+			<h1 className="page-title">Projects</h1>
+			<div className="projectCardGrid">{projectCards}</div>
+		</div>
 	);
 }
 

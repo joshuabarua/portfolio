@@ -74,7 +74,6 @@ export const AppContextProvider = ({children}) => {
 			}
 		}
 	};
-
 	const handleOrientationChange = () => {
 		let myScreenOrientation = window.screen.orientation;
 		console.log(myScreenOrientation);
