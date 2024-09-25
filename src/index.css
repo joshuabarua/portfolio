@@ -156,7 +156,7 @@ body.dark {
 	top: 0;
 	width: 1px;
 	height: 100%;
-	opacity: 0.4;
+	opacity: 0.6;
 }
 
 .frame_line-right {
@@ -165,7 +165,7 @@ body.dark {
 	top: 0;
 	width: 1px;
 	height: 100%;
-	opacity: 0.4;
+	opacity: 0.6;
 }
 
 .frame_line-top {
@@ -174,7 +174,7 @@ body.dark {
 	top: 0;
 	width: 100%;
 	height: 1px;
-	opacity: 0.4;
+	opacity: 0.6;
 }
 
 .frame_line-bottom {
@@ -183,7 +183,7 @@ body.dark {
 	bottom: 0;
 	width: 100%;
 	height: 1px;
-	opacity: 0.4;
+	opacity: 0.6;
 }
 
 .mask {
