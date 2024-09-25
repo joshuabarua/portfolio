@@ -1,5 +1,5 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import React, {useContext} from 'react';
+import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import React, {useContext, Suspense} from 'react';
 import {DarkModeToggle} from './Components/DarkModeToggle';
 import Loading from './Components/Loading/Loading';
 import {AppContext} from './context/AppContext';
@@ -8,55 +8,35 @@ import {useGSAP} from '@gsap/react';
 
 gsap.registerPlugin(useGSAP);
 
+gsap.registerPlugin(useGSAP);
+
+function AnimatedRoutes() {
+	const location = useLocation();
+	const {routes} = useContext(AppContext);
+
+	useGSAP(() => {
+		const tl = gsap.timeline();
+
+		tl.fromTo('.page-title', {opacity: 0, x: 10}, {opacity: 1, x: 0, duration: 0.6, ease: 'power2.out'})
+			.fromTo('.personalDetails', {opacity: 0, y: 10}, {opacity: 1, y: 0, duration: 0.5, ease: 'power2.out'}, '-=0.3')
+			.fromTo('.techSkills', {opacity: 0, x: -10}, {opacity: 1, x: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1}, '-=0.3');
+	}, [location]);
+
+	return (
+		<Routes>
+			{routes.map((route, index) => (
+				<Route key={index} path={route.path} element={React.createElement(route.component)} />
+			))}
+		</Routes>
+	);
+}
+
 function App() {
-	const {isDark, routes, getHomeComponent, loading} = useContext(AppContext);
+	const {isDark, getHomeComponent, loading} = useContext(AppContext);
 
 	useGSAP(() => {
 		const pageIntroTl = gsap.timeline();
-		const pageTitles = gsap.timeline();
-
-		pageIntroTl
-			.from(
-				'.name-header',
-				{
-					opacity: 0,
-					y: -10,
-					duration: 0.5,
-					delay: 0.3,
-				},
-				1.8
-			)
-			.from(
-				'.tagline-header',
-				{
-					opacity: 0,
-					x: -10,
-					duration: 0.5,
-					delay: 0.3,
-				},
-				2
-			);
-
-		pageTitles
-			.from('.page-title', {
-				opacity: 0,
-				x: 10,
-				duration: 0.6,
-				delay: 2,
-			})
-			.from('.personalDetails', {
-				opacity: 0,
-				y: 10,
-				duration: 0.5,
-				delay: 2.0,
-			})
-			.from('.techSkills', {
-				opacity: 0,
-				x: -10,
-				duration: 0.5,
-				delay: 1.8,
-				stagger: 0.3,
-			});
+		pageIntroTl.from('.name-header', {opacity: 0, y: -10, duration: 0.5, delay: 0.3}, 1.8).from('.tagline-header', {opacity: 0, x: -10, duration: 0.5, delay: 0.3}, 2);
 	});
 
 	return (
@@ -80,11 +60,9 @@ function App() {
 				<>
 					{getHomeComponent}
 					<div id="content">
-						<Routes>
-							{routes.map((route, index) => (
-								<Route key={index} path={route.path} element={React.createElement(route.component)} />
-							))}
-						</Routes>
+						<Suspense fallback={<Loading showLoading={true} />}>
+							<AnimatedRoutes />
+						</Suspense>
 					</div>
 				</>
 			</Router>

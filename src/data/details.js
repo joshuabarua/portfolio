@@ -259,16 +259,18 @@ export const projectDetails = [
 	{
 		title: 'Boulder Bebis GraphQL',
 		image: boulderbbs,
-		description: '[Work in Progress] A Booking Platform for Boulder Halls – Built with GraphQL at Code Academy Berlin',
+		description:
+			'[Work in Progress] An innovative booking platform for boulder halls, leveraging GraphQL for efficient data querying. This project showcases advanced web development skills acquired at Code Academy Berlin, offering a user experience for climbers to reserve their spots.',
 		previewLink: 'https://boulder-bebis.vercel.app/',
-		techstack: 'Typescript, Graphql, MongoDB, Passport, JWT, Auth, HTML/CSS, JavaScript, Express, NodeJS, Client/Server',
+		techstack: 'Typescript, GraphQL, MongoDB, Passport, JWT, Auth, HTML/CSS, JavaScript, Express, NodeJS, Client/Server',
 		githubLink: 'https://github.com/joshuabarua/Final_Project_CAB',
 	},
 	{
 		title: 'Weather Wear JS API',
 		image: weatherWear,
-		description: '[Completed at CAB] Dress Smart for Any Weather – A JavaScript API-Driven App',
-		techstack: 'HTML/CSS, JavaScript, JSON, openWeatherAPI, geoLocation',
+		description:
+			'[Completed at CAB] A smart, API-driven application that helps users dress appropriately for any weather condition. This project demonstrates proficiency in working with external APIs and creating practical, user-friendly web applications.',
+		techstack: 'HTML/CSS, JavaScript, JSON, OpenWeatherAPI, Geolocation',
 		previewLink: 'https://weather-wear.onrender.com/',
 		githubLink: 'https://github.com/joshuabarua/CAB-JS-API-weatherApp',
 	},
@@ -276,38 +278,43 @@ export const projectDetails = [
 		title: 'Pfand-tastisch MERN',
 		image: pfantastisch,
 		previewLink: 'https://pfandtastisch-app.vercel.app/',
-		description: '[Work in Progress] Find Your Nearest Pfand Machines – A MERN Stack Web App from Code Academy Berlin',
-		techstack: 'Typescript, Reactjs, MongoDB, JWT, Express, Passport, Bcrypt/Auth, nodeJS, Client/Server, JSON',
-		githubLink: 'https://github.com/joshuabarua/pfantastisch-app',
+		description:
+			'[Completed at CAB] An eco-friendly web application built on the MERN stack, designed to help users locate nearby Pfand (bottle deposit) machines. This project showcases full-stack development skills and addresses a real-world need in German cities.',
+		techstack: 'Typescript, ReactJS, MongoDB, JWT, Express, Passport, Bcrypt/Auth, NodeJS, Client/Server, JSON',
+		githubLink: 'https://github.com/joshuabarua/pfandtastisch-app',
 	},
 	{
 		title: 'Mystic Tarot ReactJS Firebase',
 		image: mystictarot,
-		description: '[Work in Progress] Explore Tarot Cards with Firebase Login – Developed at Code Academy Berlin',
-		techstack: 'Typescript, Reactjs, CSS, Firebase',
+		description:
+			'[Completed at CAB] An engaging tarot card exploration app with Firebase authentication. This project demonstrates integration of third-party services and creating interactive, personalized user experiences.',
+		techstack: 'Typescript, ReactJS, CSS, Firebase',
 		previewLink: 'https://cab-tarot-card-site-ts.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/CAB-tarot-card-site-ts',
 	},
 	{
 		title: 'Mixtape ReactJS',
 		image: mixtape,
-		description: '[Completed at CAB] Nostalgic Mixtape Player – A Simple Music Experience in React',
-		techstack: 'Reactjs, JavaScript, CSS, Material-UI',
+		description:
+			'A nostalgic mixtape player that brings back the charm of old-school music listening. This React-based project showcases front-end development skills and the ability to create engaging user interfaces.',
+		techstack: 'ReactJS, JavaScript, CSS, Material-UI',
 		previewLink: 'https://mixtape4pati.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/mixtape_app',
 	},
 	{
 		title: 'Rick and Morty Typescript API',
 		image: ricknmorty,
-		description: '[Completed at CAB] Discover Rick and Morty Characters – A Quick TypeScript Project',
-		techstack: 'Typescript, Reactjs, APIs, JSON',
+		description:
+			'[Completed at CAB] A dynamic character explorer for the Rick and Morty universe. This TypeScript project demonstrates proficiency in working with APIs and creating responsive, data-driven web applications and was completed in two days',
+		techstack: 'Typescript, ReactJS, APIs, JSON',
 		previewLink: 'https://ricknmorty-project2-5.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/ricknmorty-project2.5',
 	},
 	{
 		title: 'Boulder Berlin HTML/CSS',
 		image: boulderberlin,
-		description: '[Completed at CAB] Design Exploration – A Simple Website Using HTML/CSS',
+		description:
+			'[Completed at CAB] A sleek, responsive website design for a fictional boulder gym in Berlin. This project showcases fundamental web development skills and an eye for modern, clean design using only HTML and CSS',
 		techstack: 'HTML/CSS',
 		previewLink: 'https://cab-project1-html-css.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/CAB-project1-HTML-CSS',
