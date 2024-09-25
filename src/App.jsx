@@ -8,8 +8,6 @@ import {useGSAP} from '@gsap/react';
 
 gsap.registerPlugin(useGSAP);
 
-gsap.registerPlugin(useGSAP);
-
 function AnimatedRoutes() {
 	const location = useLocation();
 	const {routes} = useContext(AppContext);
