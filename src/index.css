@@ -207,7 +207,7 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-	opacity: 0.6;
+	opacity: 1;
 	backdrop-filter: blur(30px);
 	z-index: 4;
 }
@@ -221,7 +221,7 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-	opacity: 0.6;
+	opacity: 1;
 	z-index: 4;
 }
 
@@ -234,7 +234,7 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-	opacity: 0.6;
+	opacity: 1
 }
 
 .mask_right {
@@ -246,7 +246,7 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-	opacity: 0.6;
+	opacity:1;
 }
 
 @media screen and (max-width: 768px) {
