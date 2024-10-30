@@ -67,7 +67,7 @@ function Technologies() {
 			x: Math.cos(angle) * radius + (Math.random() - 0.5) * 100,
 			y: Math.sin(angle) * radius + (Math.random() - 0.5) * 100,
 			rotation: Math.random() * 360,
-			scale: level === 'expert' ? 1.2 : level === 'proficient' ? 1 : 0.8,
+			scale: level === 'expert' ? 1 : level === 'proficient' ? 0.8 : 0.5,
 		};
 	}, []);
 
