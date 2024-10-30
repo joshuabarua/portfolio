@@ -60,7 +60,7 @@ function Technologies() {
 	const [tooltip, setTooltip] = useState({visible: false, text: '', x: 0, y: 0});
 
 	const initializePositions = useCallback((level, index, total) => {
-		const radius = Math.min(window.innerWidth, window.innerHeight) * 0.3;
+		const radius = Math.min(window.innerWidth, window.innerHeight) * 0.4;
 		const angle = (index / total) * Math.PI * 2;
 
 		return {
@@ -77,8 +77,8 @@ function Technologies() {
 
 		function createRandomMovement() {
 			const bounds = {
-				x: window.innerWidth * 0.4,
-				y: window.innerHeight * 0.4,
+				x: window.innerWidth ,
+				y: window.innerHeight,
 			};
 
 			const newX = (Math.random() - 0.5) * bounds.x;
