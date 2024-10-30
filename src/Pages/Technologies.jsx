@@ -81,8 +81,8 @@ function Technologies() {
 				y: window.innerHeight,
 			};
 
-			const newX = (Math.random() - 0.5) * bounds.x;
-			const newY = (Math.random() - 0.5) * bounds.y;
+			const newX = (Math.random() - 0.5) * bounds.x * 0.95;
+			const newY = (Math.random() - 0.5) * bounds.y * 0.95;
 			const baseDuration = 25;
 			const duration = baseDuration / speedMultiplier;
 
@@ -124,7 +124,7 @@ function Technologies() {
 
 	const handleMouseEnter = (e, level) => {
 		const text =
-			level === 'expert' ? 'I know this technology very well' : level === 'proficient' ? 'I am proficient in this technology' : 'I am familiar with this technology';
+			level === 'expert' ? 'Advanced' : level === 'proficient' ? 'Proficient' : 'Familiar';
 		setTooltip({visible: true, text, x: e.clientX, y: e.clientY});
 	};
 
@@ -163,7 +163,7 @@ function Technologies() {
 				</div>
 
 				{tooltip.visible && (
-					<div className="absolute bg-gray-800 text-white p-2 rounded" style={{top: tooltip.y + 10, left: tooltip.x + 10}}>
+					<div className="absolute bg-gray-800 text-white p-2 rounded text-xs" style={{ top: tooltip.y , left: tooltip.x}}>
 						{tooltip.text}
 					</div>
 				)}
