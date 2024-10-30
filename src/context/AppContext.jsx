@@ -53,6 +53,18 @@ export const AppContextProvider = ({children}) => {
 	};
 
 	const [isDark, setIsDark] = useState(getInitialColorScheme());
+
+	// eslint-disable-next-line
+	const contentStyle = useMemo(
+		() => ({
+			borderRadius: '3%',
+			minWidth: '200px',
+			background: isDark ? '#1f2020e7' : '#eaedf0e7',
+			color: isDark ? '#e8dada' : '#111111',
+		}),
+		[isDark]
+	);
+
 	const {isDesktop, isMobile} = useDeviceType();
 
 	const getRoutes = useMemo(() => (mobileScreen, desktopScreen) => mobileScreen ? mobileRoutes : desktopRoutes, []);
@@ -107,20 +119,13 @@ export const AppContextProvider = ({children}) => {
 	}, [getRoutes, isDark, isDesktop, isMobile]);
 
 	const spacing = useSpacing({isMobile, isDesktop, isDark});
-	const [loading, setLoading] = useState(true);
-	// eslint-disable-next-line
-	const [contentStyle, setContentStyle] = useState({
-		borderRadius: '3%',
-		minWidth: '200px',
-		background: isDark ? '#1f2020e7' : '#eaedf0e7',
-		color: isDark ? '#e8dada' : '#111111',
-	});
-
 	useLayoutEffect(() => {
 		const timer = setTimeout(() => setLoading(false), 2000);
 
 		return () => clearTimeout(timer);
 	}, [isDark, spacing]);
+
+	const [loading, setLoading] = useState(true);
 
 	return <AppContext.Provider value={{isDark, setIsDark, isDesktop, isMobile, routes, getHomeComponent, loading, contentStyle}}>{children}</AppContext.Provider>;
 };

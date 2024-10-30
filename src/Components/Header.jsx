@@ -10,7 +10,7 @@ function Header({isOpen, setIsOpen}) {
 		{path: '/experience', label: 'Experience'},
 		{path: '/education', label: 'Education'},
 		{path: '/technologies', label: 'Technologies'},
-		{path: '/projects', label: 'Projects'},
+		{path: '/projects', label: 'Personal Projects'},
 		{path: '/contact', label: 'Contact'},
 	];
 
