@@ -1,144 +1,173 @@
-import React, {useCallback, useLayoutEffect} from 'react';
+import React, {useCallback, useLayoutEffect, useState} from 'react';
 import {techStackDetails} from '../data/details.js';
 import gsap from 'gsap';
 import {useLocation} from 'react-router-dom';
 
-function random(min, max) {
-	const delta = max - min;
-	return (direction = 1) => (min + delta * Math.random()) * direction;
-}
-
 function Technologies() {
-	const {html, css, js, react, redux, tailwind, vscode, git, github, npm, postman, figma} = techStackDetails;
+	const skills = {
+		expert: [
+			{icon: techStackDetails.ts, name: 'TypeScript'},
+			{icon: techStackDetails.js, name: 'JavaScript'},
+			{icon: techStackDetails.react, name: 'React'},
+			{icon: techStackDetails.html, name: 'HTML'},
+			{icon: techStackDetails.css, name: 'CSS'},
+			{icon: techStackDetails.node, name: 'NodeJS'},
+			{icon: techStackDetails.github, name: 'GitHub'},
+			{icon: techStackDetails.unix, name: 'Unix'},
+			{icon: techStackDetails.postman, name: 'Postman'},
+			{icon: techStackDetails.vscode, name: 'VSCode'},
+			{icon: techStackDetails.git, name: 'Git'},
+			{icon: techStackDetails.bun, name: 'Bun'},
+			{icon: techStackDetails.zustand, name: 'Zustand'},
+			{icon: techStackDetails.tailwind, name: 'Tailwind'},
+			{icon: techStackDetails.graphql, name: 'GraphQL'},
+			{icon: techStackDetails.express, name: 'Express'},
+			{icon: techStackDetails.firebase, name: 'Firebase'},
+			{icon: techStackDetails.mongo, name: 'MongoDB'},
+		],
+		proficient: [
+			{icon: techStackDetails.redux, name: 'Redux'},
+			{icon: techStackDetails.mui, name: 'Material UI'},
+			{icon: techStackDetails.styled, name: 'Styled Components'},
+			{icon: techStackDetails.linux, name: 'Linux'},
+			{icon: techStackDetails.sql, name: 'SQL'},
+			{icon: techStackDetails.jwt, name: 'JWT'},
+			{icon: techStackDetails.npm, name: 'npm'},
+			{icon: techStackDetails.yarn, name: 'Yarn'},
+			{icon: techStackDetails.vite, name: 'Vite'},
+			{icon: techStackDetails.next, name: 'NextJS'},
+			{icon: techStackDetails.stripe, name: 'Stripe'},
+			{icon: techStackDetails.supabase, name: 'Supabase'},
+			{icon: techStackDetails.leaflet, name: 'Leaflet'},
+			{icon: techStackDetails.clerk, name: 'Clerk'},
+		],
+		familiar: [
+			{icon: techStackDetails.java, name: 'Java'},
+			{icon: techStackDetails.python, name: 'Python'},
+			{icon: techStackDetails.ruby, name: 'Ruby'},
+			{icon: techStackDetails.swift, name: 'Swift'},
+			{icon: techStackDetails.php, name: 'PHP'},
+			{icon: techStackDetails.wordpress, name: 'WordPress'},
+			{icon: techStackDetails.figma, name: 'Figma'},
+			{icon: techStackDetails.mapbox, name: 'Mapbox'},
+			{icon: techStackDetails.photoshop, name: 'Photoshop'},
+			{icon: techStackDetails.finalCut, name: 'Final Cut Pro'},
+			{icon: techStackDetails.adobe, name: 'Adobe Suite'},
+		],
+	};
 
 	const location = useLocation();
+	const [tooltip, setTooltip] = useState({visible: false, text: '', x: 0, y: 0});
 
-	const randomX = random(1, 5);
-	const randomY = random(1, 5);
-	const randomTime = random(3, 5);
-	const randomTime2 = random(5, 10);
-	const randomAngle = random(-10, 10);
+	const initializePositions = useCallback((level, index, total) => {
+		const radius = Math.min(window.innerWidth, window.innerHeight) * 0.3;
+		const angle = (index / total) * Math.PI * 2;
 
-	const rotate = useCallback(
-		(target, direction) => {
-			gsap.to(target, {
-				rotation: randomAngle(direction),
-				duration: randomTime2(),
-				ease: 'sine.inOut',
-				onComplete: rotate,
-				onCompleteParams: [target, direction * -1],
+		return {
+			x: Math.cos(angle) * radius + (Math.random() - 0.5) * 100,
+			y: Math.sin(angle) * radius + (Math.random() - 0.5) * 100,
+			rotation: Math.random() * 360,
+			scale: level === 'expert' ? 1.2 : level === 'proficient' ? 1 : 0.8,
+		};
+	}, []);
+
+	const startAnimation = useCallback((element) => {
+		const level = element.getAttribute('data-level');
+		const speedMultiplier = level === 'expert' ? 0.7 : level === 'proficient' ? 1.2 : 1.7;
+
+		function createRandomMovement() {
+			const bounds = {
+				x: window.innerWidth * 0.4,
+				y: window.innerHeight * 0.4,
+			};
+
+			const newX = (Math.random() - 0.5) * bounds.x;
+			const newY = (Math.random() - 0.5) * bounds.y;
+			const baseDuration = 25;
+			const duration = baseDuration / speedMultiplier;
+
+			gsap.to(element, {
+				x: newX,
+				y: newY,
+				rotation: Math.random() * 360,
+				duration: duration,
+				ease: 'none',
+				onComplete: createRandomMovement,
 			});
-		},
-		[randomAngle, randomTime2]
-	);
+		}
 
-	const moveX = useCallback(
-		(target, direction) => {
-			gsap.to(target, {
-				x: randomX(direction),
-				duration: randomTime(),
-				ease: 'sine.inOut',
-				onComplete: moveX,
-				onCompleteParams: [target, direction * -1],
-			});
-		},
-		[randomX, randomTime]
-	);
-
-	const moveY = useCallback(
-		(target, direction) => {
-			gsap.to(target, {
-				duration: randomTime(),
-				y: randomY(direction),
-				ease: 'sine.inOut',
-				onComplete: moveY,
-				onCompleteParams: [target, direction * -1],
-			});
-		},
-		[randomY, randomTime]
-	);
+		createRandomMovement();
+	}, []);
 
 	useLayoutEffect(() => {
-		const iconImgs = gsap.utils.toArray('.tech img');
-		iconImgs.forEach((icon) => {
-			moveX(icon, 1);
-			moveY(icon, -1);
-			rotate(icon, 1);
+		const elements = document.querySelectorAll('[data-skill]');
+		const elementsArray = Array.from(elements);
 
-			gsap.set(icon, {
-				x: randomX(-1),
-				y: randomX(1),
-				rotation: randomAngle(-1),
-				animationDelay: 1,
-			});
+		gsap.killTweensOf(elements);
+
+		elementsArray.forEach((element, index) => {
+			const level = element.getAttribute('data-level');
+			const initialPos = initializePositions(level, index, elementsArray.length);
+			gsap.set(element, initialPos);
 		});
 
+		setTimeout(() => {
+			elementsArray.forEach((element) => {
+				startAnimation(element);
+			});
+		}, 100);
+
 		return () => {
-			gsap.killTweensOf('.tech img');
+			gsap.killTweensOf(elements);
 		};
-	}, [location, moveX, moveY, randomAngle, randomX, rotate]);
+	}, [location, startAnimation, initializePositions]);
+
+	const handleMouseEnter = (e, level) => {
+		const text =
+			level === 'expert' ? 'I know this technology very well' : level === 'proficient' ? 'I am proficient in this technology' : 'I am familiar with this technology';
+		setTooltip({visible: true, text, x: e.clientX, y: e.clientY});
+	};
+
+	const handleMouseLeave = () => {
+		setTooltip({visible: false, text: '', x: 0, y: 0});
+	};
 
 	return (
 		<>
 			<h1 className="text-md mr-[-2px] md:mr-[-1px] md:text-2xl dark-text dark:light-text page-title">Technologies</h1>
-			<main className="w-[80%] flex justify-center items-center flex-col]">
-				<div className="mt-2 md:mt-32 ml-2 px-6 md:px-16 flex gap-2 md:gap-10 flex-col">
-					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70 techSkills">🛠️ Core Skills </h4>
-						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
-							<img src={techStackDetails.ts} title="Typescript" alt="" />
-							<img src={js} title="JavaScript" alt="" />
-							<img src={html} title="HTML" alt="" />
-							<img src={css} title="CSS" alt="" />
-							<img src={react} title="React" alt="" />
-							<img src={redux} title="Redux" alt="" />
-							<img src={techStackDetails.graphql} title="GraphQL" alt="" />
-							<img src={techStackDetails.mongo} title="MongoDB" alt="" />
-							<img src={techStackDetails.node} title="NodeJS" className="dark:bg-white rounded-md" alt="" />
-							<img src={tailwind} title="Tailwind CSS" alt="" />
-							<img src={techStackDetails.mui} title="Material UI" alt="" />
-							<img src={techStackDetails.styled} title="Styled Components" alt="" />
-							<img src={techStackDetails.jwt} title="JWT" alt="" />
-							<img src={techStackDetails.express} title="Express" alt="" style={{background: 'white', borderRadius: '50%'}} />
-							<img src={techStackDetails.firebase} title="Firebase" alt="" />
-							<img src={techStackDetails.json} title="JSON" alt="" />
-							<img src={techStackDetails.zustand} title="Zustand" alt="" />
-							<img src={techStackDetails.rest} title="RESTful" alt="" className="dark:bg-white rounded-md" />
-						</section>
-					</section>
-					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70 techSkills">💡 Secondary Skills</h4>
-						<section className="tech flex flex-wrap items-center gap-5 pt-2 pb-6">
-							<img src={techStackDetails.java} title="Java" alt="" />
-							<img src={techStackDetails.sql} title="MySQL" alt="" />
-							<img src={techStackDetails.php} title="PHP" alt="" />
-							<img src={techStackDetails.ruby} title="Ruby" alt="" />
-							<img src={techStackDetails.swift} title="Swift" alt="" />
-							<img src={techStackDetails.python} title="Python" alt="" />
-							<img src={techStackDetails.unix} title="Unix" alt="" />
-							<img src={techStackDetails.linux} title="Linux" className="dark:bg-white rounded-md" alt="" />
-							<img src={techStackDetails.wordpress} title="Wordpress" alt="" />
-						</section>
-					</section>
-
-					<section>
-						<h4 className="text-md dark-text dark:light-text md:text-xl xl:leading-tight font-bold opacity-70 techSkills">🧩 Additional Knowledge</h4>
-						<section className="tech flex flex-wrap items-center gap-5 pt-2 mb-[50px]">
-							<img src={vscode} title="Visual Studio Code" alt="" />
-							<img src={git} title="Git" alt="Git" />
-							<img src={github} title="Github" alt="Github" className="dark:bg-white rounded-md " />
-							<img src={figma} title="Figma" alt="Figma" />
-							<img src={techStackDetails.yarn} title="yarn" alt="Figma" />
-							<img src={npm} title="NPM" alt="NPM" className="bg-white rounded-md" />
-							<img src={postman} title="Postman" alt="Postman" />
-							<img src={techStackDetails.adobe} title="PremierPro" alt="" />
-							<img src={techStackDetails.finalCut} title="FinalCut" alt="" />
-							<img src={techStackDetails.photoshop} title="Photoshop" alt="" />
-							<img src={techStackDetails.vite} title="Vite" alt="" />
-						</section>
-					</section>
+			<div className="relative w-full h-full overflow-hidden p-12">
+				<div className="absolute inset-0 flex items-center justify-center">
+					<div className="relative w-full h-full flex items-center justify-center">
+						{Object.entries(skills).map(([level, skillSet]) =>
+							skillSet.map(({icon, name}) => (
+								<div
+									key={name}
+									data-skill={name}
+									data-level={level}
+									className="absolute hover:scale-110 transition-transform duration-200 group cursor-pointer"
+									style={{willChange: 'transform'}}
+									onMouseEnter={(e) => handleMouseEnter(e, level)}
+									onMouseLeave={handleMouseLeave}>
+									<img src={icon} alt={name} title={name} className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+									<span
+										className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full
+									opacity-0 group-hover:opacity-100 transition-opacity
+									text-xs text-center mt-2 whitespace-nowrap
+									dark:text-white text-black font-medium">
+										{name}
+									</span>
+								</div>
+							))
+						)}
+					</div>
 				</div>
-			</main>
+
+				{tooltip.visible && (
+					<div className="absolute bg-gray-800 text-white p-2 rounded" style={{top: tooltip.y + 10, left: tooltip.x + 10}}>
+						{tooltip.text}
+					</div>
+				)}
+			</div>
 		</>
 	);
 }

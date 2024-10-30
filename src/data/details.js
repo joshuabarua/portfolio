@@ -1,17 +1,17 @@
 // Logo images
-import logogradient from '../assets/logo.svg';
-import logo from '../assets/logo.png';
-import risefx from '../assets/riseFx.png';
-import rmit from '../assets/rmit.jpg';
-import procad from '../assets/procad.png';
-import cab from '../assets/CAB.png';
-import ggirl from '../assets/GalaxyGirlLogo.png';
-import poa from '../assets/POA6.png';
-import tca from '../assets/tca.png';
-import vicsq from '../assets/vicsq.png';
+import logogradient from '../assets/companylogos/logo.svg';
+import logo from '../assets/companylogos/logo.png';
+import risefx from '../assets/companylogos/riseFx.png';
+import rmit from '../assets/companylogos/rmit.jpg';
+import procad from '../assets/companylogos/procad.png';
+import cab from '../assets/companylogos/CAB.png';
+import ggirl from '../assets/companylogos/GalaxyGirlLogo.png';
+import poa from '../assets/companylogos/POA6.png';
+import tca from '../assets/companylogos/tca.png';
+import vicsq from '../assets/companylogos/vicsq.png';
 
 // Profile Image
-import profile from '../assets/profile.png';
+import profile from '../assets/companylogos/profile.png';
 // Tech stack images
 import html from '../assets/techstack/html.png';
 import css from '../assets/techstack/css.png';
@@ -53,6 +53,12 @@ import rest from '../assets/techstack/rest-api.png';
 import yarn from '../assets/techstack/yarn-logo-128.png';
 import vite from '../assets/techstack/vite-js-logo.png';
 import mapbox from '../assets/techstack/mapbox-logo.png';
+import bun from '../assets/techstack/Bun.png';
+import next from '../assets/techstack/nextjs.png';
+import stripe from '../assets/techstack/StripeLogo.png';
+import supabase from '../assets/techstack/supabaselogo.png';
+import clerk from '../assets/techstack/clerklogo.png';
+import leaflet from '../assets/techstack/leaflet.png';
 
 // Project Images
 import boulderberlin from '../assets/projects/boulderberlin.png';
@@ -138,7 +144,13 @@ export const techStackDetails = {
 	rest: rest,
 	yarn: yarn,
 	vite: vite,
+	bun: bun,
+	next: next,
 	mapbox: mapbox,
+	stripe: stripe,
+	supabase: supabase,
+	clerk: clerk,
+	leaflet: leaflet,
 };
 
 // Enter your Work Experience here
@@ -160,7 +172,8 @@ export const workDetails = [
 		Description:
 			'Developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, crafted a visually appealing and modern website. Integrated with a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, organization of project data—descriptions, images, and achievements—in a structured and easily accessible format.',
 		Company: `Galaxy Girl MUA`,
-		Website: 'https://github.com/joshuabarua/galaxy-girl-vite',
+		GitHub: 'https://github.com/joshuabarua/galaxy-girl-vite',
+		Website: 'https://galaxy-girl-mua.vercel.app/',
 		Location: 'Remote/Brighton, UK',
 		Type: 'Freelance',
 		Duration: 'Jan 2022 - Jan 2023',
@@ -181,11 +194,12 @@ export const workDetails = [
 		Color: '#0d0d0c',
 	},
 	{
-		Position: 'Freelance',
+		Position: 'Web Developer',
 		Description: `Created a WordPress-based CMS for an art portfolio, boosting visibility and interest in the client's work. Swiftly resolved technical issues to minimize downtime and ensure uninterrupted website access. Additionally, offered comprehensive training and support, empowering the client to independently manage and update content.`,
 		Company: `Peace of Art`,
+		Website: 'www.peace-of.art',
 		Location: 'Walldorf, DE',
-		Type: 'Part Time',
+		Type: 'Part Time/Freelance',
 		Duration: 'Jun 2021 - Jan 2022',
 		Tech: [wordpress, js, css],
 		Logo: poa,
@@ -196,6 +210,7 @@ export const workDetails = [
 		Description:
 			'Successfully managed development tasks while completing my final year at university. Using PHP and JS, I retrieved and manipulated data stored in an SQL database, enabling the marketing team to perform effective analysis. My responsibilities included API data management, database integration, data storage, creating evaluation tools, and developing the frontend UI.',
 		Company: `Victoria Square/Ously Games`,
+		Website: 'https://ouslygames.de/',
 		Location: 'Frankfurt, DE',
 		Type: 'Part Time',
 		Duration: 'Apr 2020 - Sep 2020',
@@ -209,7 +224,7 @@ export const workDetails = [
 			'Designing many features for a traffic control permit-issuing company website implementing a Wordpress CMS. Utilising handover guides for the future operation of the team. Implementing MapBox APIs and Javascript to enable certain custom features. Email campaigns designed and created for informative responses to customer queries.',
 		Company: `Traffic Control Australia`,
 		Location: 'Melbourne, AU',
-		Type: 'Part Time',
+		Type: 'Part Time/Freelance',
 		Duration: 'Nov 2017 - Mar 2018',
 		Tech: [wordpress, js, css, mapbox],
 		Logo: tca,
@@ -231,7 +246,7 @@ export const eduDetails = [
 		Color: '#239178',
 	},
 	{
-		Position: 'Bachelors Degree of Computer Science',
+		Position: 'Bachelor of Information Technology (Transition from Computer Science)',
 		Website: 'https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bachelor-of-information-technology-bp162/bp162opn9auscy',
 		Company: `Royal Melbourne Institute of Technology University`,
 		Location: 'Melbourne, AU',

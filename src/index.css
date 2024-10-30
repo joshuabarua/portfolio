@@ -234,7 +234,7 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-	opacity: 1
+	opacity: 1;
 }
 
 .mask_right {
@@ -246,7 +246,7 @@ body.dark {
 	transition-property: background-color;
 	transition-duration: 0.9s;
 	transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-	opacity:1;
+	opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -343,28 +343,24 @@ body.dark {
 }
 
 /** LIGHT DARK TOGGLE START **/
-
 .lightdark {
 	position: fixed;
-	left: var(--pad);
 	bottom: 31px;
+	left: 1px;
 	z-index: 10;
-	left: 6px;
 	writing-mode: vertical-lr;
 	transform: rotate(180deg);
 	display: flex;
 	justify-content: flex-start;
-	align-items: flex-start;
 	height: 100%;
 	width: 29px;
 }
 
-.lightdark .baseline {
+.baseline {
 	display: flex;
-	justify-content: center;
-	align-items: baseline;
-	width: 100%;
+	align-items: center; /* Changed from baseline to center */
 	gap: 5px;
+	width: 100%;
 }
 
 .custom-checkbox {
@@ -375,36 +371,26 @@ body.dark {
 	cursor: pointer;
 	width: 13px;
 	height: 13px;
+	flex-shrink: 0; /* Prevent box from shrinking */
 }
 
 .custom-box + h5 {
-	position: relative;
-	left: 1px;
 	font-size: 18px;
-	font-weight: 400 !important;
+	font-weight: 400;
+	margin: 0; /* Reset margin */
+	line-height: 1; /* Adjust line height */
 }
 
 @media screen and (max-width: 768px) {
 	.lightdark {
 		bottom: 21px;
-		left: -1px;
-	}
-
-	.baseline {
-		margin-left: 4px;
-		gap: 5px;
+		left: -6px;
 	}
 
 	.custom-box + h5 {
 		font-size: 16px;
-		left: 2px;
-	}
-
-	.custom-box {
-		font-size: 18px;
 	}
 }
-
 /** LIGHT DARK TOGGLE FINISH **/
 
 .wrapped-text {
@@ -482,8 +468,12 @@ input:focus {
 }
 
 /*** PROJECTS COMPONENT STYLING ***/
+.projects {
+	overflow-x: hidden;
+}
 
 .projectCardGrid {
+	overflow-x: hidden;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 1.5em;
@@ -619,4 +609,21 @@ body.dark .projectCard {
 	.vertical-timeline.vertical-timeline--two-columns {
 		width: 100% !important;
 	}
+}
+
+[data-skill] {
+  transition: transform 0.2s ease-out;
+}
+
+[data-skill]:hover {
+  z-index: 10;
+}
+
+/* Optional: Add a subtle glow effect on hover */
+[data-skill]:hover img {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.dark [data-skill]:hover img {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
 }
