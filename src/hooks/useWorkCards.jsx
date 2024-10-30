@@ -9,7 +9,6 @@ export const useWorkCards = (selector) => {
 	useEffect(() => {
         const workCards = document.querySelectorAll(selector);
         const state = Flip.getState(workCards);
-		console.log('workCards', workCards);
 		workCards.forEach((card, idx) => {
 			card.classList.remove('active', 'is-inactive');
 			if (idx === activeIndex) {

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 import gsap from 'gsap';
-import { Flip } from 'gsap/Flip';
+import {Flip} from 'gsap/Flip';
 
 const Spinner = () => (
 	<div className="spinner">
@@ -9,11 +9,32 @@ const Spinner = () => (
 	</div>
 );
 
-const Project = React.memo(({ props, idx }) => {
-	const { title, image, description, techstack, previewLink, githubLink } = props;
+const Project = React.memo(({props, idx}) => {
+	const {title, image, description, techstack, previewLink, githubLink} = props;
 	gsap.registerPlugin(Flip);
 
 	const [loading, setLoading] = useState(true);
+	const [imageLoaded, setImageLoaded] = useState(false);
+
+	const getImageSource = () => {
+		if (window.innerWidth <= 600) {
+			return image[0]; 
+		} else if (window.innerWidth <= 900) {
+			return image[1]; 
+		}
+		return image[2]; 
+	};
+
+	const [currentImage, setCurrentImage] = useState(getImageSource());
+
+	useEffect(() => {
+		const handleResize = () => {
+			setCurrentImage(getImageSource());
+		};
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, [image]);
 
 	const handleCardClick = (e) => {
 		e.preventDefault();
@@ -40,17 +61,28 @@ const Project = React.memo(({ props, idx }) => {
 		});
 	};
 
+	const handleImageLoad = () => {
+		setLoading(false);
+		setImageLoaded(true);
+	};
+
 	return (
-		<article className="projectCard" onClick={handleCardClick}>
-			{loading && <Spinner />}
-			<img
-				src={image}
-				alt=""
-				loading="lazy"
-				decoding="async"
-				className={`transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100'}`}
-				onLoad={() => setLoading(false)}
-			/>
+		<article className="projectCard relative" onClick={handleCardClick}>
+			<div className={`w-full  relative ${!imageLoaded ? 'bg-gray-200 dark:bg-gray-700' : ''} flex items-center justify-center`}>
+				{loading && (
+					<div className="absolute inset-0 flex items-center justify-center">
+						<Spinner />
+					</div>
+				)}
+				<img
+					src={currentImage}
+					alt={title}
+					loading="lazy"
+					decoding="async"
+					className={`w-full h-full object-cover transition-opacity duration-500 border border-gray-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+					onLoad={handleImageLoad}
+				/>
+			</div>
 			<h1 className="dark-text dark:light-text work-header-text text-sm md:text-lg xl:text-2xl">{title}</h1>
 			<div className="details wrapped-text px-2 md:px-12">
 				<p className="wrapped-text font-light text-xs md:text-lg xl:text-xl">{description}</p>
@@ -66,8 +98,7 @@ const Project = React.memo(({ props, idx }) => {
 							height="20"
 							viewBox="0 0 20 20"
 							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
+							xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M11.2867 8.7133C10.6041 8.031 9.67846 7.64771 8.71334 7.64771C7.74821 7.64771 6.82259 8.031 6.14 8.7133L3.56584 11.2866C2.88324 11.9692 2.49976 12.895 2.49976 13.8604C2.49976 14.8257 2.88324 15.7515 3.56584 16.4341C4.24844 17.1167 5.17424 17.5002 6.13959 17.5002C7.10493 17.5002 8.03074 17.1167 8.71334 16.4341L10 15.1475"
 								strokeWidth="1.66667"
@@ -88,14 +119,13 @@ const Project = React.memo(({ props, idx }) => {
 									href={previewLink}
 									target="_blank"
 									rel="noreferrer noopener"
-									className="underline font-light text-xs md:text-base dark:text-white z-50 h-18 border-white"
-								>
+									className="underline font-light text-xs md:text-base dark:text-white z-50 h-18 border-white">
 									Live Preview
 								</a>
 							</div>
 						) : (
 							<p className="">Unavailable</p>
-							)}
+						)}
 					</div>
 					<div className="flex items-center">
 						<svg
@@ -104,8 +134,7 @@ const Project = React.memo(({ props, idx }) => {
 							height="20"
 							viewBox="0 0 20 20"
 							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
+							xmlns="http://www.w3.org/2000/svg">
 							<path
 								fillRule="evenodd"
 								clipRule="evenodd"
@@ -118,8 +147,7 @@ const Project = React.memo(({ props, idx }) => {
 							href={githubLink}
 							target="_blank"
 							rel="noreferrer noopener"
-							className="underline font-light dark:text-white text-xs md:text-base"
-						>
+							className="underline font-light dark:text-white text-xs md:text-base">
 							View Code
 						</a>
 					</div>

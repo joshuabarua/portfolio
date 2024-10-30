@@ -68,6 +68,20 @@ import mixtape from '../assets/projects/mixtape.png';
 import boulderbbs from '../assets/projects/boulderbbs.png';
 import weatherWear from '../assets/projects/weather_wear.png';
 import ricknmorty from '../assets/projects/rickandmorty.png';
+import boulderberlinSmall from '../assets/projects/boulderberlin-small.png';
+import mystictarotSmall from '../assets/projects/mystictarot-small.png';
+import pfantastischSmall from '../assets/projects/pfandtastisch-small.png';
+import mixtapeSmall from '../assets/projects/mixtape-small.png';
+import boulderbbsSmall from '../assets/projects/boulderbbs-small.png';
+import weatherWearSmall from '../assets/projects/weather_wear-small.png';
+import ricknmortySmall from '../assets/projects/rickandmorty-small.png';
+import boulderberlinMedium from '../assets/projects/boulderberlin-medium.png';
+import mystictarotMedium from '../assets/projects/mystictarot-medium.png';
+import pfantastischMedium from '../assets/projects/pfandtastisch-medium.png';
+import mixtapeMedium from '../assets/projects/mixtape-medium.png';
+import boulderbbsMedium from '../assets/projects/boulderbbs-medium.png';
+import weatherWearMedium from '../assets/projects/weather_wear-medium.png';
+import ricknmortyMedium from '../assets/projects/rickandmorty-medium.png';
 
 //logos
 
@@ -273,7 +287,7 @@ export const eduDetails = [
 export const projectDetails = [
 	{
 		title: 'Boulder Bebis GraphQL',
-		image: boulderbbs,
+		image: [boulderbbsSmall, boulderbbsMedium, boulderbbs],
 		description:
 			'[Work in Progress] An innovative booking platform for boulder halls, leveraging GraphQL for efficient data querying. This project showcases advanced web development skills acquired at Code Academy Berlin, offering a user experience for climbers to reserve their spots.',
 		previewLink: 'https://boulder-bebis.vercel.app/',
@@ -282,7 +296,7 @@ export const projectDetails = [
 	},
 	{
 		title: 'Weather Wear JS API',
-		image: weatherWear,
+		image: [weatherWearSmall, weatherWearMedium, weatherWear],
 		description:
 			'[Completed at CAB] A smart, API-driven application that helps users dress appropriately for any weather condition. This project demonstrates proficiency in working with external APIs and creating practical, user-friendly web applications.',
 		techstack: 'HTML/CSS, JavaScript, JSON, OpenWeatherAPI, Geolocation',
@@ -291,7 +305,7 @@ export const projectDetails = [
 	},
 	{
 		title: 'Pfand-tastisch MERN',
-		image: pfantastisch,
+		image: [pfantastischSmall, pfantastischMedium, pfantastisch],
 		previewLink: 'https://pfandtastisch-app.vercel.app/',
 		description:
 			'[Completed at CAB] An eco-friendly web application built on the MERN stack, designed to help users locate nearby Pfand (bottle deposit) machines. This project showcases full-stack development skills and addresses a real-world need in German cities.',
@@ -300,7 +314,7 @@ export const projectDetails = [
 	},
 	{
 		title: 'Mystic Tarot ReactJS Firebase',
-		image: mystictarot,
+		image: [mystictarotSmall, mystictarotMedium, mystictarot],
 		description:
 			'[Completed at CAB] An engaging tarot card exploration app with Firebase authentication. This project demonstrates integration of third-party services and creating interactive, personalized user experiences.',
 		techstack: 'Typescript, ReactJS, CSS, Firebase',
@@ -309,7 +323,7 @@ export const projectDetails = [
 	},
 	{
 		title: 'Mixtape ReactJS',
-		image: mixtape,
+		image: [mixtapeSmall, mixtapeMedium, mixtape],
 		description:
 			'A nostalgic mixtape player that brings back the charm of old-school music listening. This React-based project showcases front-end development skills and the ability to create engaging user interfaces.',
 		techstack: 'ReactJS, JavaScript, CSS, Material-UI',
@@ -318,7 +332,7 @@ export const projectDetails = [
 	},
 	{
 		title: 'Rick and Morty Typescript API',
-		image: ricknmorty,
+		image: [ricknmortySmall, ricknmortyMedium, ricknmorty],
 		description:
 			'[Completed at CAB] A dynamic character explorer for the Rick and Morty universe. This TypeScript project demonstrates proficiency in working with APIs and creating responsive, data-driven web applications and was completed in two days',
 		techstack: 'Typescript, ReactJS, APIs, JSON',
@@ -327,7 +341,7 @@ export const projectDetails = [
 	},
 	{
 		title: 'Boulder Berlin HTML/CSS',
-		image: boulderberlin,
+		image: [boulderberlinSmall, boulderberlinMedium, boulderberlin],
 		description:
 			'[Completed at CAB] A sleek, responsive website design for a fictional boulder gym in Berlin. This project showcases fundamental web development skills and an eye for modern, clean design using only HTML and CSS',
 		techstack: 'HTML/CSS',
