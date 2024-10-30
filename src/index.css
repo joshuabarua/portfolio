@@ -346,7 +346,7 @@ body.dark {
 .lightdark {
 	position: fixed;
 	bottom: 31px;
-	left: 1px;
+	left: -1px;
 	z-index: 10;
 	writing-mode: vertical-lr;
 	transform: rotate(180deg);
@@ -358,9 +358,9 @@ body.dark {
 
 .baseline {
 	display: flex;
-	align-items: center; /* Changed from baseline to center */
-	gap: 5px;
+	align-items: bottom;
 	width: 100%;
+	gap: 3px;
 }
 
 .custom-checkbox {
@@ -369,22 +369,22 @@ body.dark {
 
 .custom-box {
 	cursor: pointer;
-	width: 13px;
-	height: 13px;
-	flex-shrink: 0; /* Prevent box from shrinking */
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
 }
 
 .custom-box + h5 {
 	font-size: 18px;
 	font-weight: 400;
-	margin: 0; /* Reset margin */
-	line-height: 1; /* Adjust line height */
+	margin: 0;
+	line-height: 1;
 }
 
 @media screen and (max-width: 768px) {
 	.lightdark {
-		bottom: 21px;
-		left: -6px;
+		bottom: 20px;
+		left: -12px;
 	}
 
 	.custom-box + h5 {
@@ -612,18 +612,18 @@ body.dark .projectCard {
 }
 
 [data-skill] {
-  transition: transform 0.2s ease-out;
+	transition: transform 0.2s ease-out;
 }
 
 [data-skill]:hover {
-  z-index: 10;
+	z-index: 10;
 }
 
 /* Optional: Add a subtle glow effect on hover */
 [data-skill]:hover img {
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+	filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
 }
 
 .dark [data-skill]:hover img {
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+	filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
 }
