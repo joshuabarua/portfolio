@@ -358,7 +358,7 @@ body.dark {
 
 .baseline {
 	display: flex;
-	align-items: bottom;
+	align-items: center;
 	width: 100%;
 	gap: 3px;
 }
