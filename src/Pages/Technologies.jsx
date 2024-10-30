@@ -52,7 +52,7 @@ function Technologies() {
 			{icon: techStackDetails.mapbox, name: 'Mapbox'},
 			{icon: techStackDetails.photoshop, name: 'Photoshop'},
 			{icon: techStackDetails.finalCut, name: 'Final Cut Pro'},
-			{icon: techStackDetails.adobe, name: 'Adobe Suite'},
+			{icon: techStackDetails.adobe, name: 'Premiere Pro'},
 		],
 	};
 
@@ -152,7 +152,7 @@ function Technologies() {
 									<span
 										className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full
 									opacity-0 group-hover:opacity-100 transition-opacity
-									text-xs text-center mt-2 whitespace-nowrap
+									text-md text-center mt-2 whitespace-nowrap
 									dark:text-white text-black font-medium">
 										{name}
 									</span>
