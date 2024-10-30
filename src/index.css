@@ -456,9 +456,6 @@ input:focus {
 	color: var(--text-dark);
 }
 
-.projectCard {
-	background-color: #fcf9f9;
-}
 
 .extraSpace {
 	height: calc(100% + 2000px);
@@ -481,6 +478,9 @@ input:focus {
 .projects {
 	overflow-x: hidden;
 	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .projectCardGrid {
