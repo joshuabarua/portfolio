@@ -38,7 +38,6 @@ export const AppContextProvider = ({children}) => {
 
 	const getInitialColorScheme = () => {
 		const storedValue = localStorage.getItem('colorScheme');
-		console.log('Stored val color: ', storedValue);
 		if (storedValue !== null) {
 			try {
 				const parsedValue = JSON.parse(storedValue);
@@ -88,9 +87,7 @@ export const AppContextProvider = ({children}) => {
 	};
 	const handleOrientationChange = () => {
 		let myScreenOrientation = window.screen.orientation;
-		console.log(myScreenOrientation);
 		if (myScreenOrientation.type !== 'portrait-primary') {
-			console.log('Runs');
 			myScreenOrientation.lock('portrait-primary').catch((err) => {
 				console.error('Failed to lock screen orientation:', err);
 			});
