@@ -390,6 +390,16 @@ body.dark {
 	.custom-box + h5 {
 		font-size: 16px;
 	}
+
+	.custom-box {
+		width: 12px;
+		height: 12px;
+	}
+
+	.baseline {
+	gap: 2px;
+}
+
 }
 /** LIGHT DARK TOGGLE FINISH **/
 
