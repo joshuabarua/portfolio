@@ -400,23 +400,20 @@ body.dark {
 	all: unset;
 	display: inline-flex;
 	align-items: center;
-	gap: 0.2em;
+	gap: 0.25em;
 	cursor: pointer;
 	font-size: 18px;
 	line-height: 1;
 }
 
 .custom-box {
-	display: inline-block;
-	width: 0.72em;
-	height: 0.72em;
-	vertical-align: middle;
-	margin-top: -0.08em;
+	width: 0.68em;
+	height: 0.68em;
+	flex-shrink: 0;
 }
 
 .toggle-label {
 	font-weight: 400;
-	vertical-align: middle;
 }
 
 @media screen and (max-width: 768px) {
@@ -427,7 +424,7 @@ body.dark {
 
 	.baseline {
 		font-size: 16px;
-		gap: 2px;
+		gap: 0.2em;
 	}
 }
 /** LIGHT DARK TOGGLE FINISH **/
