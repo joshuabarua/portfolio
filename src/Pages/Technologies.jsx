@@ -1,5 +1,5 @@
 import React, {useCallback, useLayoutEffect, useState} from 'react';
-import {techStackDetails} from '../data/details.js';
+import {techStackDetails} from '../data/Details.js';
 import gsap from 'gsap';
 import {useLocation} from 'react-router-dom';
 

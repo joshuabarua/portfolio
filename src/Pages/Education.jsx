@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import Work from '../Components/Work';
-import {eduDetails} from '../data/details.js';
+import {eduDetails} from '../data/Details.js';
 import {VerticalTimeline} from 'react-vertical-timeline-component';
 import {AppContext} from '../context/AppContext.jsx';
 import Spacer from '../Components/Spacer.jsx';

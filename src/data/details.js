@@ -1,17 +1,17 @@
 // Logo images
-import logogradient from '../assets/companylogos/logo.svg';
-import logo from '../assets/companylogos/logo.png';
-import risefx from '../assets/companylogos/riseFx.png';
-import rmit from '../assets/companylogos/rmit.jpg';
-import procad from '../assets/companylogos/procad.png';
-import cab from '../assets/companylogos/CAB.png';
-import ggirl from '../assets/companylogos/GalaxyGirlLogo.png';
-import poa from '../assets/companylogos/POA6.png';
-import tca from '../assets/companylogos/tca.png';
-import vicsq from '../assets/companylogos/vicsq.png';
+import logogradient from '../assets/logo.svg';
+import logo from '../assets/logo.png';
+import risefx from '../assets/riseFx.png';
+import rmit from '../assets/rmit.jpg';
+import procad from '../assets/procad.png';
+import cab from '../assets/CAB.png';
+import ggirl from '../assets/GalaxyGirlLogo.png';
+import poa from '../assets/POA6.png';
+import tca from '../assets/tca.png';
+import vicsq from '../assets/vicsq.png';
 
 // Profile Image
-import profile from '../assets/companylogos/profile.png';
+import profile from '../assets/profile.png';
 // Tech stack images
 import html from '../assets/techstack/html.png';
 import css from '../assets/techstack/css.png';
@@ -26,7 +26,7 @@ import git from '../assets/techstack/git.png';
 import npm from '../assets/techstack/npm.png';
 import postman from '../assets/techstack/postman.png';
 import figma from '../assets/techstack/figma.png';
-import premiere from '../assets/techstack/adobe-premiere-pro-96.png';
+import adobe from '../assets/techstack/adobe-premiere-pro-96.png';
 import express from '../assets/techstack/express-js-150.png';
 import finalCut from '../assets/techstack/final-cut-pro-x-96.png';
 import firebase from '../assets/techstack/firebase-144.png';
@@ -53,12 +53,6 @@ import rest from '../assets/techstack/rest-api.png';
 import yarn from '../assets/techstack/yarn-logo-128.png';
 import vite from '../assets/techstack/vite-js-logo.png';
 import mapbox from '../assets/techstack/mapbox-logo.png';
-import bun from '../assets/techstack/Bun.png';
-import next from '../assets/techstack/nextjs.png';
-import stripe from '../assets/techstack/StripeLogo.png';
-import supabase from '../assets/techstack/supabaselogo.png';
-import clerk from '../assets/techstack/clerklogo.png';
-import leaflet from '../assets/techstack/leaflet.png';
 
 // Project Images
 import boulderberlin from '../assets/projects/boulderberlin.png';
@@ -68,20 +62,6 @@ import mixtape from '../assets/projects/mixtape.png';
 import boulderbbs from '../assets/projects/boulderbbs.png';
 import weatherWear from '../assets/projects/weather_wear.png';
 import ricknmorty from '../assets/projects/rickandmorty.png';
-import boulderberlinSmall from '../assets/projects/boulderberlin-small.png';
-import mystictarotSmall from '../assets/projects/mystictarot-small.png';
-import pfantastischSmall from '../assets/projects/pfandtastisch-small.png';
-import mixtapeSmall from '../assets/projects/mixtape-small.png';
-import boulderbbsSmall from '../assets/projects/boulderbbs-small.png';
-import weatherWearSmall from '../assets/projects/weather_wear-small.png';
-import ricknmortySmall from '../assets/projects/rickandmorty-small.png';
-import boulderberlinMedium from '../assets/projects/boulderberlin-medium.png';
-import mystictarotMedium from '../assets/projects/mystictarot-medium.png';
-import pfantastischMedium from '../assets/projects/pfandtastisch-medium.png';
-import mixtapeMedium from '../assets/projects/mixtape-medium.png';
-import boulderbbsMedium from '../assets/projects/boulderbbs-medium.png';
-import weatherWearMedium from '../assets/projects/weather_wear-medium.png';
-import ricknmortyMedium from '../assets/projects/rickandmorty-medium.png';
 
 //logos
 
@@ -133,7 +113,7 @@ export const techStackDetails = {
 	github: github,
 	figma: figma,
 	finalCut: finalCut,
-	premiere: premiere,
+	adobe: adobe,
 	express: express,
 	firebase: firebase,
 	graphql: graphql,
@@ -158,20 +138,14 @@ export const techStackDetails = {
 	rest: rest,
 	yarn: yarn,
 	vite: vite,
-	bun: bun,
-	next: next,
 	mapbox: mapbox,
-	stripe: stripe,
-	supabase: supabase,
-	clerk: clerk,
-	leaflet: leaflet,
 };
 
 // Enter your Work Experience here
 export const workDetails = [
 	{
 		Position: 'Frontend Developer',
-		Description: `At a leading European VFX studio, I significantly improved a VFX management web app using React.js, TypeScript, GraphQL, Jest, Zustand, and Material-UI. I developed and integrated features to improve the user experience, streamline workflows, and increase platform functionality. My tasks involved creating and optimizing components, enhancing UI, and bug resolution within an agile system. Pipeline used Jenkins on a main branch for CI/CD.`,
+		Description: `At a leading European VFX studio, I significantly improved a VFX management web app using React.js, TypeScript, GraphQL, Jest, Zustand, and Material-UI. I developed and integrated features to improve the user experience, streamline workflows, and increase platform functionality. My tasks involved creating and optimizing components, enhancing UI, and bug resolution within an agile system.`,
 		Company: `RISE FX GmbH`,
 		Website: 'https://www.risefx.com/',
 		Location: 'Berlin, Germany',
@@ -184,10 +158,9 @@ export const workDetails = [
 	{
 		Position: 'Frontend Developer',
 		Description:
-			'Developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, crafted a visually appealing and modern website. Integrated with a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, organization of project data—descriptions, images, and achievements—in a structured and easily accessible format.',
+			'[Currently migrated to vite and yarn due to create-react-app issues, currently squashing bugs] I developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, I crafted a visually appealing and modern website. I integrated a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, I organized project data—descriptions, images, and achievements—in a structured and easily accessible format.',
 		Company: `Galaxy Girl MUA`,
-		GitHub: 'https://github.com/joshuabarua/galaxy-girl-vite',
-		Website: 'https://galaxy-girl-mua.vercel.app/',
+		Website: 'https://github.com/joshuabarua/galaxy-girl-vite',
 		Location: 'Remote/Brighton, UK',
 		Type: 'Freelance',
 		Duration: 'Jan 2022 - Jan 2023',
@@ -208,12 +181,11 @@ export const workDetails = [
 		Color: '#0d0d0c',
 	},
 	{
-		Position: 'Web Developer',
+		Position: 'Freelance',
 		Description: `Created a WordPress-based CMS for an art portfolio, boosting visibility and interest in the client's work. Swiftly resolved technical issues to minimize downtime and ensure uninterrupted website access. Additionally, offered comprehensive training and support, empowering the client to independently manage and update content.`,
 		Company: `Peace of Art`,
-		Website: 'www.peace-of.art',
 		Location: 'Walldorf, DE',
-		Type: 'Part Time/Freelance',
+		Type: 'Part Time',
 		Duration: 'Jun 2021 - Jan 2022',
 		Tech: [wordpress, js, css],
 		Logo: poa,
@@ -224,7 +196,6 @@ export const workDetails = [
 		Description:
 			'Successfully managed development tasks while completing my final year at university. Using PHP and JS, I retrieved and manipulated data stored in an SQL database, enabling the marketing team to perform effective analysis. My responsibilities included API data management, database integration, data storage, creating evaluation tools, and developing the frontend UI.',
 		Company: `Victoria Square/Ously Games`,
-		Website: 'https://ouslygames.de/',
 		Location: 'Frankfurt, DE',
 		Type: 'Part Time',
 		Duration: 'Apr 2020 - Sep 2020',
@@ -238,7 +209,7 @@ export const workDetails = [
 			'Designing many features for a traffic control permit-issuing company website implementing a Wordpress CMS. Utilising handover guides for the future operation of the team. Implementing MapBox APIs and Javascript to enable certain custom features. Email campaigns designed and created for informative responses to customer queries.',
 		Company: `Traffic Control Australia`,
 		Location: 'Melbourne, AU',
-		Type: 'Part Time/Freelance',
+		Type: 'Part Time',
 		Duration: 'Nov 2017 - Mar 2018',
 		Tech: [wordpress, js, css, mapbox],
 		Logo: tca,
@@ -260,7 +231,7 @@ export const eduDetails = [
 		Color: '#239178',
 	},
 	{
-		Position: 'Bachelor of Information Technology (Transition from Computer Science)',
+		Position: 'Bachelors Degree of Information Technology & Computer Science',
 		Website: 'https://www.rmit.edu.au/study-with-us/levels-of-study/undergraduate-study/bachelor-degrees/bachelor-of-information-technology-bp162/bp162opn9auscy',
 		Company: `Royal Melbourne Institute of Technology University`,
 		Location: 'Melbourne, AU',
@@ -287,63 +258,56 @@ export const eduDetails = [
 export const projectDetails = [
 	{
 		title: 'Boulder Bebis GraphQL',
-		image: [boulderbbsSmall, boulderbbsMedium, boulderbbs],
-		description:
-			'[Work in Progress] An innovative booking platform for boulder halls, leveraging GraphQL for efficient data querying. This project showcases advanced web development skills acquired at Code Academy Berlin, offering a user experience for climbers to reserve their spots.',
+		image: boulderbbs,
+		description: `[Work in Progress] A booking website for buying tokens to use at a local boulder hall timeslot online`,
 		previewLink: 'https://boulder-bebis.vercel.app/',
-		techstack: 'Typescript, GraphQL, MongoDB, Passport, JWT, Auth, HTML/CSS, JavaScript, Express, NodeJS, Client/Server',
+		techstack: 'Typescript, Graphql, MongoDB, Passport, JWT, Auth,  HTML/CSS, JavaScript, Express, NodeJS, Client/Server',
 		githubLink: 'https://github.com/joshuabarua/Final_Project_CAB',
 	},
 	{
 		title: 'Weather Wear JS API',
-		image: [weatherWearSmall, weatherWearMedium, weatherWear],
-		description:
-			'[Completed at CAB] A smart, API-driven application that helps users dress appropriately for any weather condition. This project demonstrates proficiency in working with external APIs and creating practical, user-friendly web applications.',
-		techstack: 'HTML/CSS, JavaScript, JSON, OpenWeatherAPI, Geolocation',
+		image: weatherWear,
+		description: `An app that consumes an API using Javascript. This is weather app that tells you what to wear given the temperature throughout the day based on clothing options selected.`,
+		techstack: 'HTML/CSS, JavaScript, JSON, openWeatherAPI, geoLocation',
 		previewLink: 'https://weather-wear.onrender.com/',
 		githubLink: 'https://github.com/joshuabarua/CAB-JS-API-weatherApp',
 	},
 	{
 		title: 'Pfand-tastisch MERN',
-		image: [pfantastischSmall, pfantastischMedium, pfantastisch],
+		image: pfantastisch,
 		previewLink: 'https://pfandtastisch-app.vercel.app/',
-		description:
-			'[Completed at CAB] An eco-friendly web application built on the MERN stack, designed to help users locate nearby Pfand (bottle deposit) machines. This project showcases full-stack development skills and addresses a real-world need in German cities.',
-		techstack: 'Typescript, ReactJS, MongoDB, JWT, Express, Passport, Bcrypt/Auth, NodeJS, Client/Server, JSON',
-		githubLink: 'https://github.com/joshuabarua/pfandtastisch-app',
+		description: `[Work in Progress]  A web app to help users find the nearest pfandmachine nearby. `,
+		techstack: 'Typescript, Reactjs, MongoDB, JWT, Express, Passport, Bcrypt/Auth, nodeJS, Client/Server, JSON',
+		githubLink: 'https://github.com/joshuabarua/pfantastisch-app',
 	},
 	{
 		title: 'Mystic Tarot ReactJS Firebase',
-		image: [mystictarotSmall, mystictarotMedium, mystictarot],
-		description:
-			'[Completed at CAB] An engaging tarot card exploration app with Firebase authentication. This project demonstrates integration of third-party services and creating interactive, personalized user experiences.',
-		techstack: 'Typescript, ReactJS, CSS, Firebase',
+		image: mystictarot,
+		description: `[Work in Progress] A Tarot Card website that allows card selections and firebase as a login system.`,
+		techstack: 'Typescript, Reactjs, CSS, Firebase',
 		previewLink: 'https://cab-tarot-card-site-ts.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/CAB-tarot-card-site-ts',
 	},
 	{
 		title: 'Mixtape ReactJS',
-		image: [mixtapeSmall, mixtapeMedium, mixtape],
-		description:
-			'A nostalgic mixtape player that brings back the charm of old-school music listening. This React-based project showcases front-end development skills and the ability to create engaging user interfaces.',
-		techstack: 'ReactJS, JavaScript, CSS, Material-UI',
-		previewLink: 'https://mixtape4pati.vercel.app/',
+		image: mixtape,
+		description: `A simple webapp to play songs that look like a mixtape`,
+		techstack: 'Reactjs, JavaScript, CSS, Material-UI',
+		previewLink: 'https://mixtape4pati.vercel.app/ ',
 		githubLink: 'https://github.com/joshuabarua/mixtape_app',
 	},
 	{
 		title: 'Rick and Morty Typescript API',
-		image: [ricknmortySmall, ricknmortyMedium, ricknmorty],
-		description:
-			'[Completed at CAB] A dynamic character explorer for the Rick and Morty universe. This TypeScript project demonstrates proficiency in working with APIs and creating responsive, data-driven web applications and was completed in two days',
-		techstack: 'Typescript, ReactJS, APIs, JSON',
+		image: ricknmorty,
+		description: `A mini project completed at Code Academy Berlin in a two days using the rick and morty API to display characters using typescript`,
+		techstack: 'Typescript, Reactjs, APIs, JSON',
 		previewLink: 'https://ricknmorty-project2-5.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/ricknmorty-project2.5',
 	},
 	{
 		title: 'Boulder Berlin HTML/CSS',
-		image: [boulderberlinSmall, boulderberlinMedium, boulderberlin],
-		description:
-			'[Completed at CAB] A sleek, responsive website design for a fictional boulder gym in Berlin. This project showcases fundamental web development skills and an eye for modern, clean design using only HTML and CSS',
+		image: boulderberlin,
+		description: `A simple website to test design skills with HTML/CSS`,
 		techstack: 'HTML/CSS',
 		previewLink: 'https://cab-project1-html-css.vercel.app/',
 		githubLink: 'https://github.com/joshuabarua/CAB-project1-HTML-CSS',

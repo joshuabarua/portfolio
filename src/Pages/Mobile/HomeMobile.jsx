@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {personalDetails} from '../../data/details.js';
+import {personalDetails} from '../../data/Details.js';
 import './burgerMenu.css';
 import Header from '../../Components/Header';
 
