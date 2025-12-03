@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import gsap from 'gsap';
-import {Flip} from 'gsap/Flip';
+import React, { useState, useEffect, useCallback } from "react";
+import gsap from "gsap";
+import { Flip } from "gsap/Flip";
 
 const Spinner = () => (
 	<div className="spinner">
@@ -9,54 +9,55 @@ const Spinner = () => (
 	</div>
 );
 
-const Project = React.memo(({props, idx}) => {
-	const {title, image, description, techstack, previewLink, githubLink} = props;
+const Project = React.memo(({ props, idx }) => {
+	const { title, image, description, techstack, previewLink, githubLink } =
+		props;
 	gsap.registerPlugin(Flip);
 
 	const [loading, setLoading] = useState(true);
 	const [imageLoaded, setImageLoaded] = useState(false);
 
-	const getImageSource = () => {
+	const getImageSource = useCallback(() => {
 		if (window.innerWidth <= 600) {
-			return image[0]; 
+			return image[0];
 		} else if (window.innerWidth <= 900) {
-			return image[1]; 
+			return image[1];
 		}
-		return image[2]; 
-	};
+		return image[2];
+	}, [image]);
 
-	const [currentImage, setCurrentImage] = useState(getImageSource());
+	const [currentImage, setCurrentImage] = useState(() => getImageSource());
 
 	useEffect(() => {
 		const handleResize = () => {
 			setCurrentImage(getImageSource());
 		};
 
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, [image]);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, [getImageSource]);
 
 	const handleCardClick = (e) => {
 		e.preventDefault();
-		const isCardActive = e.currentTarget.classList.contains('active');
-		const projectCards = document.querySelectorAll('.projectCard');
+		const isCardActive = e.currentTarget.classList.contains("active");
+		const projectCards = document.querySelectorAll(".projectCard");
 		const flipState = Flip.getState(projectCards);
 
 		projectCards.forEach((otherCard, otherIdx) => {
-			otherCard.classList.remove('active');
-			otherCard.classList.remove('is-inactive');
+			otherCard.classList.remove("active");
+			otherCard.classList.remove("is-inactive");
 			if (!isCardActive && idx !== otherIdx) {
-				otherCard.classList.add('is-inactive');
+				otherCard.classList.add("is-inactive");
 			}
 		});
 
 		if (!isCardActive) {
-			e.currentTarget.classList.add('active');
+			e.currentTarget.classList.add("active");
 		}
 
 		Flip.from(flipState, {
 			duration: 1.2,
-			ease: 'expo.out',
+			ease: "expo.out",
 			absolute: true,
 		});
 	};
@@ -68,7 +69,10 @@ const Project = React.memo(({props, idx}) => {
 
 	return (
 		<article className="projectCard relative" onClick={handleCardClick}>
-			<div className={`w-full  relative ${!imageLoaded ? 'bg-gray-200 dark:bg-gray-700' : ''} flex items-center justify-center`}>
+			<div
+				className={`w-full  relative ${
+					!imageLoaded ? "bg-gray-200 dark:bg-gray-700" : ""
+				} flex items-center justify-center`}>
 				{loading && (
 					<div className="absolute inset-0 flex items-center justify-center">
 						<Spinner />
@@ -79,16 +83,24 @@ const Project = React.memo(({props, idx}) => {
 					alt={title}
 					loading="lazy"
 					decoding="async"
-					className={`w-full h-full object-cover transition-opacity duration-500 border border-gray-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+					className={`w-full h-full object-cover transition-opacity duration-500 border border-gray-300 ${
+						imageLoaded ? "opacity-100" : "opacity-0"
+					}`}
 					onLoad={handleImageLoad}
 				/>
 			</div>
-			<h1 className="dark-text dark:light-text work-header-text text-sm md:text-lg xl:text-2xl">{title}</h1>
+			<h1 className="dark-text dark:light-text work-header-text text-sm md:text-lg xl:text-2xl">
+				{title}
+			</h1>
 			<div className="details wrapped-text px-2 md:px-12">
-				<p className="wrapped-text font-light text-xs md:text-lg xl:text-xl">{description}</p>
+				<p className="wrapped-text font-light text-xs md:text-lg xl:text-xl">
+					{description}
+				</p>
 				<h3 className="dark-text text-xs md:text-lg dark:light-text pt-2">
 					Tech Stack:
-					<span className="wrapped-text font-light text-xs md:text-lg xl:text-xl">{techstack}</span>
+					<span className="wrapped-text font-light text-xs md:text-lg xl:text-xl">
+						{techstack}
+					</span>
 				</h3>
 				<div className="flex justify-around items-center text-md lg:text-lg xl:text-xl wrapped-text flex-wrap pt-4 gap-4">
 					<div className="flex items-center gap-0">
@@ -115,7 +127,7 @@ const Project = React.memo(({props, idx}) => {
 						{previewLink ? (
 							<div>
 								<a
-									onClick={() => window.open(previewLink, '_blank')}
+									onClick={() => window.open(previewLink, "_blank")}
 									href={previewLink}
 									target="_blank"
 									rel="noreferrer noopener"
@@ -143,7 +155,7 @@ const Project = React.memo(({props, idx}) => {
 						</svg>
 
 						<a
-							onClick={() => window.open(githubLink, '_blank')}
+							onClick={() => window.open(githubLink, "_blank")}
 							href={githubLink}
 							target="_blank"
 							rel="noreferrer noopener"

@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-	font-family: 'helvetica-neue';
-	src: url('./assets/fonts/helvetica-neue/HelveticaNeue-Light.otf') format('opentype');
+	font-family: "helvetica-neue";
+	src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Light.otf")
+		format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -47,7 +48,7 @@ body::-webkit-scrollbar {
 	padding: 0;
 }
 body {
-	font-family: 'helvetica-neue';
+	font-family: "helvetica-neue";
 	padding: 25px;
 	overflow: hidden;
 	width: 100vw;
@@ -55,7 +56,7 @@ body {
 	display: flex;
 	min-width: 325px;
 	z-index: 10;
-	font-feature-settings: 'palt';
+	font-feature-settings: "palt";
 	-webkit-text-size-adjust: none;
 	-moz-osx-font-smoothing: grayscale;
 	overscroll-behavior: none;
@@ -237,6 +238,45 @@ body.dark {
 	opacity: 1;
 }
 
+.noise-overlay {
+	position: fixed;
+	left: var(--pad);
+	right: var(--pad);
+	top: var(--pad);
+	bottom: var(--pad);
+	pointer-events: none;
+	z-index: 2;
+	mix-blend-mode: soft-light;
+	opacity: 0.45;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+#grain-layer {
+	position: fixed;
+	left: var(--pad);
+	right: var(--pad);
+	top: var(--pad);
+	bottom: var(--pad);
+	pointer-events: none;
+	z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+	.noise-overlay {
+		left: var(--padMobile);
+		right: var(--padMobile);
+		top: var(--padMobile);
+		bottom: var(--padMobile);
+	}
+
+	#grain-layer {
+		left: var(--padMobile);
+		right: var(--padMobile);
+		top: var(--padMobile);
+		bottom: var(--padMobile);
+	}
+}
+
 .mask_right {
 	position: absolute;
 	bottom: 20px;
@@ -302,7 +342,7 @@ body.dark {
 }
 
 .hover-underline-animation::after {
-	content: '';
+	content: "";
 	position: absolute;
 	width: 20%;
 	transform: scaleX(0);
@@ -369,9 +409,10 @@ body.dark {
 
 .custom-box {
 	cursor: pointer;
-	width: 14px;
-	height: 14px;
+	width: 16px;
+	height: 16px;
 	flex-shrink: 0;
+	transform: translate(0px, 0px);
 }
 
 .custom-box + h5 {
@@ -397,9 +438,8 @@ body.dark {
 	}
 
 	.baseline {
-	gap: 2px;
-}
-
+		gap: 2px;
+	}
 }
 /** LIGHT DARK TOGGLE FINISH **/
 
@@ -423,7 +463,7 @@ body.dark {
 
 @media screen and (max-width: 768px) {
 	.page-title {
-		right: 2px;
+		right: var(--padMobile);
 	}
 }
 
@@ -455,7 +495,6 @@ textarea:focus,
 input:focus {
 	color: var(--text-dark);
 }
-
 
 .extraSpace {
 	height: calc(100% + 2000px);
@@ -606,11 +645,16 @@ body.dark .projectCard {
 	opacity: 0.4;
 }
 
-.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+.vertical-timeline--two-columns
+	.vertical-timeline-element-content
+	.vertical-timeline-element-date {
 	left: 130% !important;
 }
 
-.vertical-timeline--two-columns .vertical-timeline-element:nth-child(2n):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date {
+.vertical-timeline--two-columns
+	.vertical-timeline-element:nth-child(2n):not(.vertical-timeline-element--left)
+	.vertical-timeline-element-content
+	.vertical-timeline-element-date {
 	left: auto !important;
 	right: 100% !important;
 	text-align: center !important;
@@ -656,7 +700,7 @@ body.dark .projectCard {
 	position: absolute;
 	top: 0;
 	left: 0;
-	animation: sk-bounce 2.0s infinite ease-in-out;
+	animation: sk-bounce 2s infinite ease-in-out;
 }
 
 .dark .double-bounce1,
@@ -665,13 +709,15 @@ body.dark .projectCard {
 }
 
 .double-bounce2 {
-	animation-delay: -1.0s;
+	animation-delay: -1s;
 }
 
 @keyframes sk-bounce {
-	0%, 100% { 
-		transform: scale(0.0);
-	} 50% { 
-		transform: scale(1.0);
+	0%,
+	100% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1);
 	}
 }
