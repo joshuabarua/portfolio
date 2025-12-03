@@ -407,19 +407,11 @@ body.dark {
 }
 
 .custom-box {
-<<<<<<< Updated upstream
-	cursor: pointer;
-	width: 16px;
-	height: 16px;
-	flex-shrink: 0;
-	transform: translate(0px, 0px);
-=======
 	display: inline-block;
 	width: 0.72em;
 	height: 0.72em;
 	vertical-align: middle;
 	margin-top: -0.08em;
->>>>>>> Stashed changes
 }
 
 .toggle-label {
@@ -434,10 +426,7 @@ body.dark {
 	}
 
 	.baseline {
-<<<<<<< Updated upstream
-=======
 		font-size: 16px;
->>>>>>> Stashed changes
 		gap: 2px;
 	}
 }
