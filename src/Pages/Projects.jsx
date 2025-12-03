@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {projectDetails} from '../data/details.js';
+import {projectDetails} from '../data/Details.js';
 import Project from '../Components/Project';
 
 function Projects() {

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import Work from '../Components/Work';
-import {workDetails} from '../data/details.js';
+import {workDetails} from '../data/Details.js';
 import {VerticalTimeline} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import {isDarkMode} from '../hooks/useColorScheme.jsx';

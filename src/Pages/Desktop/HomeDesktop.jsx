@@ -1,5 +1,5 @@
 import React from 'react';
-import {personalDetails} from '../../data/details.js';
+import {personalDetails} from '../../data/Details.js';
 import Header from '../../Components/Header';
 
 export default function HomeDesktop() {
