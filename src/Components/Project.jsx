@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
-import gsap from "gsap";
-import { Flip } from "gsap/Flip";
+import React, {useState, useEffect, useCallback} from 'react';
+import gsap from 'gsap';
+import {Flip} from 'gsap/Flip';
+
+gsap.registerPlugin(Flip);
 
 const Spinner = () => (
 	<div className="spinner">
@@ -9,10 +11,8 @@ const Spinner = () => (
 	</div>
 );
 
-const Project = React.memo(({ props, idx }) => {
-	const { title, image, description, techstack, previewLink, githubLink } =
-		props;
-	gsap.registerPlugin(Flip);
+const Project = React.memo(({props, idx}) => {
+	const {title, image, description, techstack, previewLink, githubLink} = props;
 
 	const [loading, setLoading] = useState(true);
 	const [imageLoaded, setImageLoaded] = useState(false);
@@ -23,7 +23,7 @@ const Project = React.memo(({ props, idx }) => {
 		} else if (window.innerWidth <= 900) {
 			return image[1];
 		}
-		return image[2];
+		return image[2]; 
 	}, [image]);
 
 	const [currentImage, setCurrentImage] = useState(() => getImageSource());
@@ -33,11 +33,11 @@ const Project = React.memo(({ props, idx }) => {
 			setCurrentImage(getImageSource());
 		};
 
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
 	}, [getImageSource]);
 
-	const handleCardClick = (e) => {
+	const handleCardClick = useCallback((e) => {
 		e.preventDefault();
 		const isCardActive = e.currentTarget.classList.contains("active");
 		const projectCards = document.querySelectorAll(".projectCard");
@@ -60,7 +60,7 @@ const Project = React.memo(({ props, idx }) => {
 			ease: "expo.out",
 			absolute: true,
 		});
-	};
+	}, [idx]);
 
 	const handleImageLoad = () => {
 		setLoading(false);

@@ -397,29 +397,34 @@ body.dark {
 }
 
 .baseline {
-	display: flex;
+	all: unset;
+	display: inline-flex;
 	align-items: center;
-	width: 100%;
-	gap: 3px;
-}
-
-.custom-checkbox {
-	display: none;
+	gap: 0.2em;
+	cursor: pointer;
+	font-size: 18px;
+	line-height: 1;
 }
 
 .custom-box {
+<<<<<<< Updated upstream
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
 	flex-shrink: 0;
 	transform: translate(0px, 0px);
+=======
+	display: inline-block;
+	width: 0.72em;
+	height: 0.72em;
+	vertical-align: middle;
+	margin-top: -0.08em;
+>>>>>>> Stashed changes
 }
 
-.custom-box + h5 {
-	font-size: 18px;
+.toggle-label {
 	font-weight: 400;
-	margin: 0;
-	line-height: 1;
+	vertical-align: middle;
 }
 
 @media screen and (max-width: 768px) {
@@ -428,16 +433,11 @@ body.dark {
 		left: -5px;
 	}
 
-	.custom-box + h5 {
-		font-size: 16px;
-	}
-
-	.custom-box {
-		width: 12px;
-		height: 12px;
-	}
-
 	.baseline {
+<<<<<<< Updated upstream
+=======
+		font-size: 16px;
+>>>>>>> Stashed changes
 		gap: 2px;
 	}
 }

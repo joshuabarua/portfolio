@@ -11,58 +11,14 @@ export const DarkModeToggle = () => {
 	return (
 		<>
 			<div className="lightdark gap-4">
-				<div className="baseline">
-					<input
-						type="checkbox"
-						id="light-checkbox"
-						className="custom-checkbox"
-						checked={!isDark}
-						onChange={handleToggle}
-					/>
-					<svg
-						className="custom-box"
-						viewBox="0 0 14 14"
-						aria-hidden="true"
-						onClick={handleToggle}>
-						<rect
-							x="0.5"
-							y="0.5"
-							width="12"
-							height="12"
-							fill={!isDark ? "#1a1a1a" : "none"}
-							stroke={isDark ? "#f2f2f2" : "#1a1a1a"}
-							strokeWidth="1"
-							opacity={!isDark ? 1 : 0.7}
-						/>
-					</svg>
-					<h5 htmlFor="light-checkbox">LIGHT</h5>
-				</div>
-				<div className="baseline">
-					<input
-						type="checkbox"
-						id="dark-checkbox"
-						className="custom-checkbox"
-						checked={isDark}
-						onChange={handleToggle}
-					/>
-					<svg
-						className="custom-box"
-						viewBox="0 0 14 14"
-						aria-hidden="true"
-						onClick={handleToggle}>
-						<rect
-							x="0.5"
-							y="0.5"
-							width="12"
-							height="12"
-							fill={isDark ? "#f2f2f2" : "none"}
-							stroke="#1a1a1a"
-							strokeWidth="1"
-							opacity={isDark ? 1 : 0.7}
-						/>
-					</svg>
-					<h5 htmlFor="dark-checkbox">DARK</h5>
-				</div>
+				<button type="button" className="baseline" onClick={handleToggle} aria-pressed={!isDark}>
+					<span className={`custom-box ${!isDark ? 'bg-[#1a1a1a]' : 'border-[1px] opacity-70'}`} aria-hidden="true"></span>
+					<span className="toggle-label">LIGHT</span>
+				</button>
+				<button type="button" className="baseline" onClick={handleToggle} aria-pressed={isDark}>
+					<span className={`custom-box ${isDark ? 'bg-[#f2f2f2]' : 'border-[1px] opacity-70 border-dark-color border-solid'}`} aria-hidden="true"></span>
+					<span className="toggle-label">DARK</span>
+				</button>
 			</div>
 		</>
 	);
