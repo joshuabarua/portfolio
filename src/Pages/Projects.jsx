@@ -1,13 +1,10 @@
-import React, { useMemo } from "react";
-import { projectDetails } from "../data/details.js";
-import Project from "../Components/Project";
+import React from 'react';
+import {projectDetails} from '../data/details.js';
+import Project from '../Components/Project';
+
+const projectCards = projectDetails.map((project, idx) => <Project key={idx} props={project} idx={idx} />);
 
 function Projects() {
-	const projectCards = useMemo(() => {
-		return projectDetails.map((projectDetails, idx) => (
-			<Project key={idx} props={projectDetails} idx={idx} />
-		));
-	}, []);
 	return (
 		<div className="projects">
 			<h1 className="page-title text-md mr-[-2px] md:mr-[-1px] md:text-2xl dark-text dark:light-text">
