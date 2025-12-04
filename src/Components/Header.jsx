@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {socialMediaUrl} from '../data/Details.js';
 
 function Header({isOpen, setIsOpen}) {
-	const {linkdein, github} = socialMediaUrl;
+	const {linkedin, github} = socialMediaUrl;
 
 	const navLinks = [
 		{path: '/', label: 'Home'},
@@ -50,7 +50,7 @@ function Header({isOpen, setIsOpen}) {
 				</ul>
 				<ul className="flex justify-start items-center flex-row gap-4">
 					<li>
-						<a href={linkdein} target="_blank" rel="noreferrer noopener" className="header_icon">
+						<a href={linkedin} target="_blank" rel="noreferrer noopener" className="header_icon">
 							<svg
 								className="dark:fill-light-heading fill-dark-heading header_icon"
 								width="40"

@@ -17,10 +17,10 @@ const DEFAULT_OPTIONS = {
   animate: true,
   patternWidth: 100,
   patternHeight: 100,
-  grainOpacity: 0.06,
-  grainDensity: 2,
-  grainWidth: 0.9,
-  grainHeight: 0.9,
+  grainOpacity: 0.1,
+  grainDensity: 1.5,
+  grainWidth: 1,
+  grainHeight: 1,
   grainChaos: 1,
   grainSpeed: 5
 };
