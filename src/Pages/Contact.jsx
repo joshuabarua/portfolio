@@ -112,7 +112,7 @@ const ContactForm = () => {
 								value={formData.subject}
 								onChange={handleInputChange}
 								className="focus:dark:text-light-color block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-10 text-lg text-gray-900  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 pl-6"
-								placeholder="Lets work together!"
+								placeholder="Let's work together!"
 							/>
 						</div>
 

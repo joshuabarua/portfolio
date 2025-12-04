@@ -9,6 +9,7 @@ import ggirl from '../assets/companylogos/GalaxyGirlLogo.png';
 import poa from '../assets/companylogos/POA6.png';
 import tca from '../assets/companylogos/tca.png';
 import vicsq from '../assets/companylogos/vicsq.png';
+import automation from '../assets/companylogos/AutomationDMinor.png'
 
 // Profile Image
 import profile from '../assets/companylogos/profile.png';
@@ -97,6 +98,7 @@ export const logos = {
 	poa: poa,
 	tca: tca,
 	vicsq: vicsq,
+	automation: automation
 };
 
 // Enter your Personal Details here
@@ -104,15 +106,12 @@ export const personalDetails = {
 	name: 'Joshua Barua-Fowle',
 	tagline: 'Fullstack Developer',
 	img: profile,
-	about: `Design and programming have the ability to merge together and create elegant solutions to complex problems.
-	I utilise a diverse skill set in frontend and backend development to achieve this, coupled with a strong commitment to agile methodologies and a
-passion for collaborative teamwork. I'm committed to achieving excellence as a full stack engineer, dedicated to crafting 
-web applications whilst continuing to explore aspects of design and grow as a developer. `,
+	about: `I'm a full stack developer with a background in frontend and backend development. I build clean, functional web applications using modern frameworks and agile workflows. I enjoy solving complex problems and collaborating with teams to deliver polished, user-focused products.`,
 };
 
 // Enter your Social Media URLs here
 export const socialMediaUrl = {
-	linkdein: 'https://www.linkedin.com/in/joshua-barua/',
+	linkedin: 'https://www.linkedin.com/in/joshua-barua/',
 	github: 'https://www.github.com/joshuabarua',
 	instagram: 'https://www.instagram.com/joshua.barua',
 };
@@ -171,6 +170,33 @@ export const techStackDetails = {
 export const workDetails = [
 	{
 		Position: 'Frontend Developer',
+		Description:
+			'Developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, crafted a visually appealing and modern website. Integrated with a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, organization of project data descriptions, images, and achievements in a structured and easily accessible format.',
+		Company: `Galaxy Girl MUA`,
+		GitHub: 'https://github.com/joshuabarua/galaxy-girl-vite',
+		Website: 'https://galaxy-girl-mua.vercel.app/',
+		Location: 'Remote/Brighton, UK',
+		Type: 'Freelance',
+		Duration: 'Jan 2022 - Present (Updated)',
+		Tech: [react, ts, yarn, git, css, vite],
+		Logo: ggirl,
+		Color: '#ffeab0',
+	},
+	{
+		Position: 'App Developer',
+		Description: 'Developed a cross-platform mobile app for artist Angus Greenhalgh using React Native that functions as a tachometer for viewing rotational animations on a physical Zoetrope. Built for iOS and Android with precise timing controls and smooth frame synchronization.',
+		Company: `Automation in D Minor`,
+		GitHub: 'https://github.com/joshuabarua/mccashback-app',
+		Website: 'https://apps.apple.com/gb/app/automation-in-d-minor/id6751198956',
+		Location: 'Remote/Brighton, UK',
+		Type: 'Freelance',
+		Duration: 'Jun 2025 - Oct 2025',
+		Tech: [react, ts, yarn, tailwind, git, css],
+		Logo: automation,
+		Color: 'orange',
+	},
+	{
+		Position: 'Frontend Developer',
 		Description: `At a leading European VFX studio, I significantly improved a VFX management web app using React.js, TypeScript, GraphQL, Jest, Zustand, and Material-UI. I developed and integrated features to improve the user experience, streamline workflows, and increase platform functionality. My tasks involved creating and optimizing components, enhancing UI, and bug resolution within an agile system. Pipeline used Jenkins on a main branch for CI/CD.`,
 		Company: `RISE FX GmbH`,
 		Website: 'https://www.risefx.com/',
@@ -180,20 +206,6 @@ export const workDetails = [
 		Tech: [react, ts, npm, graphql, mui, git, css],
 		Logo: risefx,
 		Color: 'black',
-	},
-	{
-		Position: 'Frontend Developer',
-		Description:
-			'Developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, crafted a visually appealing and modern website. Integrated with a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, organization of project dataΓÇödescriptions, images, and achievementsΓÇöin a structured and easily accessible format.',
-		Company: `Galaxy Girl MUA`,
-		GitHub: 'https://github.com/joshuabarua/galaxy-girl-vite',
-		Website: 'https://galaxy-girl-mua.vercel.app/',
-		Location: 'Remote/Brighton, UK',
-		Type: 'Freelance',
-		Duration: 'Jan 2022 - Jan 2023',
-		Tech: [react, js, yarn, styled, mui, git, css, vite],
-		Logo: ggirl,
-		Color: '#ffeab0',
 	},
 	{
 		Position: 'Content Developer',

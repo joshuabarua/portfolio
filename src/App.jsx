@@ -83,7 +83,6 @@ function App() {
 		<div id="main-app">
 			{loading && <Loading showLoading={loading} />}
 			<div id="background"></div>
-			<div className="noise-overlay"></div>
 			<div id="grain-layer"></div>
 			<div id="frame">
 				<div className="frame_line frame_line-left bg-dark-color dark:bg-light-color"></div>

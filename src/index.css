@@ -238,18 +238,6 @@ body.dark {
 	opacity: 1;
 }
 
-.noise-overlay {
-	position: fixed;
-	left: var(--pad);
-	right: var(--pad);
-	top: var(--pad);
-	bottom: var(--pad);
-	pointer-events: none;
-	z-index: 2;
-	mix-blend-mode: soft-light;
-	opacity: 0.45;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-}
 
 #grain-layer {
 	position: fixed;
@@ -262,13 +250,6 @@ body.dark {
 }
 
 @media screen and (max-width: 768px) {
-	.noise-overlay {
-		left: var(--padMobile);
-		right: var(--padMobile);
-		top: var(--padMobile);
-		bottom: var(--padMobile);
-	}
-
 	#grain-layer {
 		left: var(--padMobile);
 		right: var(--padMobile);
