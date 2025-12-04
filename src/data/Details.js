@@ -50,6 +50,7 @@ import ts from '../assets/techstack/ts.png';
 import unix from '../assets/techstack/unix-96.png';
 import wordpress from '../assets/techstack/wordpress-240.png';
 import zustand from '../assets/techstack/zustand.png';
+import gsap from '../assets/companylogos/gsap.svg';
 import rest from '../assets/techstack/rest-api.png';
 import yarn from '../assets/techstack/yarn-logo-128.png';
 import vite from '../assets/techstack/vite-js-logo.png';
@@ -164,6 +165,7 @@ export const techStackDetails = {
 	supabase: supabase,
 	clerk: clerk,
 	leaflet: leaflet,
+	gsap: gsap,
 };
 
 // Enter your Work Experience here
@@ -171,14 +173,14 @@ export const workDetails = [
 	{
 		Position: 'Frontend Developer',
 		Description:
-			'Developed a web portfolio for a versatile SFX makeup artist using React and JavaScript, ensuring a responsive and interactive frontend. Employing Material-UI and styled-components, crafted a visually appealing and modern website. Integrated with a lightbox feature, enhancing user experience by allowing detailed exploration of project details. Additionally, organization of project data descriptions, images, and achievements in a structured and easily accessible format.',
+			'Built a responsive portfolio website for an SFX makeup artist using React and TypeScript. Features GSAP animations and a clean, modern design with organized content structure.',
 		Company: `Galaxy Girl MUA`,
 		GitHub: 'https://github.com/joshuabarua/galaxy-girl-vite',
 		Website: 'https://galaxy-girl-mua.vercel.app/',
 		Location: 'Remote/Brighton, UK',
 		Type: 'Freelance',
 		Duration: 'Jan 2022 - Present (Updated)',
-		Tech: [react, ts, yarn, git, css, vite],
+		Tech: [react, ts, yarn, git, css, vite, gsap],
 		Logo: ggirl,
 		Color: '#ffeab0',
 	},

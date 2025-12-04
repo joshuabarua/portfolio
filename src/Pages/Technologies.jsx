@@ -23,6 +23,7 @@ const skills = {
 		{icon: techStackDetails.express, name: 'Express'},
 		{icon: techStackDetails.firebase, name: 'Firebase'},
 		{icon: techStackDetails.mongo, name: 'MongoDB'},
+		{icon: techStackDetails.gsap, name: 'GSAP'},
 	],
 	proficient: [
 		{icon: techStackDetails.redux, name: 'Redux'},
