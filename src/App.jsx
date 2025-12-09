@@ -73,9 +73,9 @@ function App() {
 
 	useEffect(() => {
 		return applyGrain("grain-layer", {
-			grainOpacity: 0.12,
-			grainChaos: 1.2,
-			grainSpeed: 12,
+			grainOpacity: 0.08,
+			grainChaos: 0.5,
+			grainSpeed: 8,
 		});
 	}, []);
 

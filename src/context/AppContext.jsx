@@ -1,34 +1,19 @@
-import React, {createContext, useState, useEffect, useLayoutEffect, useMemo} from 'react';
+import React, {createContext, useState, useEffect, useMemo} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import useDeviceType from '../hooks/useDeviceType';
 import {desktopRoutes, mobileRoutes} from '../data/routes';
 import HomeDesktop from '../Pages/Desktop/HomeDesktop';
 import HomeMobile from '../Pages/Mobile/HomeMobile';
-import useSpacing from '../hooks/useVantaSpacing';
 
 export const AppContext = createContext({
 	isDark: false,
-	setIsDark: () => {
-		throw new Error('context not implemented.');
-	},
-	is1440p: false,
+	setIsDark: () => {},
 	isDesktop: false,
 	isMobile: false,
-	getRoutes: () => {},
 	routes: [],
-	setRoutes: () => {
-		throw new Error('context not implemented.');
-	},
-	getHomeComponent: () => {
-		throw new Error('context not implemented.');
-	},
+	getHomeComponent: null,
 	loading: true,
-	setLoading: () => {
-		throw new Error('context not implemented.');
-	},
-
-	constentStyle: {},
-	setContentStyle: () => {},
+	contentStyle: {},
 });
 
 export const AppContextProvider = ({children}) => {
@@ -71,56 +56,16 @@ export const AppContextProvider = ({children}) => {
 
 	const getHomeComponent = useMemo(() => (isMobile ? <HomeMobile /> : <HomeDesktop />), [isMobile]);
 
-	const requestFullScreen = async () => {
-		let element = await document.documentElement;
-		let requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-		if (requestMethod) {
-			requestMethod.call(element);
-			return true;
-		} else if (typeof window.ActiveXObject !== 'undefined') {
-			let wscript = new window.ActiveXObject('WScript.Shell');
-			if (wscript !== null) {
-				wscript.SendKeys('{F11}');
-				return true;
-			}
-		}
-	};
-	const handleOrientationChange = () => {
-		let myScreenOrientation = window.screen.orientation;
-		if (myScreenOrientation.type !== 'portrait-primary') {
-			myScreenOrientation.lock('portrait-primary').catch((err) => {
-				console.error('Failed to lock screen orientation:', err);
-			});
-		}
-		myScreenOrientation.lock('portrait-primary').catch((err) => {
-			console.error('Failed to lock screen orientation:', err);
-		});
-	};
-
 	useEffect(() => {
-		const handleFullScreen = () => requestFullScreen();
-		const handleOrientation = () => handleOrientationChange();
-
-		window.addEventListener('requestFullscreen', handleFullScreen);
-		window.addEventListener('orientationchange', handleOrientation);
-
 		localStorage.setItem('colorScheme', JSON.stringify(isDark));
 		document.body.classList.toggle('dark', isDark);
-
 		setRoutes(getRoutes(isMobile, isDesktop));
-
-		return () => {
-			window.removeEventListener('orientationchange', handleOrientation);
-			window.removeEventListener('requestFullscreen', handleFullScreen);
-		};
 	}, [getRoutes, isDark, isDesktop, isMobile]);
 
-	const spacing = useSpacing({isMobile, isDesktop, isDark});
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const timer = setTimeout(() => setLoading(false), 2000);
-
 		return () => clearTimeout(timer);
-	}, [isDark, spacing]);
+	}, []);
 
 	const [loading, setLoading] = useState(true);
 
