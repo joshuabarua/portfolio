@@ -17,12 +17,12 @@ const DEFAULT_OPTIONS = {
   animate: true,
   patternWidth: 100,
   patternHeight: 100,
-  grainOpacity: 0.1,
-  grainDensity: 1.5,
-  grainWidth: 1,
-  grainHeight: 1,
+  grainOpacity: 1,
+  grainDensity: 2,
+  grainWidth: 2,
+  grainHeight: 2,
   grainChaos: 1,
-  grainSpeed: 5
+  grainSpeed: 1
 };
 
 const KEYFRAME_STYLE_ID = "grained-keyframes";
