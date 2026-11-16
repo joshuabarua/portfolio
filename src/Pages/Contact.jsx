@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
+import PageTitle from '../Components/PageTitle';
 
 const ContactForm = () => {
 	const formRef = useRef();
@@ -37,7 +38,7 @@ const ContactForm = () => {
 
 	return (
 		<>
-			<h1 className="dark-text dark:light-text text-2xl xl:leading-tight mr-[-1px]  page-title">Contact</h1>
+			<PageTitle className="dark-text dark:light-text text-2xl xl:leading-tight mr-[-1px]">Contact</PageTitle>
 			<main className="flex w-full flex-col items-center justify-center">
 				<section className="flex w-[100%] items-center justify-center">
 					<form

@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
+import PageTitle from '../../Components/PageTitle';
 
 const ContactMobile = () => {
 	const formRef = useRef();
@@ -37,7 +38,7 @@ const ContactMobile = () => {
 
 	return (
 		<>
-			<h1 className="dark-text dark:light-text text-md md:text-2xl xl:leading-tight page-title">Contact</h1>
+			<PageTitle className="dark-text dark:light-text text-md mr-[-2px] md:text-2xl xl:leading-tight">Contact</PageTitle>
 			<main className="w-full flex justify-center items-center flex-col overflow-y-auto mt-4">
 				<form onSubmit={handleSubmit} ref={formRef} className="flex flex-col justify-center items-left gap-1 w-[90%] h-[550px] max-w-[500px] rounded-md">
 					{/* Name */}

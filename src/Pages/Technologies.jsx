@@ -2,6 +2,7 @@ import React, { useCallback, useLayoutEffect, useState } from "react";
 import { techStackDetails } from "../data/Details.js";
 import gsap from "gsap";
 import { useLocation } from "react-router-dom";
+import PageTitle from '../Components/PageTitle';
 
 const skills = {
 	expert: [
@@ -150,9 +151,7 @@ function Technologies() {
 
 	return (
 		<>
-			<h1 className="text-md mr-[-2px] md:mr-[-1px] md:text-2xl dark-text dark:light-text page-title">
-				Technologies
-			</h1>
+			<PageTitle className="text-md mr-[-2px] md:mr-[-1px] md:text-2xl dark-text dark:light-text">Technologies</PageTitle>
 			<div className="relative w-full h-full overflow-hidden p-12">
 				<div className="absolute inset-0 flex items-center justify-center">
 					<div className="relative w-full h-full flex items-center justify-center">

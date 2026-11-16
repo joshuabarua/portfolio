@@ -369,70 +369,239 @@ body.dark {
 	margin-top: 50px;
 }
 
-/** LIGHT DARK TOGGLE START **/
-.lightdark {
-	position: fixed;
-	bottom: 31px;
-	left: 8px;
-	z-index: 10;
-	writing-mode: vertical-lr;
-	transform: rotate(180deg);
-	display: flex;
-	justify-content: flex-start;
-	height: 100%;
-	width: 29px;
+/** NAV DRAWER START **/
+:root {
+	--drawer-line: rgba(26, 26, 26, 0.6);
+	--drawer-bg: rgba(238, 235, 235, 0.88);
+	--drawer-width: 320px;
 }
 
-.baseline {
-	all: unset;
-	display: inline-flex;
+body.dark {
+	--drawer-line: rgba(242, 242, 242, 0.6);
+	--drawer-bg: rgba(26, 26, 26, 0.88);
+}
+
+.nav-drawer {
+	/* Origin sits exactly on the top frame line, centered.
+	   The panel hangs from the line; the line itself stays unbroken. */
+	position: fixed;
+	/* +1px: start just below the 1px frame line so nothing paints over it */
+	top: calc(var(--pad) + 1px);
+	left: 50%;
+	width: var(--drawer-width);
+	transform: translateX(-50%);
+	z-index: 12;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+.nav-drawer_tab {
+	/* Sits in the top gutter above the frame line, centered horizontally */
+	position: absolute;
+	/* Baseline lines up with the name in the top-left (~28px from the top) */
+	top: -10px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	display: flex;
 	align-items: center;
-	gap: 0.25em;
-	cursor: pointer;
-	font-size: 18px;
+	gap: 8px;
+	padding: 4px 8px;
+	font: inherit;
+	font-size: 13px;
+	letter-spacing: 0.08em;
 	line-height: 1;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.nav-drawer_tab:focus-visible {
+	outline: 1px solid currentColor;
+	outline-offset: 2px;
+}
+
+.nav-drawer_chevron {
+	width: 9px;
+	height: 6px;
+	transition: transform 0.4s ease;
+}
+
+.nav-drawer_tab:hover .nav-drawer_chevron {
+	transform: translateY(1px);
+}
+
+.nav-drawer.is-open .nav-drawer_chevron,
+.nav-drawer.is-open .nav-drawer_tab:hover .nav-drawer_chevron {
+	transform: rotate(180deg);
+}
+
+.nav-drawer_panel {
+	/* Hangs from the frame line; its sides and bottom continue the line */
+	box-sizing: border-box;
+	width: 100%;
+	display: grid;
+	grid-template-rows: 0fr;
+	/* Closed: nothing painted, so no strip shows along the frame line */
+	background: transparent;
+	border: 1px solid transparent;
+	border-top: none;
+	/* Closing: fold up immediately, drop background and borders once folded */
+	transition: grid-template-rows 0.4s cubic-bezier(0.7, 0, 0.2, 1),
+		border-color 0s linear 0.4s, background-color 0s linear 0.4s,
+		backdrop-filter 0s linear 0.4s;
+}
+
+.nav-drawer.is-open .nav-drawer_panel {
+	grid-template-rows: 1fr;
+	background: var(--drawer-bg);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-color: var(--drawer-line);
+	pointer-events: auto;
+	transition: grid-template-rows 0.45s cubic-bezier(0.7, 0, 0.2, 1),
+		border-color 0s linear;
+}
+
+.nav-drawer_inner {
+	overflow: hidden;
+	min-height: 0;
+}
+
+.nav-drawer_links {
+	list-style: none;
+	padding: 20px 28px 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.nav-drawer_link {
+	display: flex;
+	align-items: baseline;
+	font-size: 22px;
+	line-height: 1.2;
+	opacity: 0;
+	transform: translateY(-6px);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-drawer.is-open .nav-drawer_link {
+	opacity: 0.6;
+	transform: none;
+	transition-duration: 0.3s;
+}
+
+/* Stagger links in as the panel drops */
+.nav-drawer.is-open li:nth-child(1) .nav-drawer_link { transition-delay: 0.15s; }
+.nav-drawer.is-open li:nth-child(2) .nav-drawer_link { transition-delay: 0.19s; }
+.nav-drawer.is-open li:nth-child(3) .nav-drawer_link { transition-delay: 0.23s; }
+.nav-drawer.is-open li:nth-child(4) .nav-drawer_link { transition-delay: 0.27s; }
+.nav-drawer.is-open li:nth-child(5) .nav-drawer_link { transition-delay: 0.31s; }
+.nav-drawer.is-open li:nth-child(6) .nav-drawer_link { transition-delay: 0.35s; }
+
+.nav-drawer.is-open .nav-drawer_link:hover,
+.nav-drawer.is-open .nav-drawer_link.is-active {
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+.nav-drawer_link.is-active {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+}
+
+.nav-drawer_social {
+	display: flex;
+	gap: 18px;
+	padding: 12px 28px 18px;
+	font-size: 13px;
+	letter-spacing: 0.04em;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.nav-drawer.is-open .nav-drawer_social {
+	opacity: 0.7;
+	transition-delay: 0.4s;
+}
+
+.nav-drawer_social a:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nav-drawer_panel,
+	.nav-drawer.is-open .nav-drawer_panel,
+	.nav-drawer_link,
+	.nav-drawer_social,
+	.nav-drawer_chevron {
+		transition: none !important;
+	}
+}
+/** NAV DRAWER FINISH **/
+
+/** LIGHT DARK TOGGLE START **/
+.lightdark {
+	/* Sits in the bottom gutter, right edge aligned with the frame's right line */
+	position: fixed;
+	right: var(--pad);
+	bottom: 0;
+	height: var(--pad);
+	z-index: 11;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	font-size: 14px;
+	letter-spacing: 0.04em;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.theme-option {
+	cursor: pointer;
+	user-select: none;
+}
+
+.custom-checkbox {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
 }
 
 .custom-box {
-	width: 12px;
-	height: 12px;
-	flex-shrink: 0;
-	box-sizing: border-box;
-	display: inline-flex;
-	align-self: center;
-	position: relative;
-	top: 0;
+	/* Cap height of Helvetica Neue is ~0.72em; baseline alignment puts
+	   the box bottom on the text baseline so it matches the capitals */
+	display: inline-block;
+	width: 0.72em;
+	height: 0.72em;
+	margin-right: 0.4em;
+	vertical-align: baseline;
+	overflow: visible;
+	opacity: 0.7;
+	transition: opacity 0.2s ease;
 }
 
-.custom-box.filled {
-	background-color: currentColor;
-	border: 1px solid currentColor;
+.theme-option:hover .custom-box,
+.custom-checkbox:checked + .custom-box {
+	opacity: 1;
 }
 
-.custom-box.empty {
-	background-color: transparent;
-	border: 1px solid currentColor;
-	opacity: 0.5;
-}
-
-.toggle-label {
-	font-weight: 400;
+.custom-checkbox:focus-visible + .custom-box {
+	outline: 1px solid currentColor;
+	outline-offset: 2px;
 }
 
 @media screen and (max-width: 768px) {
 	.lightdark {
-		bottom: 20px;
-		left: -5px;
-	}
-
-	.baseline {
-		font-size: 16px;
-		gap: 0.2em;
-	}
-
-	.custom-box {
-		width: 10px;
-		height: 10px;
+		right: var(--padMobile);
+		height: var(--padMobile);
+		font-size: 12px;
+		gap: 14px;
 	}
 }
 /** LIGHT DARK TOGGLE FINISH **/
@@ -444,23 +613,42 @@ body.dark {
 }
 
 .page-title {
+	/* Anchored to the right frame line (not the viewport edge), sitting just
+	   outside it in the right gutter. Letters are stacked as blocks and
+	   left-aligned (see PageTitle.jsx) so the gap is the same on every page. */
 	position: absolute;
 	top: 31px;
-	right: 4px;
+	left: calc(100% - var(--pad) + 7px);
+	right: auto;
+	margin: 0 !important;
 	z-index: 9;
-	writing-mode: vertical-rl;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 6px;
+	font-size: 24px;
 	font-weight: 700;
-	text-align: center;
+	line-height: 1;
 	text-transform: uppercase;
-	letter-spacing: 15px;
+	white-space: nowrap;
+}
+
+.page-title > span {
+	display: block;
+	height: 1em;
+}
+
+.page-title_space {
+	height: 0.75em !important;
 }
 
 @media screen and (max-width: 768px) {
 	.page-title {
-		margin-right: -6px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		letter-spacing: 8px;
+		top: calc(var(--padMobile) + 1px);
+		left: calc(100% - var(--padMobile) + 7px);
+		/* Fit the narrower mobile gutter */
+		font-size: 13px;
+		gap: 3px;
 	}
 }
 
